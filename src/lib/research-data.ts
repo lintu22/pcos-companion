@@ -23,12 +23,18 @@ export interface Citation {
   summary: string;
 }
 
+export interface ResearchRecommendation {
+  text: string; // an actionable suggestion, e.g. "Consider CBT..."
+  citations: string[]; // citation ids this suggestion is grounded in — never shown without these
+}
+
 export interface SymptomInfo {
   key: SymptomKey;
   label: string;
   description: string;
   citations: string[]; // citation ids — look up in CITATIONS (hand-curated) or ALL_CITATIONS (incl. ingested PDFs)
   insights: string[]; // evidence-based statements, paired 1:1 with citations by index where possible
+  recommendations?: ResearchRecommendation[]; // what the research suggests actually helps (optional — not every symptom has a clear one)
 }
 
 export const CITATIONS: Record<string, Citation> = {
@@ -134,6 +140,12 @@ export const SYMPTOMS: SymptomInfo[] = [
       "Irregular ovulation is one of the three core diagnostic criteria for PCOS under the Rotterdam consensus, alongside hyperandrogenism and polycystic ovarian morphology.",
       "Cycle irregularity in PCOS is driven by disrupted LH pulsatility and anovulation, not just 'stress' — guidelines recommend it as a primary red flag to raise with a clinician.",
     ],
+    recommendations: [
+      {
+        text: "International guidelines recommend lifestyle modification (diet and exercise) as first-line management to help restore more regular ovulation, particularly alongside weight considerations.",
+        citations: ["teede2018"],
+      },
+    ],
   },
   {
     key: "acne",
@@ -171,6 +183,12 @@ export const SYMPTOMS: SymptomInfo[] = [
       "A meta-analysis of over 30 studies found women with PCOS have significantly higher rates of overweight, obesity, and central (abdominal) adiposity than the general population.",
       "Clamp studies show insulin resistance in PCOS is often intrinsic — present independent of body weight — which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
     ],
+    recommendations: [
+      {
+        text: "A Cochrane review of lifestyle intervention trials found structured diet-and-exercise programmes improved insulin sensitivity and related metabolic symptoms, even without large amounts of weight loss.",
+        citations: ["moran2013"],
+      },
+    ],
   },
   {
     key: "fatigue",
@@ -190,6 +208,12 @@ export const SYMPTOMS: SymptomInfo[] = [
       "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PCOS compared to controls — this is a recognised part of the condition, not 'just stress'.",
       "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PCOS compared with usual care — a concrete, evidence-based option to raise with a clinician or therapist.",
     ],
+    recommendations: [
+      {
+        text: "Cognitive behavioural therapy (CBT) is a first-line, evidence-based option for depression in PCOS — a 2022 meta-analysis found a large effect size in favour of CBT compared with usual care.",
+        citations: ["jiskoot2022"],
+      },
+    ],
   },
   {
     key: "cravings_blood_sugar",
@@ -200,6 +224,12 @@ export const SYMPTOMS: SymptomInfo[] = [
       "Insulin resistance — present in a majority of PCOS cases regardless of weight — can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
       "Cochrane review evidence shows structured lifestyle/dietary approaches (not necessarily weight loss) can meaningfully improve insulin sensitivity and related symptoms.",
     ],
+    recommendations: [
+      {
+        text: "Structured dietary changes aimed at stabilising blood sugar (not necessarily a weight-loss diet) are supported by Cochrane review evidence for improving insulin sensitivity and related cravings/energy symptoms.",
+        citations: ["moran2013"],
+      },
+    ],
   },
   {
     key: "fertility_concerns",
@@ -208,6 +238,12 @@ export const SYMPTOMS: SymptomInfo[] = [
     citations: ["balen2016"],
     insights: [
       "PCOS is the leading cause of anovulatory infertility, but ESHRE guidelines note the large majority of cases respond well to first-line ovulation induction treatment.",
+    ],
+    recommendations: [
+      {
+        text: "ESHRE guidelines recommend first-line ovulation induction treatment for anovulatory infertility in PCOS, which the large majority of patients respond well to — worth raising with a fertility specialist.",
+        citations: ["balen2016"],
+      },
     ],
   },
   {

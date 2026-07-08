@@ -33,6 +33,8 @@ User answers 5 symptom questions + 2 free-text questions  (the "Intake")
       - a % likelihood score
       - the person's "dominant symptoms"
       - a few evidence-based insights, each with a citation
+      - a few "what might help" recommendations, each backed by
+        either a research citation or a community stat (see §2.6)
                          │
                          ▼
        Shown on the Profile page, saved on the user's device
@@ -150,6 +152,45 @@ shown real sources and told firmly to stay within them). Layer 3 is what
 makes it actually impossible for a fabricated source to be presented to the
 user as real — because rendering a citation depends on matching *our* data,
 not on trusting the AI's output.
+
+---
+
+## 2.6. "What might help" — recommendations from research AND community
+
+Insights (§2, §2.5) explain *why* a symptom happens and point to the science
+behind it. **Recommendations** go one step further and suggest something
+practical the person could look into — but we hold these to an even stricter
+rule than citations, because a suggestion carries more weight than a fact.
+
+We never let the AI generate a recommendation freely. Every recommendation
+must come from one of exactly two hand-curated lists, and must say which one
+it came from:
+
+- **`source: "research"`** — a suggestion we've written ourselves, grounded
+  in a real citation (e.g. *"CBT is a first-line, evidence-based option for
+  depression in PCOS"*, backed by the Jiskoot 2022 meta-analysis). These live
+  in `research-data.ts`, as a `recommendations` list on each symptom.
+- **`source: "community"`** — a suggestion pulled from what other app users
+  say helped them (e.g. *"protein-first breakfasts"*), together with a
+  (mock, illustrative) percentage of people who found it helpful. These live
+  in `community-data.ts` as `COMMUNITY_RECOMMENDATIONS`, each traceable back
+  to specific forum posts.
+
+**The same three-layer grounding from §2.5 applies here, symmetrically for
+both sources:**
+- We paste both full lists into the system prompt (Layer 1) and explicitly
+  instruct Claude to only pick from them, never invent a suggestion or a
+  percentage (Layer 2).
+- On the Profile page, before showing *any* recommendation, we check: for a
+  research one, do its citation ids actually resolve in `ALL_CITATIONS`? For
+  a community one, does its id actually exist in `COMMUNITY_RECOMMENDATIONS`?
+  **If either check fails, that recommendation is silently dropped and never
+  shown** — this is a hard rule, not a nice-to-have. You will never see a
+  recommendation on screen that isn't traceable to one of these two lists.
+
+This is why every recommendation on the Profile page carries a visible tag —
+"Research-backed" (with a clickable source) or "From the community" (with a
+real % and its own basis) — there is no third, ungrounded kind.
 
 ---
 
@@ -340,6 +381,18 @@ ingested per §3.5), and the `insights` sentences.
 See §3.5 above — run `scripts/ingest-pdf.mjs`, then register the new file in
 `src/lib/pdf-sources.ts`.
 
+### To add or edit a research-backed recommendation ("what might help")
+Same file (`research-data.ts`) → find the symptom in `SYMPTOMS` → add/edit its
+`recommendations` list. Each one needs `text` (the suggestion, in your own
+words) and `citations` (a list of citation ids it's grounded in — same rule
+as everywhere else: if the ids don't resolve, it won't be shown).
+
+### To add or edit a community-reported recommendation
+Open `src/lib/community-data.ts` → `COMMUNITY_RECOMMENDATIONS` → add an entry
+with a unique `id`, which `symptom` it applies to, the `suggestion` text, an
+illustrative `percentReportingHelpful`, and which `FORUM_POSTS` ids it's
+based on (for traceability).
+
 ### To change the 5 intake questions
 Open `src/lib/questions.ts` → `INTAKE_QUESTIONS` → edit the `prompt` (the
 question text) or `helper` (the small grey subtext) for any of the 5
@@ -352,6 +405,7 @@ Open `src/lib/community-data.ts`:
   diagnosis, etc.)
 - `FORUM_POSTS` — add/edit/remove sample posts (author name, title, body,
   which symptoms it's tagged with)
+- `COMMUNITY_RECOMMENDATIONS` — see above
 
 ### To change what Claude is told (the prompt itself)
 Open `src/app/api/analyze/route.ts` → the `system` and `prompt` strings
@@ -365,17 +419,17 @@ about different things, etc.
 
 | File | What it controls |
 |---|---|
-| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic + PDF excerpt injection |
-| `src/lib/scoring.ts` | The answer template (schema) + fallback scoring formula |
-| `src/lib/research-data.ts` | **The dataset**: citations + symptoms + insights |
+| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic + PDF excerpt injection + recommendation grounding |
+| `src/lib/scoring.ts` | The answer template (schema) + fallback scoring formula + fallback recommendations |
+| `src/lib/research-data.ts` | **The dataset**: citations + symptoms + insights + research-backed recommendations |
 | `scripts/ingest-pdf.mjs` | Turns a PDF into searchable text chunks (§3.5) |
 | `pdf-sources/raw/` | Where you drop the original PDF files |
 | `pdf-sources/processed/` | The extracted chunks (auto-generated, do not hand-edit) |
 | `src/lib/pdf-sources.ts` | Registers ingested PDFs, merges their citations, does the keyword search |
-| `src/lib/community-data.ts` | **Mock dataset**: community stats + forum posts |
+| `src/lib/community-data.ts` | **Mock dataset**: community stats + forum posts + community-reported recommendations |
 | `src/lib/questions.ts` | The 5 intake questions + 2 free-text prompts |
 | `src/lib/storage.ts` | Saves the user's profile/check-ins on their own device |
 | `src/app/intake/page.tsx` | The question-by-question intake screen |
-| `src/app/profile/page.tsx` | The results screen (score, insights, citations, community) |
+| `src/app/profile/page.tsx` | The results screen (score, insights, citations, recommendations, community) |
 | `src/app/checkin/page.tsx` | The weekly check-in screen |
 | `src/app/community/page.tsx` | The mock forum screen |

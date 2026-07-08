@@ -1,11 +1,23 @@
 import { z } from "zod";
 import { FrequencyValue } from "./questions";
 import { SYMPTOMS, SymptomKey, getSymptomInfo } from "./research-data";
+import { COMMUNITY_RECOMMENDATIONS } from "./community-data";
 
 export const InsightSchema = z.object({
   symptom: z.string(),
   statement: z.string(),
   citationIds: z.array(z.string()),
+});
+
+// A recommendation must always be grounded in one of the two lists we hand the
+// model — never a bare suggestion. "research" ones carry citationIds (same
+// rule as insights); "community" ones carry a communityRecommendationId that
+// must match a real entry, so the UI can show its real % and source posts.
+export const RecommendationSchema = z.object({
+  text: z.string(),
+  source: z.enum(["research", "community"]),
+  citationIds: z.array(z.string()).default([]),
+  communityRecommendationId: z.string().optional(),
 });
 
 export const ProfileAnalysisSchema = z.object({
@@ -25,6 +37,11 @@ export const ProfileAnalysisSchema = z.object({
   insights: z
     .array(InsightSchema)
     .describe("3-5 evidence-based statements tied to the user's dominant symptoms, each referencing citation ids from the provided research list."),
+  recommendations: z
+    .array(RecommendationSchema)
+    .describe(
+      "2-5 actionable suggestions for the user's dominant symptoms, each grounded in either the research recommendation list (source: research, with citationIds) or the community recommendation list (source: community, with communityRecommendationId). Never invent a suggestion beyond these two lists."
+    ),
   summary: z.string().describe("A warm, empowering 2-3 sentence summary written directly to the user."),
 });
 
@@ -94,6 +111,17 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     return { symptom: symptomKey, statement, citationIds };
   });
 
+  const recommendations: ProfileAnalysis["recommendations"] = [];
+  for (const symptomKey of dominant) {
+    const info = getSymptomInfo(symptomKey);
+    for (const rec of info?.recommendations ?? []) {
+      recommendations.push({ text: rec.text, source: "research", citationIds: rec.citations });
+    }
+    for (const rec of COMMUNITY_RECOMMENDATIONS.filter((r) => r.symptom === symptomKey)) {
+      recommendations.push({ text: rec.suggestion, source: "community", citationIds: [], communityRecommendationId: rec.id });
+    }
+  }
+
   const dominantLabels = dominant
     .map((d) => SYMPTOMS.find((s) => s.key === d)?.label)
     .filter(Boolean)
@@ -106,6 +134,7 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
       "This is a screening signal based on symptom patterns, not a diagnosis — please share this profile with a doctor for confirmation.",
     dominantSymptoms: dominant,
     insights,
+    recommendations: recommendations.slice(0, 5),
     summary: dominantLabels
       ? `Your answers show a pattern most consistent with ${dominantLabels}. That combination shows up often in PCOS research, and there's solid evidence behind ways to understand and manage it.`
       : "Your answers don't show a strong symptom pattern yet — that's genuinely useful information too. Keep checking in as things change.",

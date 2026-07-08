@@ -29,6 +29,48 @@ export const COMMUNITY_STATS = {
   percentWhoTriedUnverifiedSupplements: 58,
 };
 
+export interface CommunityRecommendation {
+  id: string;
+  symptom: SymptomKey;
+  suggestion: string; // short, actionable, in plain language
+  percentReportingHelpful: number; // illustrative mock stat, not a clinical claim
+  basedOnPostIds: string[]; // which FORUM_POSTS this is drawn from, for traceability
+}
+
+// "What the community says helped" — deliberately separate from COMMUNITY_BASELINES
+// (which is just symptom prevalence). Kept small and hand-curated for the demo, same
+// spirit as the research citations: nothing the AI can expand beyond this list.
+export const COMMUNITY_RECOMMENDATIONS: CommunityRecommendation[] = [
+  {
+    id: "cr-protein-breakfast",
+    symptom: "cravings_blood_sugar",
+    suggestion: "Protein-first breakfasts and cutting back on refined carbs/sugar",
+    percentReportingHelpful: 46,
+    basedOnPostIds: ["p1"],
+  },
+  {
+    id: "cr-protein-breakfast-fatigue",
+    symptom: "fatigue",
+    suggestion: "The same protein-first approach is also reported to help afternoon energy crashes",
+    percentReportingHelpful: 38,
+    basedOnPostIds: ["p1"],
+  },
+  {
+    id: "cr-strength-training-weight",
+    symptom: "weight_gain",
+    suggestion: "Strength/resistance training rather than cardio-only routines",
+    percentReportingHelpful: 33,
+    basedOnPostIds: ["p5"],
+  },
+  {
+    id: "cr-strength-training-cravings",
+    symptom: "cravings_blood_sugar",
+    suggestion: "Strength/resistance training rather than cardio-only routines",
+    percentReportingHelpful: 31,
+    basedOnPostIds: ["p5"],
+  },
+];
+
 export interface ForumPost {
   id: string;
   author: string;

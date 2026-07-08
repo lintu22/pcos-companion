@@ -1,15 +1,28 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useStoredProfile } from "@/lib/storage";
-import { SYMPTOMS } from "@/lib/research-data";
+import { SYMPTOMS, SymptomKey, getSymptomInfo } from "@/lib/research-data";
 import { ALL_CITATIONS } from "@/lib/pdf-sources";
 import { COMMUNITY_BASELINES, COMMUNITY_STATS, COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
-import { Download, ExternalLink, ArrowRight, Users, Sparkles, Lightbulb, BookOpenCheck, MessagesSquare, Pill } from "lucide-react";
+import { SymptomRadarChart, RadarDatum } from "@/components/symptom-radar-chart";
+import {
+  Download,
+  ExternalLink,
+  ArrowRight,
+  Users,
+  Sparkles,
+  Lightbulb,
+  BookOpenCheck,
+  MessagesSquare,
+  Pill,
+  X,
+} from "lucide-react";
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
@@ -17,6 +30,7 @@ function labelFor(key: string) {
 
 export default function ProfilePage() {
   const profile = useStoredProfile();
+  const [selectedSymptom, setSelectedSymptom] = useState<SymptomKey | null>(null);
 
   if (profile === null) {
     return (
@@ -33,7 +47,7 @@ export default function ProfilePage() {
     );
   }
 
-  const { analysis, source, createdAt } = profile;
+  const { analysis, source, createdAt, answers } = profile;
 
   function downloadData() {
     if (!profile) return;
@@ -45,6 +59,42 @@ export default function ProfilePage() {
     a.click();
     URL.revokeObjectURL(url);
   }
+
+  function toggleSymptom(key: SymptomKey) {
+    setSelectedSymptom((prev) => (prev === key ? null : key));
+  }
+
+  const chartData: RadarDatum[] = SYMPTOMS.filter((s) => answers.frequencies[s.key] !== undefined).map((s) => ({
+    symptom: s.key,
+    label: s.label,
+    value: answers.frequencies[s.key]!,
+  }));
+
+  const selectedInfo = selectedSymptom ? getSymptomInfo(selectedSymptom) : undefined;
+  const overviewText = selectedSymptom
+    ? analysis.symptomOverviews?.find((o) => o.symptom === selectedSymptom)?.overview ??
+      selectedInfo?.insights[0] ??
+      selectedInfo?.description ??
+      "No additional detail available for this symptom yet."
+    : analysis.summary;
+
+  const rawVisibleInsights = selectedSymptom
+    ? analysis.insights.filter((i) => i.symptom === selectedSymptom)
+    : analysis.insights;
+  const visibleInsights =
+    selectedSymptom && rawVisibleInsights.length === 0 && selectedInfo
+      ? [{ symptom: selectedSymptom, statement: selectedInfo.insights[0], citationIds: selectedInfo.citations }]
+      : rawVisibleInsights;
+
+  const visibleRecommendations = selectedSymptom
+    ? (analysis.recommendations ?? []).filter((r) => r.symptom === selectedSymptom)
+    : analysis.recommendations ?? [];
+
+  const visibleSupplements = selectedSymptom
+    ? (analysis.supplements ?? []).filter((s) => s.symptom === selectedSymptom)
+    : analysis.supplements ?? [];
+
+  const visibleCommunitySymptoms = selectedSymptom ? [selectedSymptom] : analysis.dominantSymptoms;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
@@ -67,11 +117,35 @@ export default function ProfilePage() {
       </div>
 
       <Card className="mb-6 border-primary/30 bg-primary/5">
-        <CardContent className="flex flex-col items-center gap-4 pt-6 sm:flex-row">
-          <LikelihoodGauge percent={analysis.likelihoodPercent} />
-          <div className="flex-1">
-            <p className="text-lg font-medium">{analysis.summary}</p>
-            <p className="mt-2 text-xs text-muted-foreground">{analysis.confidenceNote}</p>
+        <CardContent className="grid gap-6 pt-6 sm:grid-cols-2 sm:items-center">
+          <div>
+            {chartData.length >= 3 ? (
+              <SymptomRadarChart data={chartData} selected={selectedSymptom} onSelect={toggleSymptom} />
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                Not enough answered symptoms yet to draw a chart.
+              </p>
+            )}
+            <p className="mt-1 text-center text-[10px] text-muted-foreground">
+              Click a symptom to focus the profile below on just that symptom.
+            </p>
+          </div>
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                {analysis.likelihoodPercent}% screening signal
+              </span>
+              {selectedSymptom && (
+                <Button variant="ghost" size="sm" onClick={() => setSelectedSymptom(null)} className="h-7 px-2 text-xs">
+                  <X className="mr-1 h-3 w-3" /> Show full profile
+                </Button>
+              )}
+            </div>
+            <p className="mt-3 text-lg font-medium">
+              {selectedSymptom ? labelFor(selectedSymptom) : "Overview"}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{overviewText}</p>
+            {!selectedSymptom && <p className="mt-2 text-xs text-muted-foreground">{analysis.confidenceNote}</p>}
           </div>
         </CardContent>
       </Card>
@@ -79,13 +153,18 @@ export default function ProfilePage() {
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Your dominant symptoms</CardTitle>
-          <CardDescription>What stood out most in your answers.</CardDescription>
+          <CardDescription>What stood out most in your answers. Click one to focus the profile.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
           {analysis.dominantSymptoms.map((s) => (
-            <Badge key={s} variant="secondary" className="px-3 py-1 text-sm">
-              {labelFor(s)}
-            </Badge>
+            <button key={s} type="button" onClick={() => toggleSymptom(s as SymptomKey)}>
+              <Badge
+                variant={selectedSymptom === s ? "default" : "secondary"}
+                className="cursor-pointer px-3 py-1 text-sm"
+              >
+                {labelFor(s)}
+              </Badge>
+            </button>
           ))}
           {analysis.dominantSymptoms.length === 0 && (
             <p className="text-sm text-muted-foreground">No dominant pattern detected yet.</p>
@@ -101,7 +180,7 @@ export default function ProfilePage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-5">
-          {analysis.insights.map((insight, i) => (
+          {visibleInsights.map((insight, i) => (
             <div key={i}>
               <p className="font-medium">{labelFor(insight.symptom)}</p>
               <p className="mt-1 text-sm text-muted-foreground">{insight.statement}</p>
@@ -123,9 +202,12 @@ export default function ProfilePage() {
                   );
                 })}
               </div>
-              {i < analysis.insights.length - 1 && <Separator className="mt-5" />}
+              {i < visibleInsights.length - 1 && <Separator className="mt-5" />}
             </div>
           ))}
+          {visibleInsights.length === 0 && (
+            <p className="text-sm text-muted-foreground">No specific research insight for this symptom yet.</p>
+          )}
         </CardContent>
       </Card>
 
@@ -140,7 +222,7 @@ export default function ProfilePage() {
         </CardHeader>
         <CardContent className="space-y-4">
           {(() => {
-            const grounded = (analysis.recommendations ?? [])
+            const grounded = visibleRecommendations
               .map((rec) => {
                 if (rec.source === "research") {
                   const citations = rec.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
@@ -199,7 +281,7 @@ export default function ProfilePage() {
       </Card>
 
       {(() => {
-        const groundedSupplements = (analysis.supplements ?? [])
+        const groundedSupplements = visibleSupplements
           .map((sup) => {
             const citations = sup.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
             if (citations.length === 0) return null; // ungrounded — never shown
@@ -262,7 +344,7 @@ export default function ProfilePage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
-          {analysis.dominantSymptoms.map((s) => {
+          {visibleCommunitySymptoms.map((s) => {
             const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
             if (!baseline) return null;
             return (
@@ -291,33 +373,6 @@ export default function ProfilePage() {
         <Button render={<Link href="/community" />} variant="outline">
           Visit the community
         </Button>
-      </div>
-    </div>
-  );
-}
-
-function LikelihoodGauge({ percent }: { percent: number }) {
-  const radius = 46;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percent / 100) * circumference;
-  return (
-    <div className="relative h-32 w-32 shrink-0">
-      <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-        <circle cx="50" cy="50" r={radius} strokeWidth="8" className="fill-none stroke-muted" />
-        <circle
-          cx="50"
-          cy="50"
-          r={radius}
-          strokeWidth="8"
-          strokeLinecap="round"
-          className="fill-none stroke-primary transition-all duration-700"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold">{percent}%</span>
-        <span className="text-[10px] text-muted-foreground">screening signal</span>
       </div>
     </div>
   );

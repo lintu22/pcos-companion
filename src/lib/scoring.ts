@@ -15,6 +15,7 @@ export const InsightSchema = z.object({
 // must match a real entry, so the UI can show its real % and source posts.
 export const RecommendationSchema = z.object({
   text: z.string(),
+  symptom: z.string(),
   source: z.enum(["research", "community"]),
   citationIds: z.array(z.string()).default([]),
   communityRecommendationId: z.string().optional(),
@@ -26,7 +27,17 @@ export const RecommendationSchema = z.object({
 // resolve to a real citation, same hard rule as everything else.
 export const SupplementSchema = z.object({
   text: z.string(),
+  symptom: z.string(),
   citationIds: z.array(z.string()),
+});
+
+// One short synthesis per dominant symptom, shown when the user clicks that
+// symptom on the radar chart. Not independently grounded (it's a summary of
+// the insights/recommendations/supplements already produced for that
+// symptom) — the prompt instructs the model to introduce no new claims here.
+export const SymptomOverviewSchema = z.object({
+  symptom: z.string(),
+  overview: z.string(),
 });
 
 export const ProfileAnalysisSchema = z.object({
@@ -55,6 +66,11 @@ export const ProfileAnalysisSchema = z.object({
     .array(SupplementSchema)
     .describe(
       "0-3 dietary supplement suggestions for the user's dominant symptoms, picked only from the provided supplement reference list, each with citationIds from that entry. Never invent a supplement or claim beyond that list; omit entirely if nothing in the list is relevant."
+    ),
+  symptomOverviews: z
+    .array(SymptomOverviewSchema)
+    .describe(
+      "One entry per symptom key in dominantSymptoms: a 1-2 sentence synthesis based only on the insights/recommendations/supplements you already produced for that symptom in this same response — introduce no new claims or citations here."
     ),
   summary: z.string().describe("A warm, empowering 2-3 sentence summary written directly to the user."),
 });
@@ -129,10 +145,16 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
   for (const symptomKey of dominant) {
     const info = getSymptomInfo(symptomKey);
     for (const rec of info?.recommendations ?? []) {
-      recommendations.push({ text: rec.text, source: "research", citationIds: rec.citations });
+      recommendations.push({ text: rec.text, symptom: symptomKey, source: "research", citationIds: rec.citations });
     }
     for (const rec of COMMUNITY_RECOMMENDATIONS.filter((r) => r.symptom === symptomKey)) {
-      recommendations.push({ text: rec.suggestion, source: "community", citationIds: [], communityRecommendationId: rec.id });
+      recommendations.push({
+        text: rec.suggestion,
+        symptom: symptomKey,
+        source: "community",
+        citationIds: [],
+        communityRecommendationId: rec.id,
+      });
     }
   }
 
@@ -140,9 +162,19 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
   for (const symptomKey of dominant) {
     const info = getSymptomInfo(symptomKey);
     for (const sup of info?.supplements ?? []) {
-      supplements.push({ text: sup.text, citationIds: sup.citations });
+      supplements.push({ text: sup.text, symptom: symptomKey, citationIds: sup.citations });
     }
   }
+
+  const symptomOverviews: ProfileAnalysis["symptomOverviews"] = dominant.map((symptomKey) => {
+    const info = getSymptomInfo(symptomKey);
+    const severity = derivedFrequencies[symptomKey];
+    const severityNote = severity !== undefined ? `You rated this ${severity}/4. ` : "";
+    return {
+      symptom: symptomKey,
+      overview: `${severityNote}${info?.insights[0] ?? "This symptom is tracked in current PMOS literature."}`,
+    };
+  });
 
   const dominantLabels = dominant
     .map((d) => SYMPTOMS.find((s) => s.key === d)?.label)
@@ -158,6 +190,7 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     insights,
     recommendations: recommendations.slice(0, 5),
     supplements: supplements.slice(0, 3),
+    symptomOverviews,
     summary: dominantLabels
       ? `Your answers show a pattern most consistent with ${dominantLabels}. That combination shows up often in PMOS research, and there's solid evidence behind ways to understand and manage it.`
       : "Your answers don't show a strong symptom pattern yet — that's genuinely useful information too. Keep checking in as things change.",

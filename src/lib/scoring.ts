@@ -90,7 +90,7 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
   const insights = dominant.slice(0, 5).map((symptomKey) => {
     const info = getSymptomInfo(symptomKey);
     const statement = info?.insights[0] ?? "This symptom is tracked in current PCOS literature.";
-    const citationIds = (info?.citations ?? []).map((c) => c.id);
+    const citationIds = info?.citations ?? [];
     return { symptom: symptomKey, statement, citationIds };
   });
 

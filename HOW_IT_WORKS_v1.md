@@ -199,14 +199,20 @@ that show up on the Profile page.
   key: "irregular_periods",
   label: "Irregular or absent periods",
   description: "Cycles longer than 35 days, unpredictable timing, or missed periods.",
-  citations: [CITATIONS.teede2018, CITATIONS.legro2013],
+  citations: ["teede2018", "legro2013"],   // just ids — the full citation is looked up from CITATIONS
   insights: [
     "Irregular ovulation is one of the three core diagnostic criteria for PCOS...",
   ],
 },
 ```
 
-### C) Community data (`src/lib/community-data.ts`)
+### C) Real PDFs as a data source (`pdf-sources/` + `src/lib/pdf-sources.ts`)
+
+Beyond the hand-typed citation list, we can also feed Claude **real excerpts
+straight out of an actual PDF** — not our paraphrase of it, the paper's own
+words. See §3.5 below for exactly how this works and how to add more papers.
+
+### D) Community data (`src/lib/community-data.ts`)
 
 This is **entirely mock/illustrative data** for the demo — a stand-in for
 what would eventually be real, anonymised, opted-in user statistics. It has:
@@ -216,6 +222,77 @@ what would eventually be real, anonymised, opted-in user statistics. It has:
   diagnosis"
 - `FORUM_POSTS` — five sample forum posts with fake authors, used on the
   Community page
+
+---
+
+## 3.5. Using real PDFs as a data source
+
+We can now drop in an actual research PDF and have Claude quote/paraphrase
+its real content — not just our hand-written summary of it — while keeping
+the exact same "can't fake a citation" guarantee from §2.5. Here's how it
+works, end to end.
+
+**Step 1 — extract the PDF into small text passages ("chunks").**
+Run:
+```
+node scripts/ingest-pdf.mjs pdf-sources/raw/<your-file>.pdf \
+  --id somename2024 \
+  --title "The paper's real title" \
+  --authorsYear "Smith et al., 2024" \
+  --journal "Journal Name" \
+  --url "https://doi.org/..." \
+  --summary "One sentence describing the paper, for the citation list."
+```
+This reads the PDF, splits it into ~800-character passages (skipping pages
+that are mostly a reference list, since those aren't useful as quotes), and
+writes them to `pdf-sources/processed/somename2024.json` — a plain JSON file
+of `{ chunkId, page, text }` entries anyone can open and read.
+
+**Step 2 — register it.**
+Open [`src/lib/pdf-sources.ts`](src/lib/pdf-sources.ts), import the new JSON
+file, and add it to the `PDF_DOCS` list at the top. That's the only code
+change needed — everything downstream (citation rendering, prompt injection)
+picks it up automatically.
+
+**Step 3 — how it actually gets used.**
+When someone submits their intake answers, [`route.ts`](src/app/api/analyze/route.ts)
+takes the symptoms they scored highly and the words in their free-text
+answers, and uses them as **keywords** to search across every ingested PDF's
+chunks (`findRelevantChunks` in `pdf-sources.ts` — simple keyword counting,
+no AI or vector database involved). The best-matching 4 passages get pasted
+into the same system prompt described in §2, clearly labelled as **quotable
+excerpts** with their source id and page number, e.g.:
+
+```
+Supporting excerpts from source documents (you may quote or paraphrase
+these, but must cite using the matching id, exactly as shown in brackets):
+- [jiskoot2022] (p.4) "An overall Cohen's d effect size of 1.02 (95%
+  confidence interval 0.02–2.02) was found in favour of CBT compared with
+  standard care..."
+```
+
+Claude can then ground an insight in that real sentence, and must still tag
+it with `jiskoot2022` — which only resolves to a real, clickable citation
+because that id exists in our own data (§2.5's Layer 3 safety net applies
+here exactly the same way, whether the citation came from a hand-typed entry
+or an ingested PDF).
+
+**Worked example already in the app:** we ingested a real 2022 systematic
+review on CBT for depression in women with PCOS (Jiskoot et al., *Reproductive
+BioMedicine Online*). It's linked to the `mood_changes` symptom
+(`research-data.ts`) so it always shows up in that fallback insight, **and**
+its actual text passages are searchable by the live AI path — try answering
+the intake with heavy anxiety/low-mood answers and mentioning "CBT" or
+"therapy" in the free text, and Claude will typically cite it directly from
+the real excerpt, not just our summary.
+
+**Where the limits are (see also the earlier "PDFs as a data source"
+discussion):** this keyword-matching approach works well for a handful of
+PDFs. If we ingest many more papers, keyword matching will start missing
+relevant passages that use different wording than the user's answers — at
+that point it's worth upgrading `findRelevantChunks` to use real semantic
+search (embeddings + similarity, e.g. the AI SDK's `embed`) instead of
+keyword counting.
 
 ---
 
@@ -255,8 +332,13 @@ authors/year, journal, link, and a short summary in your own words.
 
 ### To add or edit a symptom (and its insight statements)
 Same file → find the `SYMPTOMS` list → copy an existing entry, change the
-`label`, `description`, which `citations` it points to (must match an `id`
-from `CITATIONS`), and the `insights` sentences.
+`label`, `description`, which `citations` it points to (a list of citation
+id strings — each one must match an entry in `CITATIONS`, or in a PDF you've
+ingested per §3.5), and the `insights` sentences.
+
+### To add a real PDF as a data source
+See §3.5 above — run `scripts/ingest-pdf.mjs`, then register the new file in
+`src/lib/pdf-sources.ts`.
 
 ### To change the 5 intake questions
 Open `src/lib/questions.ts` → `INTAKE_QUESTIONS` → edit the `prompt` (the
@@ -283,9 +365,13 @@ about different things, etc.
 
 | File | What it controls |
 |---|---|
-| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic |
+| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic + PDF excerpt injection |
 | `src/lib/scoring.ts` | The answer template (schema) + fallback scoring formula |
 | `src/lib/research-data.ts` | **The dataset**: citations + symptoms + insights |
+| `scripts/ingest-pdf.mjs` | Turns a PDF into searchable text chunks (§3.5) |
+| `pdf-sources/raw/` | Where you drop the original PDF files |
+| `pdf-sources/processed/` | The extracted chunks (auto-generated, do not hand-edit) |
+| `src/lib/pdf-sources.ts` | Registers ingested PDFs, merges their citations, does the keyword search |
 | `src/lib/community-data.ts` | **Mock dataset**: community stats + forum posts |
 | `src/lib/questions.ts` | The 5 intake questions + 2 free-text prompts |
 | `src/lib/storage.ts` | Saves the user's profile/check-ins on their own device |

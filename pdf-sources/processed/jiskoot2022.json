@@ -1,0 +1,308 @@
+{
+  "id": "jiskoot2022",
+  "title": "Cognitive behavioural therapy for depression in women with PCOS: systematic review and meta-analysis",
+  "authorsYear": "Jiskoot et al., 2022",
+  "journal": "Reproductive BioMedicine Online",
+  "url": "https://doi.org/10.1016/j.rbmo.2022.05.001",
+  "summary": "Systematic review and meta-analysis of 8 studies finding CBT-based interventions produce a large effect (Cohen's d ~1.0) in reducing depression scores in women with PCOS versus usual care.",
+  "sourceFile": "jiskoot2022-cbt-depression-pcos.pdf",
+  "totalPages": 9,
+  "chunkCount": 59,
+  "chunks": [
+    {
+      "chunkId": "jiskoot2022-p1-1",
+      "page": 1,
+      "text": "599 RBMO VOLUME 45 ISSUE 3 202 2 1 Erasmus MC, Division of Reproductive Endocrinology and Infertility, Department of Obstetrics and Gynecology, PO Box 2040, Rotterdam CA 3000, the Netherlands 2 Erasmus MC, Department of Psychiatry, Section of Medical Psychology and Psychotherapy, PO Box 2040, Rotterdam CA 3000, the Netherlands © 2022 The Author(s). Published by Elsevier Ltd on behalf of Reproductive Healthcare Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/) *Corresponding author. E-mail address: L.jiskoot@erasmusmc.nl (G. Jiskoot). https://doi.org/10.1016/j.rbmo.2022.05.001 1472-6483/© 2022 The Author(s). Published by Elsevier Ltd on behalf of Reproductive Healthcare Ltd."
+    },
+    {
+      "chunkId": "jiskoot2022-p1-2",
+      "page": 1,
+      "text": "This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/) Declaration: The authors report no financial or commercial conflicts of interest. KEYWORDS Cognitive behavioural therapy Depression Intervention PCOS Polycystic ovary syndrome REVIEW Cognitive behavioural therapy for depression in women with PCOS: systematic review and meta-analysis BIOGRAPHY Geranne Jiskoot works as a psychologist and obtained a PhD degree at the Department of Reproductive Medicine of the Erasmus MC. Her main research interests include lifestyle treatment in women with PCOS and the emotional aspects of premature ovarian insufficiency."
+    },
+    {
+      "chunkId": "jiskoot2022-p1-3",
+      "page": 1,
+      "text": "Geranne Jiskoot1,2,*, Anne-Lotte van der Kooi1, Jan Busschbach2, Joop Laven1, Annemerle Beerthuizen2 KEY MESSAGE Most psychological interventions applying cognitive behavioural therapy are effective in lowering depression scores in adult women with PCOS. An overall Cohen's d effect size of 1.02 was found in favour of CBT. However, these results should be interpreted with caution due to methodological differences and quality of the studies. ABSTRACT Polycystic ovary syndrome (PCOS) is a common endocrine disorder with physical and psychological complaints, especially high depression scores. Cognitive behavioural therapy (CBT) is the first-line psychological treatment for depression."
+    },
+    {
+      "chunkId": "jiskoot2022-p1-4",
+      "page": 1,
+      "text": "The objective of this study was to examine the effect of different types of CBT interventions and the effects on depression scores in women with PCOS. A literature search was performed in six databases up to July 2020. Studies published in English, in which depression scores were compared between groups during a CBT intervention in women with PCOS, were included. A total of 4854 studies were identified, of which eight studies were included in the systematic review and five in the meta-analysis. CBT ranged from 8 to 52 weeks and involved between 8 and 20 sessions. An overall Cohen's d effect size of 1.02 (95% confidence interval 0.02–2.02) was found in favour of CBT compared with standard care."
+    },
+    {
+      "chunkId": "jiskoot2022-p1-5",
+      "page": 1,
+      "text": "To conclude, most psychological interventions applying CBT are effective in lowering depression scores in women with PCOS. These results should be interpreted with caution due to methodological differences and quality of the studies. More clinical trials are needed to assess how many sessions of CBT are necessary to treat depression in women with PCOS."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-1",
+      "page": 2,
+      "text": "600 RBMO VOLUME 45 ISSUE 3 202 2 INTRODUCTION Polycystic ovary syndrome (PCOS) is a common endocrine disorder that affects 5–10% of women in their reproductive years (Ehrmann, 2005). Most women with PCOS experience one or more of the following physical symptoms in varying degrees: irregular menstrual periods, subfertility, hirsutism (excessive body hair growth), acne, obesity, insulin resistance and dyslipidaemia (Laven et al., 2002; Rotterdam ESHRE/ASRM- Sponsored PCOS Consensus Workshop Group, 2004). Besides these physical symptoms, many women with PCOS experience psychological symptoms such as depression (due to daily fatigue, sleep disturbances, appetite changes and diminished interest), anxiety, bulimia nervosa, and disordered eating behaviours."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-2",
+      "page": 2,
+      "text": "Moreover, they also report more often low health-related quality of life (QoL), sexual dissatisfaction and appear to have low self-esteem and a negative body image (Annagur et al., 2014; Cesta et al., 2016; de Niet et al., 2010; Hollinrake et al., 2007; Lee et al., 2017). In particular, depression and anxiety scores are significantly higher (Veltman-Verhulst et al., 2012) and remained consistently high across the lifespan in women with PCOS compared with a normal population (Greenwood et al., 2019). Cooney and colleagues found a median prevalence for depression of almost 37% among women with PCOS compared with 14% in controls (Cooney et al., 2017). Most women with PCOS score mild and moderate on the Beck Depression Inventory (BDI) with a mean BDI score of 12.7 (Tan et al., 2008)."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-3",
+      "page": 2,
+      "text": "Despite the evidence that women with PCOS are at increased odds for depression and anxiety, there is no evidence supporting a single pathway for these increased odds (Cooney and Dokras, 2017). The presence of acne, hirsutism, insulin resistance, infertility due to oligo-ovulation and obesity seems to be associated with depressive feelings and lower QoL (Hahn et al., 2005; Teede et al., 2018). Others found that all women with PCOS had difficulties in dealing with menstrual function, fertility and body image and found no difference between the depressed and non-depressed group (Kerchner et al., 2009). Based on qualitative research, women with PCOS perceive themselves as abnormal and less feminine due to hirsutism, menstrual dysfunction and subfertility (Kitzinger and Willmott, 2002)."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-4",
+      "page": 2,
+      "text": "Therefore, researchers suggested that the chronic and complex nature of PCOS can result in high levels of stress (Teede et al., 2010). Another important factor that could be associated with mental health is the availability of information about the disorder for this group of women (Avery and Braunack- Mayer, 2007). A large international survey among women with PCOS revealed that only 3.4% of the women were satisfied with the emotional support and counselling they received after the PCOS diagnosis. Also, in more than 60% of the participants emotional support was not offered or discussed (Gibson-Helm et al., 2017)."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-5",
+      "page": 2,
+      "text": "According to the recent international PCOS guideline (Teede et al., 2018), risk factors and the severity of depressive as well as anxiety symptoms should be routinely screened for all women with PCOS. These international guidelines further suggest that depressive complaints in women with PCOS should be treated according to regional protocols (Brennan et al., 2017; Teede et al., 2010). In most countries, the first-line treatment for depression is cognitive behavioural therapy (CBT) or interpersonal therapy and behavioural activation. For maintenance treatment, CBT and mindfulness-based cognitive therapy are recommended (Parikh et al., 2016)."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-6",
+      "page": 2,
+      "text": "CBT is based on the cognitive model: ‘the way that individuals perceive a situation is more closely connected to their reaction than the situation itself’ (Wright and Beck, 1983). The therapies consist of different components such as self-monitoring, goal setting and the development of alternative behaviours (Castelnuovo et al., 2017) by using thought records and behavioural experiences (Werrij et al., 2009). A number of studies have examined the effects of a psychological intervention in adult women with PCOS. The objective of this systematic review is to examine the different types of CBT interventions and to determine the effects of these on depression scores in adult women with PCOS by performing a meta-analysis."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-7",
+      "page": 2,
+      "text": "METHODS Literature search Relevant studies published up to July 2020 were identified by a biomedical information specialist in EMBASE, Medline (Ovid), Web of Science, Cochrane CENTRAL, PsycINFO (Ovid) and Google Scholar, using the following search terms: ‘PCOS’ and ‘depression’ or ‘mood disorder’ or ‘psychology’, or ‘psychological wellbeing’, or ‘life satisfaction’, or ‘psychological aspect’, or ‘behaviour disorder’, or ‘eating disorder’, or ‘quality of life’, or ‘stress’, or ‘anxiety disorder’. Detailed information on the search strategy is listed in the Supplementary Information. Hand searches and reference checks were also performed. No language restriction was applied."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-8",
+      "page": 2,
+      "text": "Study selection After identifying and excluding duplicate studies, studies were screened based on the title and abstract to select studies that potentially met the inclusion criteria. The inclusion criteria for studies were: (i) adult women with PCOS; (ii) participants received CBT; (iii) the primary or secondary outcome measure was depression; (iv) validated psychological questionnaires were used to measure depression; (v) an intervention and control group were included; (vi) reported sufficient data to estimate Cohen's d effect sizes (mean, SD or SE and number of participants in each arm) in both intervention and care as usual; and (vi) were written in English. If necessary, the authors were contacted for additional data."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-9",
+      "page": 2,
+      "text": "Studies were excluded if (i) the intervention was conducted in adolescents with PCOS; (ii) if the intervention did not use any form of CBT; (iii) if the effect size could not be calculated. Two reviewers independently screened all studies (GJ and AB) on title and abstract using COVIDENCE (https://www.covidence.org/). There was no disagreement over eligibility of studies. The same authors performed the full-text screening to determine the final selection. This study was registered in PROSPERO (https://www.crd.york.ac.uk/ prospero/) under registration number CRD42020173513. Data extraction and quality assessment For the systematic review, the PRISMA guidelines were followed (Page et al., 2021)."
+    },
+    {
+      "chunkId": "jiskoot2022-p2-10",
+      "page": 2,
+      "text": "For the interventions in the meta- analysis, the revised Cochrane risk of bias tool for randomized trials (RoB 2.0) was used (McGuinness and Higgins, 2021) to assess the risk of bias in five domains: randomization processes, deviations from intended interventions, missing outcome data, measurement"
+    },
+    {
+      "chunkId": "jiskoot2022-p4-1",
+      "page": 4,
+      "text": "602 RBMO VOLUME 45 ISSUE 3 202 2 mindfulness practice or mindfulness stress management (Stefanaki et al., 2015). The intervention that combined a pharmacological and psychological approach examined the use of fluoxetine alone or 12 weeks of supportive psychotherapy alone (Ramazanzadeh et al., 2019). In two interventions, care as usual consisted of no intervention (Abdollahi et al., 2018; Stefanaki et al., 2015). In three studies, the care as usual consisted of a minimal intervention without CBT (Cooney et al., 2018; Jiskoot et al., 2020; Oberg et al., 2020). One study consisted of a crossover design in which all participants received the same intervention in a different order (Roessler et al., 2012). Five different instruments were used to measure depression."
+    },
+    {
+      "chunkId": "jiskoot2022-p4-2",
+      "page": 4,
+      "text": "The Beck Depression Inventory-II (BDI- II) was used most frequently. Other questionnaires to measure depression were the Depression Anxiety Stress Scale (DASS-21), the Center for Epidemiologic Studies Depression Scale (CES-D) and the Psychological General Well-Being Index (PGWBI) (TABLE 1). Quality assessment The RoB 2.0 tool was used for quality assessment of the RCT (FIGURE 2). Among the five included studies, three studies (Cooney et al., 2018; Jiskoot et al., 2020; Oberg et al., 2020) were classified as ‘some concerns’."
+    },
+    {
+      "chunkId": "jiskoot2022-p4-3",
+      "page": 4,
+      "text": "All five papers were classified as ‘some concerns’ for the second and fifth domain, ‘deviations from intended interventions’, and ‘selection of reported results’, in which it is stated that the authors should mention whether participants received the intended intervention, whether there was protocol deviation or whether a subset of data was used. These domains were not described in any of the papers. The study by Stefanaki et al. (2015) was classified as high risk of bias due to concerns over three domains. This study was classified as ‘some concerns’ for the domain ‘missing outcome data’ because the reasons for drop-out were not mentioned. The risk of bias of the study by Abdollahi et al."
+    },
+    {
+      "chunkId": "jiskoot2022-p4-4",
+      "page": 4,
+      "text": "(2018) was classified as high for the domains ‘randomization process’ and ‘bias in selection of the reported results’ because the randomization process was not explained and no treatment description was mentioned. Meta-analysis For the meta-analysis, Cohen's d effect sizes were calculated based on five published articles (TABLE 2). A total of 136 participants in the intervention arm and 136 participants in the care as usual arm were included (Abdollahi et al., 2018; Cooney et al., 2018; Jiskoot et al., 2020; Oberg et al., 2020; Stefanaki et al., 2015). In the random fixed-effects model (FIGURE 3), four studies showed a positive Cohen's d and one study found no effect. An overall Cohen's d effect size of 1.02 (95% confidence interval [CI] 0.02–2.02) was found."
+    },
+    {
+      "chunkId": "jiskoot2022-p4-5",
+      "page": 4,
+      "text": "This meta- FIGURE 1 PRISMA flow diagram showing the selection of studies for inclusion."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-1",
+      "page": 5,
+      "text": "RBMO VOLUME 45 ISSUE 3 202 2 603 TABLE 1 CHARACTERISTICS OF STUDIES INCLUDED IN THE SYSTEMATIC REVIEW First author, year of publication Title Journal, country of publication Study design PCOS criteria Inclusion criteria Outcomes Intervention Care as usual Oberg et al., 2020 Psychological well-be- ing and personality in relation to weight loss following behavioural modification interven- tion in obese women with polycystic ovary syndrome: a randomized controlled trial European Journal of Endocrinology, Sweden RCT Rotterdam BMI ≥27 kg/ m2 Between 18 and 40 years Psychological General Well-Be- ing Index (PGWBI) Personality traits (SSP) 4 months of weekly meetings (face-to- face) in small groups with lifestyle coach with monthly coach- ing sessions."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-2",
+      "page": 5,
+      "text": "Received oral and written information about a healthy life- style from a midwife. Cooney et al., 2018 Cognitive-behavioural therapy improves weight loss and quality of life in women with polycystic ovary syndrome: a pilot randomized clinical trial Fertility and Sterility, USA Pilot RCT NIH CES-D score ≥14 BMI 27–50 kg/m2 Depression (CES-D) 16 weekly individual face-to-face sessions (30 min) of nutri- tional advice/exer- cise + 8 weeks brief CBT (30 min). 16 weekly individual face-to-face sessions (30 min) of nutritional advice/exercise."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-3",
+      "page": 5,
+      "text": "Stefanaki et al., 2015 Impact of a mindfulness stress management program on stress, anxiety, depression and quality of life in women with polycystic ovary syndrome: a randomized controlled trial The Internation- al Journal on the Biology of Stress, Greece Pilot RCT Rotterdam Between 15 and 40 years Depression (DASS-21) 8 weekly (30 min individual face-to- face) sessions of daily mindfulness stress management programme by audio and guided instructions. No intervention, only questionnaires."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-4",
+      "page": 5,
+      "text": "Ramazanzadeh et al., 2019 The effect of psychi- atric interventions on depression and fertility in infertile patients with polycystic ovarian disease Journal of Research in Medical and Dental Science, Iran Clinical trial Unknown Between 20 and 35 years Depression (BDI-II) Fluoxetine 20–60 mg/day or supportive psychotherapy for 12 weeks (1–2 times per week individual face-to-face) or combination of both methods in infertile women with PCOS. Fluoxetine 20–60 mg/ day or supportive psychotherapy for 12 weeks (1–2 times per week individual face-to-face) or combination of both methods in infertile women without PCOS diagnosis."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-5",
+      "page": 5,
+      "text": "Abdollahi et al., 2018 The effect of cognitive behavioural therapy on depression and obesity in women with polycys- tic ovarian syndrome: a randomized controlled clinical trial Iranian Red Crescent Medi- cal Journal, Iran RCT Unknown Between 18 and 35 years Completed a secondary school educa- tion Depression (BDI-II) 8 weekly sessions (45–60 min) cog- nitive behavioural approach in groups (8 to max. 10 partic- ipants). No intervention, only questionnaires."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-6",
+      "page": 5,
+      "text": "Jiskoot et al., 2020 Long-term effects of a three-component lifestyle intervention on emotional well-being in women with polycystic ovary syndrome (PCOS): a secondary analysis of a randomized controlled trial PLOS One, the Netherlands RCT Rotterdam BMI ≥25 kg/ m2 Between 18 and 38 years Depression (BDI-II) Self-esteem (Rosenberg) Body image (fear of negative appearance) One year of 20 group CBT sessions (90 min) with psychologist and dietician and physi- cal therapy sessions (60 min). One year of five individual face-to-face meetings with treating physician. Participants were encouraged to lose weight through publicly available services."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-7",
+      "page": 5,
+      "text": "Correa et al., 2015 A case report demon- strating the efficacy of a comprehensive cogni- tive-behavioural therapy approach for treating anxiety, depression, and problematic eating in polycystic ovarian syndrome Archive of Women's Mental Health, USA Case report Unknown NA Depression (BDI-II) Anxiety (BAI) General psycho- social functioning (OQ) Personality charac- teristics (PAI) Eating disorder (EDEQ) 11 individual face- to-face sessions primarily focused on material present- ed in The PCOS Workbook NA Roessler et al., 2012 Supportive relationships – psychological effects of group counselling in women with polycystic ovary syndrome (PCOS) Communication and Medicine, Denmark Crosso- ver trial Unknown BMI 25–40 kg/m2 Premeno- pausal The group coun- selling sessions were filmed, tape recorded and transcribed verbatim 8 weekly (90 min) face-to-face sessions of high-intensity aerobic exercise and 8 weekly (90 min) psychodynamic group therapy ses- sions (crossover)."
+    },
+    {
+      "chunkId": "jiskoot2022-p5-8",
+      "page": 5,
+      "text": "8 weekly (90 min) psychodynamic group therapy sessions and 8 weekly (90 min) face-to-face sessions of high-intensity aerobic exercise (crossover). BAI = Beck Anxiety Inventory; BDI-II = Beck Depression Inventory-II; BMI = body mass index; CBT = cognitive behavioural therapy; CES-D = Center for Epidemiologic Studies Depression Scale; DASS-21 = Depression Anxiety Stress Scale; EDEQ = Eating Disorder Examination Questionnaire; NA = not available; NIH = National Institutes of Health; OQ = Outcome Questionnaire-45.2; PAI = Personality Assessment Inventory; PCOS = polycystic ovary syndrome; RCT = randomized controlled trial."
+    },
+    {
+      "chunkId": "jiskoot2022-p6-1",
+      "page": 6,
+      "text": "604 RBMO VOLUME 45 ISSUE 3 202 2 analysis showed a large effect size in favour of the intervention compared with care as usual. However, there is large between-study heterogeneity in intervention effect (I2 = 88%; P < 0.001), suggesting that 88% of the variability in treatment effect estimates is due to differences (heterogeneity) between included studies and 12% might be due to chance. Therefore, two additional sensitivity analyses were performed. In the first sensitivity analysis one study was excluded (Abdollahi et al., 2018) due to a high risk of bias and unknown criteria for the diagnosis of PCOS (FIGURE 4). In this analysis, an overall Cohen's d of 0.66 (95% CI 0.26–1.06) was found in the fixed-effects model, which is considered a medium effect size in favour of the intervention."
+    },
+    {
+      "chunkId": "jiskoot2022-p6-2",
+      "page": 6,
+      "text": "Exclusion of this study resulted in a lower I2 statistic of 53%. In the second sensitivity analysis, three lifestyle interventions for weight loss were excluded (Cooney et al., 2018; Jiskoot et al., 2020; Oberg et al., 2020). In this analysis, an overall Cohen's d of 2.11 (95% CI 1.64–2.59) was found in the fixed-effects model, which is considered a large effect size in favour of the intervention. Exclusion of these three lifestyle interventions resulted in an I2 statistic of 85% (FIGURE 5). A MCID was found in three out of five studies; a MCID was achieved in the intervention groups and not in the control groups (TABLE 2) (Abdollahi et al., 2018; Jiskoot et al., 2020; Stefanaki et al., 2015)."
+    },
+    {
+      "chunkId": "jiskoot2022-p6-3",
+      "page": 6,
+      "text": "DISCUSSION The primary objective of this systematic review and meta-analysis was to summarize the current evidence for the effect of psychological interventions on depression scores in women with PCOS. In this systematic review of the literature, three RCT were found reporting on interventions for depression as primary outcome, while other RCT reported on depression as a secondary outcome measure in a lifestyle intervention. A large statistically significant effect size FIGURE 2 Results of the RoB 2.0 tool risk of bias assessment."
+    },
+    {
+      "chunkId": "jiskoot2022-p6-4",
+      "page": 6,
+      "text": "TABLE 2 BASELINE AND POST-INTERVENTION SCORES FOR DEPRESSION Study Measurement n Intervention n Care as usual MCID Mean baseline (SD) Mean post (SD) Mean baseline (SD) Mean post (SD) in symptoms Oberg et al., 2020 PGWBI (DM) 34 10.00 (1.8) 10.00 (0.9) 34 10.00 (1.3) 10.00 (0.9) Unknown Cooney et al., 2018 CED-D 15 20.75 (8.4) 15.88 (11.8) 15 21.71 (4.9) 21.00 (6.8) No Stefanaki et al., 2015 DASS-21 23 18.00 (8.0) 4.34 (3.3) 23 18.10 (12.8) 17.20 (10.0) Yes, in the intervention Abdollahi et al., 2018 BDI-II 37 16.40 (0.6) 4.50 (3.9) 37 13.70 (5.7) 16.50 (8.6) Yes, in the intervention Jiskoot et al., 2020 BDI-II 27 16.07 (11.1) 11.59 (11.3) 27 8.75 (6.8) 8.27 (8.8) Yes, in the intervention BDI-II = Beck Depression Inventory-II; CES-D = Center for Epidemiologic Studies Depression Scale; DASS-21 = Depression Anxiety Stress Scale; MCID = minimum clinically important difference; PGWBI = Psychological General Well-Being Index."
+    },
+    {
+      "chunkId": "jiskoot2022-p7-1",
+      "page": 7,
+      "text": "RBMO VOLUME 45 ISSUE 3 202 2 605 (d = 1.16) was found in favour of all the interventions compared with care as usual for depression in women with PCOS. Psychological interventions including CBT seem to be an effective form of therapy in decreasing depression scores in women with PCOS. This is thought to be the first systematic review and meta-analysis that has focused on psychological interventions for depression in women with PCOS. CBT was used in almost all interventions that were included in this meta-analysis. CBT was defined as a psychological intervention in which restructuring of negative beliefs was one of the central components."
+    },
+    {
+      "chunkId": "jiskoot2022-p7-2",
+      "page": 7,
+      "text": "However, most RCT also included other components such as homework assignments, lifestyle counselling, behavioural modification, exercise and mindfulness and used different protocols of CBT. Also, three of the studies were group- based interventions and the other two interventions were based on individual sessions. The variety of these components and formats differed widely. In the general population, a recent network meta-analysis revealed no differences between CBT protocols for depression. This implies that individual treatment, group, telephone and guided self-help CBT were all effective (Cuijpers et al., 2019), although others found that individual CBT was more effective than group-based CBT (Cuijpers et al., 2008)."
+    },
+    {
+      "chunkId": "jiskoot2022-p7-3",
+      "page": 7,
+      "text": "However, in the current meta-analysis a large variation in Cohen's d effect sizes was seen when comparing individual studies using different psychological interventions in women with PCOS. This result suggests that this difference could be explained by the CBT protocol, individual versus group treatment or length of treatment. Also, three of the included studies involved a lifestyle intervention with a great emphasis on weight loss. In these interventions, CBT is one of the components besides nutritional advice and exercise. Based on the current literature, it is known that a 5–10% weight loss can improve depression, and the reproductive and metabolic features of PCOS (Naderpoor et al., 2015; Teede et al., 2010)."
+    },
+    {
+      "chunkId": "jiskoot2022-p7-4",
+      "page": 7,
+      "text": "It was decided to include these lifestyle FIGURE 3 Overall forest plot for meta-analysis of psychological interventions compared with care as usual in women with PCOS. FIGURE 4 Forest plot based on sensitivity analysis with the study with high risk of bias excluded. FIGURE 5 Forest plot based on sensitivity analysis with the three studies with lifestyle intervention for weight loss excluded."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-1",
+      "page": 8,
+      "text": "606 RBMO VOLUME 45 ISSUE 3 202 2 interventions in this meta-analysis because it is possible that weight loss itself, more than a specific CBT protocol within the lifestyle interventions, was responsible for the changes in depression in women with PCOS. To assess this hypothesis, studies that incorporated dietary advice and exercise within their lifestyle interventions were excluded, leaving CBT as the main intervention. In this sensitivity analysis, an even larger effect size (d = 1.99) in favour of CBT compared with care as usual was found for depression in women with PCOS."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-2",
+      "page": 8,
+      "text": "Although a large effect was found for the intervention group compared with care as usual, it is believed that the differences in the interventions and CBT protocols may have contributed to the statistical heterogeneity and certainly to the clinical heterogeneity found in this meta-analysis. Besides the concerns over heterogeneity, this meta-analysis has several limitations. First, it is based on a moderate number of individuals with PCOS within an even smaller number of studies. A small sample size can be a problem when calculating the degree of heterogeneity. Particularly when the number of patients and studies is low, the risk of overestimating the I² statistic is high (Thorlund et al., 2011; von Hippel, 2015)."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-3",
+      "page": 8,
+      "text": "A second limitation of this meta-analysis relates to the diagnosis of PCOS; it was found that the criteria for PCOS diagnosis were not identical between studies. Most studies used the Rotterdam criteria and in several studies the criteria for PCOS were unknown. In a recent meta-analysis that examined mental health in women with PCOS, differences in diagnostic criteria were significantly associated with heterogeneity in results (Yin et al., 2021). Based on these limitations, the current findings should be interpreted with caution. Moreover, they again underpin the necessity of adopting the international guideline (Teede et al., 2018a) recommending the use of the Rotterdam criteria to diagnose PCOS."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-4",
+      "page": 8,
+      "text": "Given the high prevalence and odds for depression in women with PCOS (Cooney et al., 2017; Dokras et al., 2011), the PCOS guideline recommends that all women should be screened for depression. Besides screening for depression, more research is needed to optimize psychological treatment options for women who suffer from depression and mood disorders. Therefore, larger studies should examine whether a standardized CBT protocol or pharmacological options are effective for depression in women with PCOS. To control for bias, it is suggested that future trials investigating the effect of psychological interventions on depression in women with PCOS should be carried out by collaborative research teams."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-5",
+      "page": 8,
+      "text": "In conclusion, this systematic review and meta-analysis demonstrates that most psychological interventions applying CBT are effective in lowering depression scores in women with PCOS. A MCID was found in four out of five interventions. However, these results should be interpreted with caution due to methodological differences and the low quality of the studies. Therefore, more clinical trials are needed to assess whether CBT or pharmacological options are effective to improve depression in women with PCOS. GJ, AVDK, AB, JB and AB have nothing to declare. JL has received unrestricted research grants from Ansh Labs, Ferring and Roche Diagnostics and also received consultancy fees from the following companies: Ansh Labs, Ferring, Roche Diagnostics, and Titus Healthcare."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-6",
+      "page": 8,
+      "text": "ACKNOWLEDGEMENTS The authors wish to thank Christa Niehot from the Erasmus MC Medical Library for developing and updating the search strategies. FUNDING This study was supported by an institutional grant for a PhD position. DATA AVAILABILITY STATEMENT The authors confirm that the data supporting the findings of this study are available within the article. REFERENCES Abdollahi, L., Mirghafourvand, M., Babapour Kheyradin, J., Mohammadi, M. The effect of cognitive behavioural therapy on depression and obesity in women with polycystic ovarian syndrome: a randomized controlled clinical trial. Iranian Red Crescent Medical Journal 2018; 20: e62735 Annagur, B.B., Tazegul, A., Akbaba, N. Body image, self-esteem and depressive symptomatology in women with polycystic ovary syndrome."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-7",
+      "page": 8,
+      "text": "Noro Psikiyatr Ars 2014; 51: 129–132 Avery, J.C., Braunack-Mayer, A.J. The information needs of women diagnosed with polycystic ovarian syndrome – implications for treatment and health outcomes. BMC Women's Health 2007; 7: 9 Balduzzi, S., Rücker, G., Schwarzer, G. How to perform a meta-analysis with R: a practical tutorial. Evidence-Based Mental Health 2019; 22: 153–160 Brennan, L., Teede, H., Skouteris, H., Linardon, J., Hill, B., Moran, L. Lifestyle and behavioural management of polycystic ovary syndrome. Journal of Women's Health 2017; 26: 836–848 Button, K.S., Kounali, D., Thomas, L., Wiles, N.J., Peters, T.J., Welton, N.J., Ades, A.E., Lewis, G Minimal clinically important difference on the Beck Depression Inventory-II according to the patient's perspective."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-8",
+      "page": 8,
+      "text": "Psychological Medicine 2015; 45: 3269–3279 Castelnuovo, G., Pietrabissa, G., Manzoni, G.M., Cattivelli, R., Rossi, A., Novelli, M., Varallo, G., Molinari, E. Cognitive behavioural therapy to aid weight loss in obese patients: current perspectives. Psychological Research and Behavior Management 2017; 10: 165–173 Cesta, C.E., Mansson, M., Palm, C., Lichtenstein, P., Iliadou, A.N., Landen, M. Polycystic ovary syndrome and psychiatric disorders: co- morbidity and heritability in a nationwide Swedish cohort. Psychoneuroendocrinology 2016; 73: 196–203 Cohen, J. 1988 Statistical Power Analysis for the Behavioural Sciences. Laurence Erlbaum Associates, Inc Hillsdale, NJ Cooney, L.G., Dokras, A. Depression and anxiety in polycystic ovary syndrome: aetiology and treatment."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-9",
+      "page": 8,
+      "text": "Current Psychiatry Reports 2017; 19: 83 Cooney, L.G., Lee, I., Sammel, M.D., Dokras, A. High prevalence of moderate and severe depressive and anxiety symptoms in polycystic ovary syndrome: a systematic review and meta-analysis. Human Reproduction 2017; 32: 1075–1091 Cooney, L.G., Milman, L.W., Hantsoo, L., Kornfield, S., Sammel, M.D., Allison, K.C., Epperson, C.N., Dokras, A. Cognitive- behavioural therapy improves weight loss and quality of life in women with polycystic ovary syndrome: a pilot randomized clinical trial. Fertility and Sterility 2018; 110: 161–171 Correa, J.B., Sperry, S.L., Darkes, J. A case report demonstrating the efficacy of a comprehensive cognitive-behavioural therapy approach for treating anxiety, depression, and problematic eating in polycystic ovarian syndrome."
+    },
+    {
+      "chunkId": "jiskoot2022-p8-10",
+      "page": 8,
+      "text": "Archives of Women's Mental Health 2015; 18: 649–654 Cuijpers, P., Noma, H., Karyotaki, E., Cipriani, A., Furukawa, T.A. Effectiveness and acceptability of cognitive behaviour therapy delivery formats in adults with depression: a network"
+    },
+    {
+      "chunkId": "jiskoot2022-p9-1",
+      "page": 9,
+      "text": "RBMO VOLUME 45 ISSUE 3 202 2 607 meta-analysis. JAMA Psychiatry 2019; 76: 700–707 Cuijpers, P., van Straten, A., Warmerdam, L. Are individual and group treatments equally effective in the treatment of depression in adults?: a meta-analysis. The European Journal of Psychiatry 2008; 22: 38–51 de Niet, J.E., de Koning, C.M., Pastoor, H., Duivenvoorden, H.J., Valkenburg, O., Ramakers, M.J., Passchier, J., de Klerk, C., Laven, J.S. Psychological well-being and sexarche in women with polycystic ovary syndrome. Human Reproduction 2010; 25: 1497–1503 Dokras, A., Clifton, S., Futterweit, W., Wild, R. Increased risk for abnormal depression scores in women with polycystic ovary syndrome: a systematic review and meta-analysis. Obstetrics and Gynecology 2011; 117: 145–152 Ehrmann, D.A."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-2",
+      "page": 9,
+      "text": "Polycystic ovary syndrome. New England Journal of Medicine 2005; 352: 1223–1236 Gibson-Helm, M., Teede, H., Dunaif, A., Dokras, A. Delayed diagnosis and a lack of information associated with dissatisfaction in women with polycystic ovary syndrome. The Journal of Clinical Endocrinology and Metabolism 2017; 102: 604–612 Greenwood, E.A., Yaffe, K., Wellons, M.F., Cedars, M.I., Huddleston, H.G. Depression over the lifespan in a population-based cohort of women with polycystic ovary syndrome: longitudinal analysis. Journal of Clinical Endocrinology and Metabolism 2019; 104: 2809–2819 Haase, I., Winkeler, M., Imgart, H. Ascertaining minimal clinically meaningful changes in symptoms of depression rated by the 15-item Centre for Epidemiologic Studies Depression Scale."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-3",
+      "page": 9,
+      "text": "Journal of Evaluation in Clinical Practice 2021; 28: 500–506 Hahn, S., Janssen, O.E., Tan, S., Pleger, K., Mann, K., Schedlowski, M., Kimmig, R., Benson, S., Balamitsa, E., Elsenbruch, S. Clinical and psychological correlates of quality-of-life in polycystic ovary syndrome. European Journal of Endocrinology 2005; 153: 853–860 Hollinrake, E., Abreu, A., Maifeld, M., Van Voorhis, B.J., Dokras, A. Increased risk of depressive disorders in women with polycystic ovary syndrome. Fertility and Sterility 2007; 87: 1369–1376 Jaeschke, R., Guyatt, G., Keller, J., Singer, J. Measurement of health status: ascertaining the meaning of a change in quality-of-life questionnaire score."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-4",
+      "page": 9,
+      "text": "Controlled Clinical Trials 1989; 10: 407–415 Jiskoot, G., Dietz de Loos, A., Beerthuizen, A., Timman, R., Busschbach, J., Laven, J. Long-term effects of a three-component lifestyle intervention on emotional well-being in women with polycystic ovary syndrome (PCOS): a secondary analysis of a randomized controlled trial. PLoS One 2020; 15e0233876 Kerchner, A., Lester, W., Stuart, S.P., Dokras, A. Risk of depression and other mental health disorders in women with polycystic ovary syndrome: a longitudinal study. Fertility and Sterility 2009; 91: 207–212 Kitzinger, C., Willmott, J. ‘The thief of womanhood’: women's experience of polycystic ovarian syndrome. Social Science and Medicine 2002; 54: 349–361 Laven, J.S., Imani, B., Eijkemans, M.J., Fauser, B.C."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-5",
+      "page": 9,
+      "text": "New approach to polycystic ovary syndrome and other forms of anovulatory infertility. Obstetrical and Gynecological Survey 2002; 57: 755–767 Lee, I., Cooney, L.G., Saini, S., Smith, M.E., Sammel, M.D., Allison, K.C., Dokras, A. Increased risk of disordered eating in polycystic ovary syndrome. Fertility and Sterility 2017; 107: 796–802 McGuinness, L.A., Higgins, J.P.T. Risk-of-bias VISualization (robvis): an R package and Shiny web app for visualizing risk-of-bias assessments. Research Synthesis Methods 2021; 12: 55–61 Naderpoor, N., Shorakae, S., de Courten, B., Misso, M.L., Moran, L.J., Teede, H.J. Metformin and lifestyle modification in polycystic ovary syndrome: systematic review and meta- analysis."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-6",
+      "page": 9,
+      "text": "Human Reproduction Update 2015; 21: 560–574 National Collaborating Centre for Mental Health. 2010 Depression: The Treatment and Management of Depression in Adults. (Updated Edition) British Psychological Society Leicester Oberg, E., Lundell, C., Blomberg, L., Gidlöf, S.B., Egnell, P.T., Hirschberg, A.L. Psychological well-being and personality in relation to weight loss following behavioural modification intervention in obese women with polycystic ovary syndrome: a randomized controlled trial. European Journal of Endocrinology 2020; 183: 1–11 Page, M.J., McKenzie, J.E., Bossuyt, P.M., Boutron, I., Hoffmann, T.C., Mulrow, C.D., Shamseer, L., Tetzlaff, J.M., Akl, E.A., Brennan, S.E. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-7",
+      "page": 9,
+      "text": "International Journal of Surgery 2021; 88105906 Parikh, S.V., Quilty, L.C., Ravitz, P., Rosenbluth, M., Pavlova, B., Grigoriadis, S., Velyvis, V., Kennedy, S.H., Lam, R.W., MacQueen, G.M., Milev, R.V., Ravindran, A.V., Uher, R., CANMAT Depression Work Group Canadian Network for Mood and Anxiety Treatments (CANMAT) 2016 Clinical Guidelines for the Management of Adults with Major Depressive Disorder: Section 2. Psychological Treatments. Canadian Journal of Psychiatry 2016; 61: 524–539 Ramazanzadeh, F., Nourbala, A.A., Tanha, F.D., Mostaan, F. The effect of psychiatric interventions on depression and fertility in infertile patients with polycystic ovarian disease."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-8",
+      "page": 9,
+      "text": "Journal of Research in Medical and Dental Science 2019; 7: 187–191 Roessler, K.K., Glintborg, D., Ravn, P., Birkebaek, C., Andersen, M. Supportive relationships – psychological effects of group counselling in women with polycystic ovary syndrome (PCOS). Communications Medicine 2012; 9: 125–131 Ronk, F.R., Korman, J.R., Hooke, G.R., Page, A.C. Assessing clinical significance of treatment outcomes using the DASS-21. Psychological Assessment 2013; 25: 1103 Rotterdam ESHRE/ASRM-Sponsored PCOS Consensus Workshop Group. Revised 2003 consensus on diagnostic criteria and long- term health risks related to polycystic ovary syndrome. Fertility and Sterility 2004; 81: 19–25 Stefanaki, C., Bacopoulou, F., Livadas, S., Kandaraki, A., Karachalios, A., Chrousos, G.P., Diamanti-Kandarakis, E."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-9",
+      "page": 9,
+      "text": "Impact of a mindfulness stress management program on stress, anxiety, depression and quality of life in women with polycystic ovary syndrome: a randomized controlled trial. Stress 2015; 18: 57–66 Sterne, J.A.C., Sutton, A.J., Ioannidis, J.P.A., Terrin, N., Jones, D.R., Lau, J., Carpenter, J., Rücker, G., Harbord, R.M., Schmid, C.H. Recommendations for examining and interpreting funnel plot asymmetry in meta- analyses of randomized controlled trials. BMJ 2011; 343: d4002 Tan, S., Hahn, S., Benson, S., Janssen, O.E., Dietz, T., Kimmig, R., Hesse-Hussain, J., Mann, K., Schedlowski, M., Arck, P.C., Elsenbruch, S. Psychological implications of infertility in women with polycystic ovary syndrome. Human Reproduction 2008; 23: 2064–2071 Teede, H., Deeks, A., Moran, L."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-10",
+      "page": 9,
+      "text": "Polycystic ovary syndrome: a complex condition with psychological, reproductive and metabolic manifestations that impacts on health across the lifespan. BMC Medicine 2010; 8: 41 Teede, H.J., Misso, M.L., Costello, M.F., Dokras, A., Laven, J., Moran, L., Piltonen, T., Norman, R.J., International PCOS Network Recommendations from the international evidence-based guideline for the assessment and management of polycystic ovary syndrome. Fertility and Sterility 2018; 110: 364–379 Teede, H.J., Misso, M.L., Costello, M.F., Dokras, A., Laven, J., Moran, L., Piltonen, T., Norman, R.J., International PCOS Network Recommendations from the international evidence-based guideline for the assessment and management of polycystic ovary syndrome."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-11",
+      "page": 9,
+      "text": "Human Reproduction 2018; 33: 1602–1618 Thorlund, K., Imberger, G., Walsh, M., Chu, R., Gluud, C., Wetterslev, J., Guyatt, G., Devereaux, P.J., Thabane, L. The number of patients and events required to limit the risk of overestimation of intervention effects in meta-analysis – a simulation study. PLOS One 2011; 6: e25491 Veltman-Verhulst, S.M., Boivin, J., Eijkemans, M.J., Fauser, B.J. Emotional distress is a common risk in women with polycystic ovary syndrome: a systematic review and meta- analysis of 28 studies. Human Reproduction Update 2012; 18: 638–651 von Hippel, P.T. The heterogeneity statistic I(2) can be biased in small meta-analyses. BMC Medical Research Methodology 2015; 15: 1–8 Werrij, M.Q., Jansen, A., Mulkens, S., Elgersma, H.J., Ament, A.J., Hospers, H.J."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-12",
+      "page": 9,
+      "text": "Adding cognitive therapy to dietetic treatment is associated with less relapse in obesity. Journal of Psychosomatic Research 2009; 67: 315–324 Wright, J.H., Beck, A.T. Cognitive therapy of depression: theory and practice. Psychiatric Services 1983; 34: 1119–1127 Yin, X., Ji, Y., Chan, C.L.W., Chan, C.H.Y. The mental health of women with polycystic ovary syndrome: a systematic review and meta- analysis. Archives of Women's Mental Health 2021; 24: 11–27 Yohannes, A.M., Dryden, S., Hanania, N.A. Validity and responsiveness of the Depression Anxiety Stress Scales-21 (DASS-21) in COPD. Chest 2019; 155: 1166–1177 Zawadski, J., Dunaif, A. Diagnostic Criteria for Polycystic Ovary Syndrome: Towards a Rational Approach. In: Dunaif, A., Givens, J.R. and Haseltine, F."
+    },
+    {
+      "chunkId": "jiskoot2022-p9-13",
+      "page": 9,
+      "text": "Eds., Polycystic Ovary Syndrome, Blackwell Scientific, Boston 1992: 377–384 Received 4 February 2022; received in revised form 21 April 2022; accepted 3 May 2022."
+    }
+  ]
+}

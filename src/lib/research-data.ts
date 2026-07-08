@@ -27,7 +27,7 @@ export interface SymptomInfo {
   key: SymptomKey;
   label: string;
   description: string;
-  citations: Citation[];
+  citations: string[]; // citation ids — look up in CITATIONS (hand-curated) or ALL_CITATIONS (incl. ingested PDFs)
   insights: string[]; // evidence-based statements, paired 1:1 with citations by index where possible
 }
 
@@ -129,7 +129,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "irregular_periods",
     label: "Irregular or absent periods",
     description: "Cycles longer than 35 days, unpredictable timing, or missed periods.",
-    citations: [CITATIONS.teede2018, CITATIONS.legro2013],
+    citations: ["teede2018", "legro2013"],
     insights: [
       "Irregular ovulation is one of the three core diagnostic criteria for PCOS under the Rotterdam consensus, alongside hyperandrogenism and polycystic ovarian morphology.",
       "Cycle irregularity in PCOS is driven by disrupted LH pulsatility and anovulation, not just 'stress' — guidelines recommend it as a primary red flag to raise with a clinician.",
@@ -139,7 +139,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "acne",
     label: "Persistent or adult-onset acne",
     description: "Acne along the jawline, chin, or chest that doesn't respond to typical skincare.",
-    citations: [CITATIONS.escobarmorreale2018],
+    citations: ["escobarmorreale2018"],
     insights: [
       "Jawline/chin acne in adults is a recognised sign of hyperandrogenism, one of the three Rotterdam diagnostic criteria for PCOS.",
     ],
@@ -148,7 +148,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "hair_growth",
     label: "Excess facial/body hair (hirsutism)",
     description: "Coarse hair growth on the face, chest, or back.",
-    citations: [CITATIONS.escobarmorreale2018, CITATIONS.legro2013],
+    citations: ["escobarmorreale2018", "legro2013"],
     insights: [
       "Hirsutism affects up to 70% of people with PCOS and is directly linked to elevated androgen levels, making it one of the most specific visible symptoms.",
     ],
@@ -157,7 +157,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "hair_loss",
     label: "Scalp hair thinning",
     description: "Thinning at the crown or widening part line.",
-    citations: [CITATIONS.escobarmorreale2018],
+    citations: ["escobarmorreale2018"],
     insights: [
       "Androgenic alopecia (scalp thinning) shares the same hormonal driver as hirsutism and acne in PCOS — elevated free androgens acting on hair follicles.",
     ],
@@ -166,7 +166,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "weight_gain",
     label: "Weight gain or difficulty losing weight",
     description: "Weight gain, especially around the abdomen, that feels disproportionate to diet/exercise changes.",
-    citations: [CITATIONS.lim2012, CITATIONS.stepto2013],
+    citations: ["lim2012", "stepto2013"],
     insights: [
       "A meta-analysis of over 30 studies found women with PCOS have significantly higher rates of overweight, obesity, and central (abdominal) adiposity than the general population.",
       "Clamp studies show insulin resistance in PCOS is often intrinsic — present independent of body weight — which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
@@ -176,7 +176,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "fatigue",
     label: "Persistent fatigue",
     description: "Low energy that doesn't improve with rest.",
-    citations: [CITATIONS.stepto2013],
+    citations: ["stepto2013"],
     insights: [
       "Fatigue in PCOS is frequently linked to underlying insulin resistance and blood-sugar volatility rather than sleep quantity alone.",
     ],
@@ -185,16 +185,17 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "mood_changes",
     label: "Anxiety or low mood",
     description: "Increased anxiety, low mood, or mood swings.",
-    citations: [CITATIONS.cooney2017],
+    citations: ["cooney2017", "jiskoot2022"],
     insights: [
       "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PCOS compared to controls — this is a recognised part of the condition, not 'just stress'.",
+      "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PCOS compared with usual care — a concrete, evidence-based option to raise with a clinician or therapist.",
     ],
   },
   {
     key: "cravings_blood_sugar",
     label: "Strong sugar/carb cravings or energy crashes",
     description: "Intense cravings, energy crashes after meals, or shakiness between meals.",
-    citations: [CITATIONS.stepto2013, CITATIONS.moran2013],
+    citations: ["stepto2013", "moran2013"],
     insights: [
       "Insulin resistance — present in a majority of PCOS cases regardless of weight — can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
       "Cochrane review evidence shows structured lifestyle/dietary approaches (not necessarily weight loss) can meaningfully improve insulin sensitivity and related symptoms.",
@@ -204,7 +205,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "fertility_concerns",
     label: "Difficulty conceiving",
     description: "Trying to conceive for 6+ months without success, or concerns about future fertility.",
-    citations: [CITATIONS.balen2016],
+    citations: ["balen2016"],
     insights: [
       "PCOS is the leading cause of anovulatory infertility, but ESHRE guidelines note the large majority of cases respond well to first-line ovulation induction treatment.",
     ],
@@ -213,7 +214,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     key: "pelvic_pain",
     label: "Pelvic pain or ovarian discomfort",
     description: "Cramping or discomfort not tied to your period.",
-    citations: [CITATIONS.teede2018],
+    citations: ["teede2018"],
     insights: [
       "Pelvic discomfort is a less specific PCOS symptom and guidelines recommend it be evaluated to rule out overlapping conditions like endometriosis.",
     ],

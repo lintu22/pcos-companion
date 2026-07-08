@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useStoredProfile } from "@/lib/storage";
-import { CITATIONS, SYMPTOMS } from "@/lib/research-data";
+import { SYMPTOMS } from "@/lib/research-data";
+import { ALL_CITATIONS } from "@/lib/pdf-sources";
 import { COMMUNITY_BASELINES, COMMUNITY_STATS } from "@/lib/community-data";
 import { Download, ExternalLink, ArrowRight, Users, Sparkles } from "lucide-react";
 
@@ -106,7 +107,7 @@ export default function ProfilePage() {
               <p className="mt-1 text-sm text-muted-foreground">{insight.statement}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {insight.citationIds.map((id) => {
-                  const c = CITATIONS[id];
+                  const c = ALL_CITATIONS[id];
                   if (!c) return null;
                   return (
                     <a

@@ -9,7 +9,7 @@ import { useStoredProfile } from "@/lib/storage";
 import { SYMPTOMS } from "@/lib/research-data";
 import { ALL_CITATIONS } from "@/lib/pdf-sources";
 import { COMMUNITY_BASELINES, COMMUNITY_STATS, COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
-import { Download, ExternalLink, ArrowRight, Users, Sparkles, Lightbulb, BookOpenCheck, MessagesSquare } from "lucide-react";
+import { Download, ExternalLink, ArrowRight, Users, Sparkles, Lightbulb, BookOpenCheck, MessagesSquare, Pill } from "lucide-react";
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
@@ -41,7 +41,7 @@ export default function ProfilePage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `pcos-companion-profile-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `pmos-companion-profile-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -197,6 +197,60 @@ export default function ProfilePage() {
           })()}
         </CardContent>
       </Card>
+
+      {(() => {
+        const groundedSupplements = (analysis.supplements ?? [])
+          .map((sup) => {
+            const citations = sup.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
+            if (citations.length === 0) return null; // ungrounded — never shown
+            return { sup, citations };
+          })
+          .filter((x): x is NonNullable<typeof x> => x !== null);
+
+        if (groundedSupplements.length === 0) return null;
+
+        return (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Pill className="h-5 w-5" /> Supplements the research points to
+              </CardTitle>
+              <CardDescription>
+                Dietary supplements with research evidence for your symptoms — not a recommendation to start
+                taking anything without talking to a doctor or pharmacist first.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {groundedSupplements.map(({ sup, citations }, i) => (
+                <div key={i}>
+                  <p className="text-sm text-muted-foreground">{sup.text}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {citations.map((c) => (
+                      <a
+                        key={c.id}
+                        href={c.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
+                        title={c.summary}
+                      >
+                        {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                      </a>
+                    ))}
+                  </div>
+                  {i < groundedSupplements.length - 1 && <Separator className="mt-4" />}
+                </div>
+              ))}
+              <Separator />
+              <p className="text-xs text-muted-foreground">
+                Supplements can interact with medicines and aren&apos;t regulated the way medicines are — check with a
+                doctor or pharmacist before starting one, especially if you&apos;re pregnant, trying to conceive, or
+                on other medication.
+              </p>
+            </CardContent>
+          </Card>
+        );
+      })()}
 
       <Card className="mb-6">
         <CardHeader>

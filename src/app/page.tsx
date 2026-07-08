@@ -12,8 +12,11 @@ export default function Home() {
           Understand your symptoms with <span className="text-primary">evidence</span>, not guesswork.
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-          PCOS Companion turns a few minutes of questions into a research-backed symptom profile —
+          PMOS Companion turns a few minutes of questions into a research-backed symptom profile —
           with citations, community comparisons, and a record you own.
+        </p>
+        <p className="mx-auto mt-2 max-w-xl text-xs text-muted-foreground">
+          PMOS (polyendocrine metabolic ovarian syndrome) is the new name for PCOS, renamed in 2026.
         </p>
         <div className="mt-8 flex justify-center gap-3">
           <Button render={<Link href="/intake" />} size="lg">

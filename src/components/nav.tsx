@@ -18,7 +18,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <HeartPulse className="h-5 w-5 text-primary" />
-          PCOS Companion
+          PMOS Companion
         </Link>
         <nav className="flex gap-1">
           {LINKS.map((link) => (

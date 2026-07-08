@@ -55,6 +55,9 @@ export async function POST(req: NextRequest) {
       (r) =>
         `- id=${r.id} (${r.symptom}): "${r.suggestion}" — ${r.percentReportingHelpful}% of community members who tried this reported it helped`
     ).join("\n");
+    const supplementReference = SYMPTOMS.filter((s) => s.supplements?.length)
+      .flatMap((s) => s.supplements!.map((r) => `- (${s.key}) "${r.text}" — citations: ${r.citations.join(", ")}`))
+      .join("\n");
 
     const answeredFrequencies = Object.entries(body.frequencies)
       .map(([k, v]) => `${k}: ${v}/4`)
@@ -64,7 +67,8 @@ export async function POST(req: NextRequest) {
       model,
       schema: ProfileAnalysisSchema,
       system:
-        "You are a careful, evidence-based PCOS symptom triage assistant. You never diagnose. " +
+        "You are a careful, evidence-based PMOS (polyendocrine metabolic ovarian syndrome, formerly known as PCOS — " +
+        "renamed in 2026) symptom triage assistant. You never diagnose. " +
         "You only cite from the provided citation list by id — never invent studies or links. " +
         "Every insight's citationIds must come from the reference list below. " +
         "Symptom keys in dominantSymptoms and insights[].symptom must be chosen from the provided symptom key list exactly as written.\n\n" +
@@ -74,9 +78,14 @@ export async function POST(req: NextRequest) {
         "source='community' and communityRecommendationId to the exact id shown — never make up a percentage " +
         "yourself. Always phrase community suggestions as what other members report trying, not as medical advice. " +
         "If neither list has anything relevant to this person's dominant symptoms, return an empty recommendations array.\n\n" +
+        "For `supplements`, only ever pick from the supplement reference list below — never invent a supplement, " +
+        "a study, or a health claim beyond what's listed. Always frame these as things to discuss with a doctor " +
+        "or pharmacist before starting, not as a standalone recommendation. If nothing in the list is relevant to " +
+        "this person's dominant symptoms, return an empty supplements array.\n\n" +
         `Symptom keys:\n${symptomReference}\n\nCitation reference:\n${citationReference}${excerptsBlock}\n\n` +
         `Research-backed recommendations available:\n${researchRecommendationReference || "(none)"}\n\n` +
-        `Community-reported recommendations available:\n${communityRecommendationReference || "(none)"}`,
+        `Community-reported recommendations available:\n${communityRecommendationReference || "(none)"}\n\n` +
+        `Supplement suggestions available:\n${supplementReference || "(none)"}`,
       prompt:
         `Frequency answers (0=never,4=almost always): ${answeredFrequencies || "none provided"}\n` +
         `What they've tried so far: ${body.triedSoFar || "(nothing shared)"}\n` +

@@ -1,0 +1,638 @@
+{
+  "id": "nice2026",
+  "title": "Polyendocrine metabolic ovarian syndrome: assessment and management (draft for consultation)",
+  "authorsYear": "NICE, 2026",
+  "journal": "NICE Guideline (Draft for Consultation)",
+  "url": "https://www.nice.org.uk/guidance/indevelopment",
+  "summary": "UK NICE draft guideline on assessing and managing PMOS (the 2026 renaming of PCOS), adapted from Monash University's 2023 international evidence-based guideline.",
+  "sourceFile": "NICEguidance_on_managingPMOS.pdf",
+  "totalPages": 43,
+  "chunkCount": 125,
+  "chunks": [
+    {
+      "chunkId": "nice2026-p1-1",
+      "page": 1,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 1 of 43 NATIONAL INSTITUTE FOR HEALTH AND CARE 1 EXCELLENCE 2 Guideline 3 Polyendocrine metabolic ovarian syndrome 4 (previously known as polycystic ovary 5 syndrome): assessment and management 6 Draft for consultation, July 2026 7 This guideline covers assessing and managing polyendocrine metabolic ovarian syndrome (PMOS) in people aged 10 and over. It also covers assessment and management of related conditions, and includes specific recommendations on managing fertility problems and monitoring for conditions and complications during pregnancy. In May 2026, polycystic ovary syndrome (PCOS) was renamed PMOS. The term PMOS is used in the guideline title and the recommendations."
+    },
+    {
+      "chunkId": "nice2026-p1-2",
+      "page": 1,
+      "text": "The term PCOS is still used in supporting technical documents for this guideline at consultation but the term PMOS will be used throughout all documents at final publication. By then a new name for polycystic ovarian morphology may also have been confirmed. Who is it for? • Healthcare professionals working in primary and secondary care • Commissioners and providers • People aged 10 and over with suspected or confirmed PMOS, and their families and carers. This guideline is for the UK only. What does it include? • the recommendations • links to the adaptation report sections which explain how the NICE committee adapted the recommendations in Monash University’s international evidence-"
+    },
+    {
+      "chunkId": "nice2026-p2-1",
+      "page": 2,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 2 of 43 based guideline for the assessment and management of polycystic ovary syndrome 2023. Most recommendations in this guideline are the result of adapting Monash University’s (MU’s) international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. These recommendations, which for consultation also include the international guideline’s (IG) recommendation numbers, are marked [NICE 2026 and MU 2023; IG recommendation]. NICE has also made recommendations, which are marked [NICE 2026]. These are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p2-2",
+      "page": 2,
+      "text": "Recommendations, or parts of recommendations, labelled [NICE 2013] have been adapted from recommendations which previously appeared in NICE’s fertility guideline. NICE’s fertility guideline will cross-refer to this guideline when it is published. Information about how the guideline was developed is on its in development page. This includes the adaptation reports that describe how the NICE committee has adapted the recommendations in the Monash University’s guideline and made some additional recommendations. 1"
+    },
+    {
+      "chunkId": "nice2026-p3-1",
+      "page": 3,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 3 of 43 Contents 1 Contents ..................................................................................................................... 3 2 Using this guideline .................................................................................................... 4 3 Principles of care ........................................................................................................ 4 4 Who this guideline covers ....................................................................................... 4 5 1.1 Communication, information and support ...................................................."
+    },
+    {
+      "chunkId": "nice2026-p3-2",
+      "page": 3,
+      "text": "5 6 1.2 Care planning and long-term management of PMOS .................................. 6 7 Assessment and diagnosis of PMOS ......................................................................... 8 8 Who this guideline covers ....................................................................................... 8 9 1.3 When to suspect PMOS ............................................................................... 8 10 1.4 Assessment for hyperandrogenism and hyperandrogenaemia .................... 9 11 1.5 Diagnosing PMOS after assessing for hyperandrogenism and 12 hyperandrogenaemia ............................................................................................ 12 13 1.6 When it is not possible to diagnose PMOS in under 18s ..........................."
+    },
+    {
+      "chunkId": "nice2026-p3-3",
+      "page": 3,
+      "text": "13 14 1.7 Assessing for polycystic ovarian morphology............................................. 14 15 1.8 Assessment for related health conditions or problems............................... 16 16 Managing symptoms and signs of PMOS ................................................................ 16 17 Who this guideline covers ..................................................................................... 16 18 1.9 Considerations for managing PMOS.......................................................... 17 19 1.10 Irregular or absent menstrual cycles .......................................................... 18 20 1.11 Symptoms and signs of hyperandrogenism ..............................................."
+    },
+    {
+      "chunkId": "nice2026-p3-4",
+      "page": 3,
+      "text": "19 21 1.12 Metabolic health problems in adults ........................................................... 24 22 1.13 Overweight and obesity ............................................................................. 25 23 Assessment and management of related health conditions or problems ................. 26 24 Who this guideline covers ..................................................................................... 27 25 1.14 Depression and anxiety ............................................................................. 27 26 1.15 Eating disorders and disordered eating ..................................................... 28 27 1.16 Cardiovascular disease in adults ..............................................................."
+    },
+    {
+      "chunkId": "nice2026-p3-5",
+      "page": 3,
+      "text": "28 28 1.17 Impaired fasting glucose, impaired glucose tolerance and type 2 diabetes 29 29 1.18 Obstructive sleep apnoea in adults ............................................................ 30 30 1.19 Endometrial hyperplasia and endometrial cancer in adults ........................ 31 31 Fertility and pregnancy ............................................................................................. 32 32 Who this guideline covers ..................................................................................... 32 33 1.20 Discussing fertility ...................................................................................... 32 34 1.21 Fertility problems........................................................................................"
+    },
+    {
+      "chunkId": "nice2026-p3-6",
+      "page": 3,
+      "text": "32 35 1.22 Pregnancy .................................................................................................. 37 36 Terms used in this guideline..................................................................................... 39 37 Effective contraception ......................................................................................... 40 38 Full lipid profile ...................................................................................................... 40 39 Hyperandrogenaemia ........................................................................................... 40 40 Hyperandrogenism ..............................................................................................."
+    },
+    {
+      "chunkId": "nice2026-p3-7",
+      "page": 3,
+      "text": "40 41 Recommendations for research ............................................................................... 40 42 Finding more information and committee details ...................................................... 41 43 Acknowledgement, territorial application and copyright............................................ 41 44 Acknowledgement ................................................................................................ 41 45 Territorial application ............................................................................................ 41 46 Copyright .............................................................................................................."
+    },
+    {
+      "chunkId": "nice2026-p3-8",
+      "page": 3,
+      "text": "42 47 International guideline copyright information ........................................................ 42 48 49"
+    },
+    {
+      "chunkId": "nice2026-p4-1",
+      "page": 4,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 4 of 43 Using this guideline 1 People have the right to be involved in discussions and make informed decisions 2 about their care, as described in NICE's information about shared decision making. 3 Healthcare professionals should follow our general guidelines for people delivering 4 care: 5 • Babies, children and young people's experience of healthcare 6 • Decision making and mental capacity 7 • Medicines adherence 8 • Medicines optimisation 9 • Multimorbidity 10 • Patient experience in adult NHS services 11 • Service user experience in adult mental health 12 • Shared decision making 13 • Transition from children’s to adults’ services."
+    },
+    {
+      "chunkId": "nice2026-p4-2",
+      "page": 4,
+      "text": "14 For guidance on managing metabolic dysfunction-associated steatotic liver disease 15 (MASLD), see NICE's guideline on non-alcoholic fatty liver disease (NAFLD). NICE 16 is aware that the term NAFLD is no longer used and plans to update references to 17 this in its guidance (an update of NICE’s guideline on NAFLD is in progress; see the 18 in development page for the update). 19 Making decisions using NICE guidelines explains how we use words to show the 20 strength (or certainty) of our recommendations, and has information about 21 prescribing medicines (including off-label use), professional guidelines, standards 22 and laws (including on consent and mental capacity), and safeguarding."
+    },
+    {
+      "chunkId": "nice2026-p4-3",
+      "page": 4,
+      "text": "23 Principles of care 24 Who this guideline covers 25 This guideline covers women, trans men and non-binary people aged 18 and over 26 who have not had, or are not having, gender-affirming hormone therapy or gender 27"
+    },
+    {
+      "chunkId": "nice2026-p5-1",
+      "page": 5,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 5 of 43 reassignment surgery (also referred to as gender-affirming surgery). It also covers 1 10- to 17-year-olds. 2 It does not cover trans men and non-binary people aged 18 and over who have had, 3 or are having, gender-affirming hormone therapy or gender reassignment surgery 4 and who may need specialist assessment and care."
+    },
+    {
+      "chunkId": "nice2026-p5-2",
+      "page": 5,
+      "text": "5 1.1 Communication, information and support 6 1.1.1 When discussing polyendocrine metabolic ovarian syndrome (PMOS) and 7 related health conditions or problems: 8 • take a kind, sensitive and age-appropriate approach in line with NICE’s 9 guidelines on patient experience in adult NHS services, babies, 10 children’s and young people’s experience of healthcare and shared 11 decision making [NICE 2026] 12 • ask for permission before discussing subjects that are potentially 13 sensitive such as weight, menstrual cycles, hair growth, body image, 14 pregnancy, fertility, contraception and psychosexual function [NICE 15 2026 and MU 2023; IG recommendations 2.3.1, 2.3.2 and 2.4.1] 16 • ask about experiences of the condition including how it affects quality of 17 life and psychological wellbeing, if appropriate."
+    },
+    {
+      "chunkId": "nice2026-p5-3",
+      "page": 5,
+      "text": "[NICE 2026 and MU 18 2023; IG recommendations 2.1.1 and 2.1.2] 19 1.1.2 If discussing obesity, overweight or central adiposity: 20 • follow the recommendations on communication in the general principles 21 of care section of NICE’s guideline on overweight and obesity 22 management and 23 • ask for permission if planning to take weight and height measurements 24 for calculating BMI, explaining that these measurements can be useful 25 for planning care (for example, in deciding how to best manage PMOS 26 symptoms); see also the section on identifying and assessing 27 overweight, obesity and central adiposity in NICE’s guideline on obesity 28 and overweight management. [NICE 2026 and MU 2023; IG 29 recommendations 3.6.1 and 3.6.4] 30"
+    },
+    {
+      "chunkId": "nice2026-p6-1",
+      "page": 6,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 6 of 43 1.1.3 Explain that a healthy diet and physical activity can help with preventing 1 and managing excess weight, but can also have other health benefits 2 regardless of BMI. [NICE 2026 and MU 2023; IG recommendation 3.5.2] 3 1.1.4 Provide advice on healthy diet and physical activity regardless of BMI in 4 line with NICE’s guideline on overweight and obesity management, 5 especially the recommendations on preventing overweight, obesity and 6 central adiposity, NICE’s guideline on cardiovascular disease: risk 7 assessment and reduction, including lipid modification and NICE’s 8 guideline on prevention of type 2 diabetes in people at high risk."
+    },
+    {
+      "chunkId": "nice2026-p6-2",
+      "page": 6,
+      "text": "[NICE 9 2026] 10 1.1.5 Discuss goals in relation to diet and physical activity that are tailored and 11 realistic, recognising that overweight and obesity are common in people 12 with PMOS and weight management can be particularly challenging. 13 [NICE 2026 and MU 2023; IG recommendations 3.1.3, 3.5.1 and 3.5.2] 14 The recommendations, or parts of recommendations, marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations, or parts of recommendations, marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p6-3",
+      "page": 6,
+      "text": "15 For details of the NICE committee’s discussion, see adaptation report 2: prevalence, 16 screening and management of psychological features and models of care and 17 adaptation report 3: lifestyle management. 18 1.2 Care planning and long-term management of PMOS 19 See also the sections on managing symptoms and signs of PMOS and assessment 20 and management of related health conditions or problems. 21"
+    },
+    {
+      "chunkId": "nice2026-p7-1",
+      "page": 7,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 7 of 43 1.2.1 Base all elements of care, including long-term management of symptoms 1 or signs, on individual priorities and preferences, taking into account that: 2 • priorities and preferences will need to be revisited when symptoms or 3 signs change and 4 • there may be several, sometimes compounding, symptoms or signs, 5 including those linked to related health conditions or problems (for 6 example, hirsutism, mental health problems, overweight or obesity, and 7 fertility problems can interact and have a compounding effect)."
+    },
+    {
+      "chunkId": "nice2026-p7-2",
+      "page": 7,
+      "text": "[NICE 8 2026] 9 1.2.2 Ensure that the care of people aged 10 and over with suspected or 10 diagnosed PMOS is coordinated effectively between services, particularly 11 if they have multiple health conditions or, if they are aged between 10 and 12 18, will need further assessment when they are older. [NICE 2026] 13 1.2.3 Offer an annual review to people aged 10 and over diagnosed with PMOS 14 that includes a review of: 15 • their symptoms and signs, and any concerns they have about period 16 regularity, fertility, weight, mood and sleep apnoea 17 • medicines use 18 • their long-term risk of developing related health conditions, such as 19 cardiovascular disease or diabetes."
+    },
+    {
+      "chunkId": "nice2026-p7-3",
+      "page": 7,
+      "text": "[NICE 2026] 20 For further guidance on providing individualised care and managing multiple 21 conditions, see NICE’s guidelines on patient experience in adult NHS services, 22 babies, children’s and young people’s experience of healthcare, shared decision 23 making and multimorbidity. 24 These recommendations, marked [NICE 2026], are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 25"
+    },
+    {
+      "chunkId": "nice2026-p8-1",
+      "page": 8,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 8 of 43 For details of the NICE committee's discussion, see adaptation report 1: screening, 1 diagnostic and risk assessment, and life stages and adaptation report 2: prevalence, 2 screening and management of psychological features and models of care. 3 Assessment and diagnosis of PMOS 4 Who this guideline covers 5 This guideline covers women, trans men and non-binary people aged 18 and over 6 who have not had, or are not having, gender-affirming hormone therapy or gender 7 reassignment surgery (also referred to as gender-affirming surgery). It also covers 8 10- to 17-year-olds."
+    },
+    {
+      "chunkId": "nice2026-p8-2",
+      "page": 8,
+      "text": "9 It does not cover trans men and non-binary people aged 18 and over who have had, 10 or are having, gender-affirming hormone therapy or gender reassignment surgery 11 and who may need specialist assessment and care. 12 1.3 When to suspect PMOS 13 1.3.1 Suspect PMOS in people aged 10 and over who have irregular or absent 14 menstrual cycles defined as any of the following: 15 • A menstrual cycle length shorter than 21 days or longer than 45 days, if 16 it has been between 1 year and 3 years since their first period. 17 • A menstrual cycle shorter than 21 days or longer than 35 days, or fewer 18 than 8 menstrual cycles per year, if it has been more than 3 years since 19 their first period and they are not yet in perimenopause."
+    },
+    {
+      "chunkId": "nice2026-p8-3",
+      "page": 8,
+      "text": "20 • Any single menstrual cycle lasting more than 90 days, if it has been 21 more than 1 year since their first period. 22 • Primary amenorrhoea: that is, they have not had their first period by the 23 age of 15, or 3 years after the start of breast development. [NICE 2026 24 and MU 2023; IG recommendation 1.1.1] 25 1.3.2 Suspect PMOS in people aged 10 and over who have symptoms or signs 26 of hyperandrogenism even if they have regular menstrual cycles. [NICE 27 2026] 28"
+    },
+    {
+      "chunkId": "nice2026-p9-1",
+      "page": 9,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 9 of 43 1.3.3 Suspect PMOS in women, trans men and non-binary people aged 18 and 1 over if polycystic ovarian morphology has been clearly identified as an 2 incidental finding (for example, during an ultrasound or MRI scan carried 3 out for a different reason). [NICE 2026] 4 1.3.4 Investigate for PMOS in all people with the following symptoms or signs 5 (either alone or in combination) because they are often linked to PMOS 6 and PMOS is also a common condition, particularly in people of Black, 7 Asian or mixed ethnicity: 8 • irregular or absent menstrual cycles (as defined in 9 recommendation 1.3.1) 10 • symptoms or signs of hyperandrogenism."
+    },
+    {
+      "chunkId": "nice2026-p9-2",
+      "page": 9,
+      "text": "[NICE 2026 and MU 2023; 11 IG recommendations 1.6.1 and 1.6.2] 12 1.3.5 Do not exclude the possibility of PMOS in women, trans men and non- 13 binary people who have experienced menopause. [NICE 2026 and MU 14 2023; IG recommendation 1.7.3] 15 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 16 For details of the NICE committee’s discussion, see adaptation report 1: screening, 17 diagnostic and risk assessment, and life stages."
+    },
+    {
+      "chunkId": "nice2026-p9-3",
+      "page": 9,
+      "text": "18 1.4 Assessment for hyperandrogenism and 19 hyperandrogenaemia 20 1.4.1 Offer people aged 10 and over with suspected PMOS: 21 • assessment for symptoms and signs of hyperandrogenism and 22"
+    },
+    {
+      "chunkId": "nice2026-p10-1",
+      "page": 10,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 10 of 43 • a blood test for hyperandrogenaemia, unless they are using oral 1 hormone replacement therapy or oral contraceptives containing 2 oestrogen (see the section on assessing for hyperandrogenaemia). 3 [NICE 2026 and MU 2023; IG recommendations 1.2.1, 1.2.6 and 4 1.3.3] 5 1.4.2 Advise people taking oral hormone replacement therapy or oral 6 contraceptives containing oestrogen to stop taking them for at least 7 3 months if they need to have a blood test for hyperandrogenaemia. If 8 they decide to stop taking oral contraceptives containing oestrogen, 9 discuss alternative contraception options with the person."
+    },
+    {
+      "chunkId": "nice2026-p10-2",
+      "page": 10,
+      "text": "[NICE 2026 10 and MU 2023; IG recommendation 1.2.6] 11 1.4.3 Do not exclude the possibility of hyperandrogenism or 12 hyperandrogenaemia (or both) being present after menopause. [NICE 13 2026 and MU 2023; IG recommendation 1.7.2] 14 Hyperandrogenism 15 1.4.4 Take a comprehensive history and offer to carry out a physical 16 examination to assess for symptoms and signs of hyperandrogenism, 17 including: 18 • moderate to severe acne 19 • hirsutism 20 • hair loss with an androgen-dependent pattern."
+    },
+    {
+      "chunkId": "nice2026-p10-3",
+      "page": 10,
+      "text": "[NICE 2026 and MU 21 2023; IG recommendations 1.3.3, 1.3.5 and 1.3.7] 22 1.4.5 When assessing the severity of symptoms or signs of hyperandrogenism 23 in people aged 10 and over, ask them: 24 • if, and how, they manage symptoms or signs themselves 25 • about the negative psychosocial impact of any symptoms and signs 26 (such as those related to hirsutism) regardless of their apparent clinical 27 significance. [NICE 2026 and MU 2023; IG recommendations 1.3.4 28 and 1.3.7] 29"
+    },
+    {
+      "chunkId": "nice2026-p11-1",
+      "page": 11,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 11 of 43 Testing androgen levels 1 Assessing for hyperandrogenaemia 2 1.4.6 When assessing for hyperandrogenaemia, order a blood test that: 3 • measures total testosterone and 4 • estimates free testosterone using the calculated free androgen index. 5 [NICE 2026 and MU 2023; IG recommendation 1.2.1] 6 1.4.7 If total testosterone or free testosterone is not found to be elevated and 7 there are no symptoms or signs of hyperandrogenism, offer to measure 8 androstenedione and dehydroepiandrosterone sulfate to aid diagnosis."
+    },
+    {
+      "chunkId": "nice2026-p11-2",
+      "page": 11,
+      "text": "9 [NICE 2026 and MU 2023; IG recommendation 1.2.2] 10 1.4.8 Interpret raised androgen levels in 10- to 17-year-olds with caution, noting 11 that the normal baseline will reflect the adult scale between the ages of 12 12 and 15. [NICE 2026 and MU 2023; IG recommendation 1.2.8] 13 Repeat testing of androgen levels 14 1.4.9 Do not routinely retest androgen levels as part of ongoing assessment of 15 PMOS in women, trans men and non-binary people aged 18 or over."
+    },
+    {
+      "chunkId": "nice2026-p11-3",
+      "page": 11,
+      "text": "16 [NICE 2026 and MU 2023; MU recommendation 1.2.7] 17 Further investigations to rule out other causes 18 1.4.10 Offer people aged 10 and over with irregular or absent menstrual cycles 19 (as defined in recommendation 1.3.1 in the section on when to suspect 20 PMOS) testing for the following to rule out other causes: 21 • thyroid-stimulating hormone (TSH) 22 • prolactin 23 • oestradiol 24 • luteinising hormone (LH) 25 • follicular-stimulating hormone (FSH). [NICE 2026] 26 1.4.11 For people aged 10 and over with hyperandrogenaemia: 27"
+    },
+    {
+      "chunkId": "nice2026-p12-1",
+      "page": 12,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 12 of 43 • Consider measuring 17-hydroxyprogesterone (17-OHP) to rule out 1 congenital adrenal hyperplasia. 2 • Offer referral to an endocrinologist if 17-OHP is elevated."
+    },
+    {
+      "chunkId": "nice2026-p12-2",
+      "page": 12,
+      "text": "[NICE 2026] 3 1.4.12 Offer an urgent referral to an endocrinologist for further investigation of 4 other causes of hyperandrogenism or hyperandrogenaemia (or both) to 5 people aged 10 and over who have 1 or more of the following features of 6 androgen excess, including features that have developed after 7 menopause: 8 • severe or rapidly worsening hirsutism 9 • features suggestive of Cushing’s syndrome (for example, skin that 10 bruises easily, or muscle weakness in the shoulders or hips) 11 • development of male-associated characteristics (virilisation), such as 12 deepening of voice or enlargement of the clitoris (clitoromegaly) 13 • a serum total testosterone test result of at least 5 nmol per litre."
+    },
+    {
+      "chunkId": "nice2026-p12-3",
+      "page": 12,
+      "text": "[NICE 14 2026 and MU 2023; IG recommendation 1.7.4] 15 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 16 For details of the NICE committee’s discussion, see adaptation report 1: screening, 17 diagnostic and risk assessment and life stages. 18 1.5 Diagnosing PMOS after assessing for hyperandrogenism 19 and hyperandrogenaemia 20 1.5.1 Diagnose PMOS in people aged 10 and over if they have 21 hyperandrogenism or hyperandrogenaemia, or both: 22"
+    },
+    {
+      "chunkId": "nice2026-p13-1",
+      "page": 13,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 13 of 43 • in combination with either irregular or absent menstrual cycles (as 1 defined in recommendation 1.3.1 in the section on when to suspect 2 PMOS) and 3 • other causes have been excluded. [NICE 2026] 4 This recommendation, marked [NICE 2026], is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 5 For details of the NICE committee’s discussion, see adaptation report 1: screening, 6 diagnostic and risk assessment, and life stages."
+    },
+    {
+      "chunkId": "nice2026-p13-2",
+      "page": 13,
+      "text": "7 1.6 When it is not possible to diagnose PMOS in under 18s 8 1.6.1 Explain to 10- to 17-year-olds, and their families and carers if appropriate, 9 that it is not possible to diagnose PMOS if they have: 10 • irregular or absent menstrual cycles but do not have hyperandrogenism 11 or hyperandrogenaemia, or 12 • hyperandrogenism or hyperandrogenaemia (or both), but their 13 menstrual cycles are not defined as absent or irregular. 14 15 For definitions of irregular or absent menstrual cycles, see 16 recommendation 1.3.1 in the section on when to suspect PMOS."
+    },
+    {
+      "chunkId": "nice2026-p13-3",
+      "page": 13,
+      "text": "[NICE 17 2026 and MU 2023; IG recommendation 1.1.3] 18 1.6.2 If PMOS is suspected in a 10- to 17-year-old but it has not been possible 19 to diagnose the condition: 20 • provide ongoing support with symptom management and 21 • defer assessment for polycystic ovarian morphology until has been 22 8 years since their first period. [NICE 2026 and MU 2023; IG 23 recommendation 1.1.4] 24"
+    },
+    {
+      "chunkId": "nice2026-p14-1",
+      "page": 14,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 14 of 43 These recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 1 For details of the NICE committee’s discussion, see adaptation report 1: screening, 2 diagnostic and risk assessment, and life stages."
+    },
+    {
+      "chunkId": "nice2026-p14-2",
+      "page": 14,
+      "text": "3 1.7 Assessing for polycystic ovarian morphology 4 1.7.1 Assess for polycystic ovarian morphology in women, trans men and non- 5 binary people aged 18 or over who had their first period at least 8 years 6 ago and who have: 7 • irregular or absent menstrual cycles but do not have hyperandrogenism 8 or hyperandrogenaemia, or 9 • hyperandrogenism or hyperandrogenaemia (or both) but their 10 menstrual cycles are not defined as irregular or absent. 11 12 For definitions of irregular or absent menstrual cycles, see 13 recommendation 1.3.1 in the section on when to suspect PMOS. [NICE 14 2026] 15 1.7.2 Do not assess for polycystic ovarian morphology in 10- to 17-year-olds."
+    },
+    {
+      "chunkId": "nice2026-p14-3",
+      "page": 14,
+      "text": "16 [NICE 2026 and MU 2023; IG recommendations 1.4.6 and 1.5.4] 17 1.7.3 Offer ultrasound to women, trans men and non-binary people aged 18 or 18 over with suspected PMOS to assess for polycystic ovarian morphology if 19 symptoms or signs suggest another condition, or a co-existing condition 20 (for example, pelvic pain or abnormal uterine bleeding such as fewer than 21 4 cycles a year). [NICE 2026] 22 1.7.4 If symptoms or signs do not suggest another condition, or a co-existing 23 condition, offer either ultrasound or a serum anti-Müllerian hormone 24 (AMH) test to assess for polycystic ovarian morphology. [NICE 2026 and 25 MU 2023; IG recommendations 1.4.9 and 1.5.1] 26"
+    },
+    {
+      "chunkId": "nice2026-p15-1",
+      "page": 15,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 15 of 43 1.7.5 Do not use both ultrasound and an AMH test to check for polycystic 1 ovarian morphology. [NICE 2026 and MU 2023; IG recommendations 2 1.5.3 and 1.5.5] 3 1.7.6 If the woman, trans man or non-binary person is concerned about fertility, 4 explain that AMH levels alone do not predict their chance of having a 5 baby. See also the section on testing for female factor fertility problems in 6 NICE’s guideline on fertility problems. [NICE 2026] 7 Ultrasound 8 1.7.7 If using ultrasound to assess for polycystic ovarian morphology, offer: 9 • transvaginal ultrasound or 10 • abdominal ultrasound, if transvaginal ultrasound is declined or not 11 suitable."
+    },
+    {
+      "chunkId": "nice2026-p15-2",
+      "page": 15,
+      "text": "[NICE 2026 and MU 2023; IG recommendations 1.4.7 and 12 1.4.8] 13 1.7.8 Use follicle number per ovary (FNPO) as a marker if using transvaginal 14 ultrasound and image quality is sufficient for accurate assessment of 15 follicle counts throughout the entire ovary. [NICE 2026 and MU 2023; IG 16 recommendations 1.4.1 and 1.4.5] 17 1.7.9 Use follicle number per section (FNPS) or ovarian volume (OV) as a 18 marker if using: 19 • abdominal ultrasound or 20 • transvaginal ultrasound when it is not possible to use FNPO as a 21 marker."
+    },
+    {
+      "chunkId": "nice2026-p15-3",
+      "page": 15,
+      "text": "[NICE 2026 and MU 2023; IG recommendations 1.4.1 and 22 1.4.5] 23 1.7.10 Diagnose PMOS if other causes of polycystic ovarian morphology have 24 been excluded and ultrasound finds the following in at least 1 ovary: 25 • FNPO of 20 or more, or 26 • FNPS of 10 or more, or 27"
+    },
+    {
+      "chunkId": "nice2026-p16-1",
+      "page": 16,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 16 of 43 • an OV of 10 ml or more. [NICE 2026 and MU 2023; IG 1 recommendations 1.4.1, 1.4.4, 1.4.5, 1.4.8 and 1.5.1] 2 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 3 For details of the NICE committee’s discussion, see adaptation report 1: screening, 4 diagnostic and risk assessment, and life stages."
+    },
+    {
+      "chunkId": "nice2026-p16-2",
+      "page": 16,
+      "text": "5 1.8 Assessment for related health conditions or problems 6 1.8.1 After a diagnosis of PMOS, discuss and assess for related health 7 conditions or problems in line with the section on assessment and 8 management of related health conditions or problems. [NICE 2026 and 9 MU 2023; IG recommendations 1.8.2, 1.9.2, 1.10.2 and 1.11.1] 10 This recommendation, marked [NICE 2026 and MU 2023], is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 11 For details of the NICE committee’s discussion, see adaptation report 1: screening, 12 diagnostic and risk assessment, and life stages."
+    },
+    {
+      "chunkId": "nice2026-p16-3",
+      "page": 16,
+      "text": "13 Managing symptoms and signs of PMOS 14 Who this guideline covers 15 This guideline covers women, trans men and non-binary people aged 18 and over 16 who have not had, or are not having, gender-affirming hormone therapy or gender 17"
+    },
+    {
+      "chunkId": "nice2026-p17-1",
+      "page": 17,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 17 of 43 reassignment surgery (also referred to as gender-affirming surgery). It also covers 1 10- to 17-year-olds. 2 It does not cover trans men and non-binary people aged 18 and over who have had, 3 or are having, gender-affirming hormone therapy or gender reassignment surgery 4 and who may need specialist assessment and care. 5 1.9 Considerations for managing PMOS 6 1.9.1 When planning care, discuss management options that could help with 7 symptoms or signs that are affecting psychological or physical wellbeing 8 (for example, excess hair, hair loss, acne or weight gain)."
+    },
+    {
+      "chunkId": "nice2026-p17-2",
+      "page": 17,
+      "text": "[NICE 2026] 9 This recommendation, marked [NICE 2026], is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 10 For details of the NICE committee’s discussion, see adaptation report 4: 11 management of non-fertility features."
+    },
+    {
+      "chunkId": "nice2026-p17-3",
+      "page": 17,
+      "text": "12 Prescribing combined oral contraceptives 13 1.9.2 If prescribing a combined oral contraceptive to people aged 10 and over 14 for irregular menstrual cycles, or symptoms or signs of hyperandrogenism, 15 choose an option based on the: 16 • person’s priorities and preferences relating to menstruation, 17 contraception, or symptoms or signs of PMOS 18 • combined oral contraceptive’s safety profile, taking into account the 19 person’s individual risk factors in line with UK Medical Eligibility Criteria 20 for Contraceptive Use 21 • type and dose of oestrogen it contains (for specific dosing information, 22 see the recommendations on managing irregular menstrual cycles, 23 hirsutism and, for women, trans men and non-binary people aged 18 24 and over, hair loss with an androgen-dependent pattern) 25"
+    },
+    {
+      "chunkId": "nice2026-p18-1",
+      "page": 18,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 18 of 43 • type and dose of progestogen it contains, taking into account that some 1 types are more favourable than others for people with PMOS because 2 they have a low androgenic effect (such as desogestrel) or are anti- 3 androgenic (such as drospirenone or dienogest). [NICE 2026 and MU 4 2023; IG recommendation 4.2.3] 5 This recommendation, marked [NICE 2026 and MU 2023], is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 6 For details of the NICE committee’s discussion, see adaptation report 4: 7 management of non-fertility features."
+    },
+    {
+      "chunkId": "nice2026-p18-2",
+      "page": 18,
+      "text": "8 1.10 Irregular or absent menstrual cycles 9 For information about management options for absent menstrual cycles, see NICE’s 10 clinical knowledge summary on PCOS (now known as PMOS). 11 1.10.1 Consider a combined oral contraceptive for irregular menstrual cycles in 12 people aged 10 and over with PMOS. For guidance on choosing 13 treatment, see also the section on prescribing combined oral 14 contraceptives. [NICE 2026 and MU 2023; IG recommendations 4.2.1 15 and 4.2.2] 16 1.10.2 Start with a combined oral contraceptive containing the lowest effective 17 dose of oestrogen (for example, 20 to 30 micrograms of ethinylestradiol)."
+    },
+    {
+      "chunkId": "nice2026-p18-3",
+      "page": 18,
+      "text": "18 [NICE 2026 and MU 2023; IG recommendation 4.2.3] 19 1.10.3 For people aged 10 and over with PMOS who have prolonged 20 amenorrhoea or menstrual cycles lasting more than 90 days and who do 21 not want to take combined oral contraceptives, or if these are 22 contraindicated or not tolerated, offer 1 of the following to provide 23 sufficient protection against endometrial hyperplasia and endometrial 24 cancer: 25"
+    },
+    {
+      "chunkId": "nice2026-p19-1",
+      "page": 19,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 19 of 43 • cyclical progestogen 1 • progestogen-only oral contraceptives 2 • a progestogen-containing intrauterine system. [NICE 2026 and MU 3 2023; IG recommendation 4.2.6] 4 5 In July 2026, this was an off-label use in 10- to 17-year-olds of all 6 cyclical progestogens, progestogen-only oral contraceptives and 7 progestogen-containing intrauterine systems. For women, trans men 8 and non-binary people aged 18 and over, this was an off-label use of 9 some cyclical progestogens, some progestogen-only oral 10 contraceptives and all progestogen-containing intrauterine systems. 11 See NICE’s information on prescribing medicines."
+    },
+    {
+      "chunkId": "nice2026-p19-2",
+      "page": 19,
+      "text": "12 See also the section on endometrial hyperplasia and endometrial cancer. 13 These recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 14 For details of the NICE committee’s discussion, see adaptation report 4: 15 management of non-fertility features. 16 1.11 Symptoms and signs of hyperandrogenism 17 1.11.1 Monitor clinical signs of hyperandrogenism, including excess hair, acne, 18 and hair loss with an androgen-dependent pattern, for improvement or 19 treatment adjustment after starting treatment."
+    },
+    {
+      "chunkId": "nice2026-p19-3",
+      "page": 19,
+      "text": "[NICE 2026 and MU 2023; 20 IG recommendation 1.3.7] 21 This recommendation, marked [NICE 2026 and MU 2023], is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 22"
+    },
+    {
+      "chunkId": "nice2026-p20-1",
+      "page": 20,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 20 of 43 For details of the NICE committee’s discussion, see adaptation report 4: 1 management of non-fertility features. 2 Hirsutism 3 For information about further management options for hirsutism, including self- 4 management, see NICE’s clinical knowledge summary on hirsutism. 5 1.11.2 Cover self-management when discussing management options for 6 hirsutism with people aged 10 and over with PMOS, and their families and 7 carers if appropriate. [NICE 2026] 8 1.11.3 Consider a combined oral contraceptive for hirsutism in people aged 10 9 and over with PMOS. For guidance on choosing treatment, see also the 10 section on prescribing combined oral contraceptives."
+    },
+    {
+      "chunkId": "nice2026-p20-2",
+      "page": 20,
+      "text": "[NICE 2026 and MU 11 2023; IG recommendations 4.2.1 and 4.2.2] 12 13 In July 2026, this was an off-label use of combined oral contraceptives. 14 See NICE’s information on prescribing medicines. 15 1.11.4 Start with a combined oral contraceptive containing the lowest effective 16 dose of oestrogen (for example, 20 to 30 micrograms of ethinylestradiol). 17 [NICE 2026 and MU 2023; IG recommendation 4.2.3] 18 Further treatment options for adults 19 1.11.5 Consider spironolactone for hirsutism in women, trans men and non- 20 binary people aged 18 and over with PMOS who do not wish to take a 21 combined oral contraceptive, or if combined oral contraceptives are 22 contraindicated or not tolerated."
+    },
+    {
+      "chunkId": "nice2026-p20-3",
+      "page": 20,
+      "text": "[NICE 2026 and MU 2023; IG 23 recommendation 4.6.1] 24 25 In July 2026, this was an off-label use of spironolactone. See NICE’s 26 information on prescribing medicines. 27 1.11.6 If offering spironolactone, advise the woman, trans man or non-binary 28 person that they must use effective contraception because of the 29"
+    },
+    {
+      "chunkId": "nice2026-p21-1",
+      "page": 21,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 21 of 43 medicine’s teratogenic potential. [NICE 2026 and MU 2023; IG 1 recommendation 4.6.3] 2 1.11.7 If a combined oral contraceptive or self-management options, or both, are 3 ineffective after being used for at least 6 months, consider: 4 • spironolactone, ensuring that the woman, trans man or non-binary 5 person is advised about effective contraception in line with 6 recommendation 1.11.6 or 7 • co-cyprindiol. [NICE 2026 and MU 2023; IG recommendations 4.2.5 8 and 4.6.1] 9 10 In July 2026, this was an off-label use of spironolactone. See NICE’s 11 information on prescribing medicines."
+    },
+    {
+      "chunkId": "nice2026-p21-2",
+      "page": 21,
+      "text": "12 1.11.8 Start spironolactone at a dosage of 100 mg a day and, if this has not been 13 effective after at least 6 months, increase the dosage to 200 mg a day. 14 [NICE 2026] 15 1.11.9 Offer referral to an endocrinologist if: 16 • spironolactone has been ineffective after a year or 17 • both spironolactone and co-cyprindiol are contraindicated or not 18 tolerated."
+    },
+    {
+      "chunkId": "nice2026-p21-3",
+      "page": 21,
+      "text": "[NICE 2026] 19 Further treatment options for 10- to 17-year-olds 20 1.11.10 Offer a referral to an endocrinologist to 10- to 17-year-olds with PMOS 21 who have hirsutism if: 22 • they do not wish to take a combined oral contraceptive, or if combined 23 oral contraceptives are contraindicated or not tolerated, or 24 • a combined oral contraceptive or self-management options, or both, are 25 ineffective after being used for at least 6 months. [NICE 2026] 26 1.11.11 For further management of hirsutism in 10- to 17-year-olds with PMOS: 27"
+    },
+    {
+      "chunkId": "nice2026-p22-1",
+      "page": 22,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 22 of 43 • consider the options recommended in the section on further treatment 1 for adults and 2 • only initiate further management in specialist settings. [NICE 2026] 3 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 4 For details of the NICE committee’s discussion, see adaptation report 4: 5 management of non-fertility features."
+    },
+    {
+      "chunkId": "nice2026-p22-2",
+      "page": 22,
+      "text": "6 Mechanical laser and light therapies for hair reduction 7 NICE has not made a recommendation about mechanical laser and light therapies 8 for hair reduction. 9 NICE has not made a recommendation about mechanical laser and light therapies for hair reduction because of a lack of clinical evidence and the resultant uncertainty about cost-effectiveness. 10 For full details of the NICE committee’s discussion and its recommendation for 11 research on mechanical laser and light therapies for hair reduction, see adaptation 12 report 4: management of non-fertility features."
+    },
+    {
+      "chunkId": "nice2026-p22-3",
+      "page": 22,
+      "text": "13 Hair loss with an androgen-dependent pattern in adults 14 For information about further options for managing hair loss with an androgen- 15 dependent pattern, see NICE’s clinical knowledge summary on female pattern hair 16 loss. 17"
+    },
+    {
+      "chunkId": "nice2026-p23-1",
+      "page": 23,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 23 of 43 1.11.12 Consider spironolactone in combination with a combined oral 1 contraceptive for hair loss with an androgen-dependent pattern in women, 2 trans men and non-binary people aged 18 and over with PMOS. [NICE 3 2026 and MU 2023; IG recommendation 4.6.2] 4 5 In July 2026, this was an off-label use of spironolactone and combined 6 oral contraceptives. See NICE’s information on prescribing medicines. 7 1.11.13 If offering spironolactone in combination with a combined oral 8 contraceptive, advise the woman, trans man or non-binary person about 9 the importance of using effective contraception because of 10 spironolactone’s teratogenic potential."
+    },
+    {
+      "chunkId": "nice2026-p23-2",
+      "page": 23,
+      "text": "[NICE 2026 and MU 2023; IG 11 recommendation 4.6.2] 12 1.11.14 When offering spironolactone in combination with a combined oral 13 contraceptive: 14 • Start with a combination that includes a spironolactone dosage of 15 100 mg a day and, if this has not been effective after at least 6 months, 16 increase the spironolactone dosage to 200 mg a day. [NICE 2026] 17 • Start with a combined oral contraceptive that has the lowest effective 18 dose of oestrogen (for example, 20 to 30 micrograms of 19 ethinylestradiol). [NICE 2026 and MU 2023; IG recommendation 20 4.2.3] 21 1.11.15 Offer referral to a dermatologist if spironolactone in combination with a 22 combined oral contraceptive: 23 • has been ineffective after a year or 24 • is contraindicated or not tolerated."
+    },
+    {
+      "chunkId": "nice2026-p23-3",
+      "page": 23,
+      "text": "[NICE 2026] 25 The recommendations, or parts of recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023."
+    },
+    {
+      "chunkId": "nice2026-p24-1",
+      "page": 24,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 24 of 43 The recommendations, or parts of the recommendations, marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 1 For details of the NICE committee’s discussion, see adaptation report 4: 2 management of non-fertility features. 3 Acne 4 1.11.16 Manage acne vulgaris in people aged 10 and over with PMOS in line with 5 NICE’s guideline on acne vulgaris, especially the section on managing 6 acne vulgaris. [NICE 2026] 7 This recommendation, marked [NICE 2026], is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p24-2",
+      "page": 24,
+      "text": "8 For details of the NICE committee’s discussion, see adaptation report 4: 9 management of non-fertility features. 10 1.12 Metabolic health problems in adults 11 1.12.1 Consider metformin in women, trans men and non-binary people aged 18 12 and over with PMOS for metabolic health benefits (for example, to 13 encourage insulin sensitivity), particularly if they have metabolic 14 syndrome, impaired glucose tolerance or a BMI of 25 kg/m 2 or more, 15 recognising that the weight loss and lipid benefits of using metformin are 16 marginal. [NICE 2026 and MU 2023; IG recommendation 4.3.1] 17 18 In July 2026, this was an off-label use of metformin. See NICE’s 19 information on prescribing medicines. 20 1.12.2 If offering metformin: 21 • consider starting with modified-release metformin and 22"
+    },
+    {
+      "chunkId": "nice2026-p25-1",
+      "page": 25,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 25 of 43 • start metformin at 500 mg a day, and increase this dosage every 1 to 1 2 weeks by 500 mg a day increments up to a maximum dosage of 2 g a 2 day for modified-release metformin (or 2.5 g a day for immediate- 3 release metformin). [NICE 2026 and MU 2023; IG recommendation 4 4.3.4] 5 1.12.3 Advise women, trans men and non-binary people aged 18 and over with 6 PMOS that there is uncertainty about the clinical benefit of inositol for 7 metabolic health problems."
+    },
+    {
+      "chunkId": "nice2026-p25-2",
+      "page": 25,
+      "text": "[NICE 2026 and MU 2023; IG 8 recommendation 4.7.1] 9 For further guidance on the use of metformin relevant to people with PMOS, see 10 NICE’s guideline on prevention of type 2 diabetes in people at high risk and NICE’s 11 guideline on management of type 2 diabetes in adults. 12 These recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 13 For details of the NICE committee’s discussion, see adaptation report 4: 14 management of non-fertility features."
+    },
+    {
+      "chunkId": "nice2026-p25-3",
+      "page": 25,
+      "text": "15 1.13 Overweight and obesity 16 1.13.1 For people aged 10 and over with overweight or obesity who have PMOS, 17 offer interventions or programmes focusing on diet, physical activity or 18 behaviour change, as appropriate, in line with NICE’s guidelines on: 19 • overweight and obesity management, especially the sections on: 20 − identifying and assessing overweight, obesity and central adiposity 21 − discussing results and referral 22 − behavioural overweight and obesity management interventions 23 − physical activity and diet 24 − planning and commissioning services and interventions for all ages 25"
+    },
+    {
+      "chunkId": "nice2026-p26-1",
+      "page": 26,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 26 of 43 • for women, trans men and non-binary people aged 18 and over, 1 cardiovascular disease: risk assessment and reduction, including lipid 2 modification and preventing type 2 diabetes in people at high risk. 3 [NICE 2026] 4 1.13.2 When discussing diet and physical activity, explain that, for 5 anthropometric, metabolic, hormonal, reproductive or psychological 6 outcomes, there is: 7 • no evidence to suggest any type of healthy diet composition is better 8 than another and 9 • a lack of evidence to suggest any type and intensity of healthy exercise 10 is better than another."
+    },
+    {
+      "chunkId": "nice2026-p26-2",
+      "page": 26,
+      "text": "[NICE 2026 and MU 2023; IG 11 recommendations 3.3.1 and 3.4.1] 12 1.13.3 For guidance on the use of anti-obesity medications and bariatric surgery, 13 follow the section on medicines and surgery in NICE’s guideline on 14 managing overweight and obesity. [NICE 2026] 15 The recommendation marked [NICE 2026 and MU 2023] is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 16 For details of the NICE committee’s discussion, see adaptation report 3: lifestyle 17 management. 18"
+    },
+    {
+      "chunkId": "nice2026-p27-1",
+      "page": 27,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 27 of 43 Assessment and management of related health conditions 1 or problems 2 Who this guideline covers 3 This guideline covers women, trans men and non-binary people aged 18 and over 4 who have not had, or are not having, gender-affirming hormone therapy or gender 5 reassignment surgery (also referred to as gender-affirming surgery). It also covers 6 10- to 17-year-olds. 7 It does not cover trans men and non-binary people aged 18 and over who have had, 8 or are having, gender-affirming hormone therapy or gender reassignment surgery 9 and who may need specialist assessment and care."
+    },
+    {
+      "chunkId": "nice2026-p27-2",
+      "page": 27,
+      "text": "10 1.14 Depression and anxiety 11 1.14.1 When assessing people aged 10 and over with PMOS, recognise that: 12 • low mood, depression and moderate to severe depressive symptoms 13 are common in people of all ages who have PMOS and 14 • anxiety disorders and moderate to severe anxiety symptoms are 15 common in women, trans men and non-binary people aged 18 and over 16 with PMOS."
+    },
+    {
+      "chunkId": "nice2026-p27-3",
+      "page": 27,
+      "text": "[NICE 2026 and MU 2023; IG recommendations 2.2.1 17 and 2.2.2] 18 1.14.2 Identify, assess and manage: 19 • depressive symptoms and depression in line with NICE’s guidelines on 20 depression in adults, depression in adults with a chronic physical health 21 problem and depression in children and young people 22 • anxiety symptoms and anxiety disorders in line with NICE’s guidelines 23 on generalised anxiety disorder and panic disorder in adults and, for 24 people aged 10 and over, social anxiety disorder. [NICE 2026] 25"
+    },
+    {
+      "chunkId": "nice2026-p28-1",
+      "page": 28,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 28 of 43 The recommendation marked [NICE 2026 and MU 2023] is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendation marked [NICE 2026] is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 1 For details of the NICE committee’s discussion, see adaptation report 2: prevalence, 2 screening and management of psychological features and models of care. 3 1.15 Eating disorders and disordered eating 4 1.15.1 Identify, assess and manage eating disorders in line with NICE’s guideline 5 on eating disorders."
+    },
+    {
+      "chunkId": "nice2026-p28-2",
+      "page": 28,
+      "text": "[NICE 2026] 6 1.15.2 Do not exclude the possibility of an eating disorder or disordered eating in 7 people aged 10 or over with PMOS solely because of their weight. [NICE 8 2026 and MU 2023; IG recommendation 2.5.1] 9 The recommendation marked [NICE 2026 and MU 2023] is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendation marked [NICE 2026] is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 10 For details of the NICE committee’s discussion, see adaptation report 2: prevalence, 11 screening and management of psychological features and models of care."
+    },
+    {
+      "chunkId": "nice2026-p28-3",
+      "page": 28,
+      "text": "12 1.16 Cardiovascular disease in adults 13 1.16.1 Discuss cardiovascular risk after making a diagnosis of PMOS, explaining 14 that, while women, trans men and non-binary people aged 18 and over 15"
+    },
+    {
+      "chunkId": "nice2026-p29-1",
+      "page": 29,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 29 of 43 with PMOS are likely to be at an increased risk of developing 1 cardiovascular disease (CVD), the overall risk before menopause is low. 2 [NICE 2026 and MU 2023; IG recommendation 1.8.1] 3 1.16.2 Consider a full lipid profile after diagnosing PMOS in women, trans men 4 and non-binary people aged 18 and over, regardless of their age and BMI. 5 [NICE 2026 and MU 2023; IG recommendation 1.8.3] 6 1.16.3 Follow the recommendations in NICE’s guideline on CVD: risk 7 assessment and reduction, including lipid modification on: 8 • identifying and assessing CVD risk in adults without established CVD 9 and 10 • primary and secondary prevention of CVD."
+    },
+    {
+      "chunkId": "nice2026-p29-2",
+      "page": 29,
+      "text": "[NICE 2026] 11 1.16.4 If the woman, trans man or non-binary person does not meet the criteria 12 for being at high risk of CVD in line with NICE’s guideline on CVD, provide 13 advice on ways to prevent CVD (such as through a healthy diet, regular 14 physical activity and stopping smoking). [NICE 2026] 15 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p29-3",
+      "page": 29,
+      "text": "16 For details of the NICE committee’s discussion, see adaptation report 1: screening, 17 diagnostic and risk assessment, and life stages. 18 1.17 Impaired fasting glucose, impaired glucose tolerance and 19 type 2 diabetes 20 1.17.1 Explain to people aged 10 and over with PMOS, and their families and 21 carers as appropriate, that women, trans men and non-binary people 22"
+    },
+    {
+      "chunkId": "nice2026-p30-1",
+      "page": 30,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 30 of 43 aged 18 and over with PMOS have a higher risk of developing impaired 1 fasting glucose, impaired glucose tolerance and type 2 diabetes 2 regardless of their age and BMI. [NICE 2026 and MU 2023; IG 3 recommendation 1.9.1] 4 1.17.2 Assess glycaemic status after diagnosing PMOS in people aged 10 and 5 over. For women, trans men and non-binary people aged 18 and over, 6 also see NICE’s guideline on preventing type 2 diabetes in people at high 7 risk. [NICE 2026 and MU 2023; IG recommendation 1.9.2] 8 1.17.3 Offer either HbA1c testing or fasting plasma glucose to people aged 10 9 and over with PMOS."
+    },
+    {
+      "chunkId": "nice2026-p30-2",
+      "page": 30,
+      "text": "See also NICE’s guidelines on diabetes (type 1 and 10 type 2) in children and young people, preventing type 2 diabetes in people 11 at high risk and managing type 2 diabetes in adults. [NICE 2026 and MU 12 2023; IG recommendation 1.9.10] 13 The recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 14 For details of the NICE committee’s discussion, see adaptation report 1: screening, 15 diagnostic and risk assessment, and life stages. 16 1.18 Obstructive sleep apnoea in adults 17 1.18.1 Explain that obstructive sleep apnoea is common in women, trans men 18 and non-binary people aged 18 and over with PMOS regardless of BMI."
+    },
+    {
+      "chunkId": "nice2026-p30-3",
+      "page": 30,
+      "text": "19 [NICE 2026 and MU 2023; IG recommendation 1.10.1] 20 1.18.2 Assess women, trans men and non-binary people aged 18 and over with 21 PMOS for symptoms of obstructive sleep apnoea. See also NICE’s 22 guideline on obstructive sleep apnoea/hypopnoea syndrome for 23 recommendations on when to assess for, and about managing, the 24 condition. [NICE 2026 and MU 2023; IG recommendation 1.10.2] 25"
+    },
+    {
+      "chunkId": "nice2026-p31-1",
+      "page": 31,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 31 of 43 These recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 1 For details of the NICE committee’s discussion, see adaptation report 1: screening, 2 diagnostic and risk assessment, and life-stages."
+    },
+    {
+      "chunkId": "nice2026-p31-2",
+      "page": 31,
+      "text": "3 1.19 Endometrial hyperplasia and endometrial cancer in adults 4 1.19.1 Explain that women, trans men and non-binary people aged 18 and over 5 with PMOS who have not experienced menopause have a higher risk of 6 developing endometrial hyperplasia and of developing endometrial cancer 7 when compared with those who do not have PMOS, but that the overall 8 likelihood of developing endometrial cancer is low. [NICE 2026 and MU 9 2023; IG recommendations 1.11.1 and 1.11.2] 10 1.19.2 Discuss strategies to prevent endometrial hyperplasia and endometrial 11 cancer, including strategies related to weight management, healthy 12 eating, regular physical activity, menstrual cycle regulation and regular 13 progestogen therapy."
+    },
+    {
+      "chunkId": "nice2026-p31-3",
+      "page": 31,
+      "text": "[NICE 2026 and MU 2023; IG recommendation 14 1.11.4] 15 1.19.3 If excessive endometrial thickness is detected as an incidental finding on 16 an ultrasound, refer for biopsy with histological analysis and offer regular 17 progestogen therapy or a combined oral contraceptive, for endometrial 18 protection. [NICE 2026 and MU 2023; IG recommendation 1.11.5] 19 20 In July 2026, this was an off-label use of progestogen therapy and 21 combined oral contraceptives. See NICE’s information on prescribing 22 medicines. 23 These recommendations, marked [NICE 2026 and MU 2023], are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023."
+    },
+    {
+      "chunkId": "nice2026-p32-1",
+      "page": 32,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 32 of 43 1 For details of the NICE committee’s discussion, see adaptation report 1: screening, 2 diagnostic and risk assessment, and life stages. 3 Fertility and pregnancy 4 Who this guideline covers 5 This guideline covers women, trans men and non-binary people aged 18 and over 6 who have not had, or are not having, gender-affirming hormone therapy or gender 7 reassignment surgery (also referred to as gender-affirming surgery). It also covers 8 10- to 17-year-olds. 9 It does not cover trans men and non-binary people aged 18 and over who have had, 10 or are having, gender-affirming hormone therapy or gender reassignment surgery 11 and who may need specialist assessment and care."
+    },
+    {
+      "chunkId": "nice2026-p32-2",
+      "page": 32,
+      "text": "12 1.20 Discussing fertility 13 1.20.1 Provide reassurance that, while PMOS is linked to an increased risk of 14 fertility problems, it is often possible to conceive with or without medical 15 assistance. [NICE 2026] 16 This recommendation, marked [NICE 2026], is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 17 For details of the NICE committee’s discussion, see adaptation report 5: assessment 18 and treatment of infertility. 19 1.21 Fertility problems 20 Optimising fertility and investigating fertility problems 21 1.21.1 To optimise fertility, give advice to women, trans men and non-binary 22 people aged 18 and over planning a pregnancy on weight, blood 23"
+    },
+    {
+      "chunkId": "nice2026-p33-1",
+      "page": 33,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 33 of 43 pressure, smoking, alcohol, diet and nutrition, folate supplementation, 1 exercise, sleep, mental health and sexual health. See also the section on 2 initial advice to people concerned about delays in conception in NICE’s 3 guideline on fertility problems. [NICE 2026 and MU 2023; IG 4 recommendations 5.1.1 and 5.1.2] 5 1.21.2 Offer to investigate fertility problems in line with the section on 6 investigation of fertility problems and management strategies in NICE’s 7 guideline on fertility problems."
+    },
+    {
+      "chunkId": "nice2026-p33-2",
+      "page": 33,
+      "text": "[NICE 2026 and MU 2023; IG 8 recommendations 5.1.1 and 5.1.2] 9 1.21.3 For women, trans men and non-binary people aged 18 and over with 10 overweight or obesity who have PMOS: 11 • explain that losing weight alone may restore ovulation, improve 12 response to ovulation induction agents, and have a positive impact on 13 pregnancy outcomes, and [NICE 2013] 14 • provide advice on weight loss in relation to fertility problems as part of a 15 package of support and interventions in line with the section on 16 managing overweight and obesity and NICE’s guideline on managing 17 overweight and obesity."
+    },
+    {
+      "chunkId": "nice2026-p33-3",
+      "page": 33,
+      "text": "[NICE 2026] 18 Fertility problems and medicines for overweight and obesity 19 1.21.4 Ensure that wash-out periods are observed for any of the medicines in the 20 recommendations on medicines for adults in NICE’s guideline on 21 managing overweight and obesity before starting fertility treatment in 22 women, trans men and non-binary people aged 18 and over with PMOS. 23 [NICE 2026] 24 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations, or parts of recommendations, marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in"
+    },
+    {
+      "chunkId": "nice2026-p34-1",
+      "page": 34,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 34 of 43 the UK related to PMOS and associated conditions. The advice on weight loss in recommendation 1.21.3, marked [NICE 2013], is partly adapted from a recommendation which was previously in NICE’s guideline on fertility problems. 1 For details of the NICE committee’s discussion, see adaptation report 5: assessment 2 and treatment of infertility. 3 Ovulation induction in specialist settings 4 1.21.5 Offer ovulation induction treatment to women, trans men and non-binary 5 people aged 18 and over with PMOS who have anovulatory infertility and 6 no other infertility factors (see the sections on first-line and second-line 7 treatments)."
+    },
+    {
+      "chunkId": "nice2026-p34-2",
+      "page": 34,
+      "text": "[NICE 2026 and MU 2023; IG recommendation 5.3.1, 8 5.4.3.1, 5.4.5.1, 5.5.5 and 5.6.1] 9 1.21.6 Before starting first-line ovulation induction treatment, agree an 10 individualised treatment plan for women, trans men and non-binary people 11 aged 18 and over with PMOS. This should cover the need to adjust the 12 dose and treatment depending on response, and the possibility of needing 13 additional treatment if either ovulation or conception do not occur. [NICE 14 2026] 15 1.21.7 Do not deny access to ovulation induction treatment based on BMI alone 16 if BMI is less than 40 kg/m 2. [NICE 2026] 17 1.21.8 Ensure ovulation induction treatment is provided in a way that minimises 18 the risk of multiple pregnancy."
+    },
+    {
+      "chunkId": "nice2026-p34-3",
+      "page": 34,
+      "text": "[NICE 2026] 19 First-line treatment 20 1.21.9 Offer letrozole to women, trans men and non-binary people aged 18 and 21 over with PMOS who have anovulatory infertility and no other infertility 22 factors. [NICE 2026 and MU 2023; IG recommendations 5.3.1 and 23 5.4.5.1] 24 25"
+    },
+    {
+      "chunkId": "nice2026-p35-1",
+      "page": 35,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 35 of 43 In July 2026, this was an off-label use of letrozole. See NICE’s information 1 on prescribing medicines. 2 1.21.10 Offer letrozole to induce ovulation in 2.5 mg increments and adjust the 3 dose and duration of treatment depending on ovarian response. [NICE 4 2026] 5 1.21.11 If letrozole is contraindicated or not tolerated, offer either of the following 6 options: 7 • clomifene citrate and metformin 8 • clomifene citrate. [NICE 2026 and MU 2023; IG recommendations 9 5.4.2.1 and 5.4.3.1] 10 11 In July 2026, this was an off-label use of metformin. See NICE’s 12 information on prescribing medicines."
+    },
+    {
+      "chunkId": "nice2026-p35-2",
+      "page": 35,
+      "text": "13 1.21.12 If using clomifene citrate and metformin: 14 • consider starting with a combination containing modified-release 15 metformin and 16 • for metformin, start with 500 mg a day and increase this dosage every 17 1 to 2 weeks by 500 mg increments up to a maximum dosage of 2 g a 18 day, and 19 • for clomifene citrate, start with 50 mg a day and increase this dosage 20 by 50 mg increments up to a maximum dosage of 150 mg. [NICE 2026] 21 1.21.13 Do not continue treatment with clomifene citrate, either alone or combined 22 with metformin, for longer than 6 cycles. [NICE 2013] 23 Second-line treatment 24 1.21.14 If first-line ovulation induction treatment has not induced ovulation, offer 25 gonadotrophins."
+    },
+    {
+      "chunkId": "nice2026-p35-3",
+      "page": 35,
+      "text": "[NICE 2026 and MU 2023; IG recommendation 5.5.5] 26 27 In July 2026, this was an off-label use of gonadotrophins if used following 28"
+    },
+    {
+      "chunkId": "nice2026-p36-1",
+      "page": 36,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 36 of 43 treatment with letrozole. See NICE’s information on prescribing 1 medicines. 2 1.21.15 Consider laparoscopic ovarian diathermy if an alternative to 3 gonadotrophins is needed. [NICE 2026 and MU 2023; IG 4 recommendation 5.6.1] 5 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendations marked [NICE 2026] are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p36-2",
+      "page": 36,
+      "text": "The recommendation marked [NICE 2013] is adapted from a recommendation which was previously in NICE’s guideline on fertility problems. 6 The NICE committee’s discussion is in adaptation report 5: assessment and 7 treatment of infertility. 8 IVF 9 1.21.16 Offer in vitro fertilisation (IVF) to women, trans men and non-binary people 10 aged 18 and over with PMOS and fertility problems if they meet the 11 access criteria for IVF in NICE’s guideline on fertility problems. [NICE 12 2026] 13 1.21.17 Perform IVF in line with the section on procedures used during IVF in 14 NICE’s guideline on fertility problems."
+    },
+    {
+      "chunkId": "nice2026-p36-3",
+      "page": 36,
+      "text": "[NICE 2026] 15 These recommendations, marked [NICE 2026], are based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions. 16"
+    },
+    {
+      "chunkId": "nice2026-p37-1",
+      "page": 37,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 37 of 43 For details of the NICE committee’s discussion, see adaptation report 5: assessment 1 and treatment of infertility. 2 Inositol 3 1.21.18 Advise that inositol is not effective for fertility problems in women, trans 4 men and non-binary people aged 18 and over with PMOS. [NICE 2026 5 and MU 2023; IG recommendation 5.8.1] 6 This recommendation, marked [NICE 2026 and MU 2023], is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 7 For details of the NICE committee’s discussion, see adaptation report 5: assessment 8 and treatment of infertility."
+    },
+    {
+      "chunkId": "nice2026-p37-2",
+      "page": 37,
+      "text": "9 Medicines only to be used in research 10 1.21.19 Do not use any of the medicines recommended in the section on 11 medicines and surgery in NICE’s guideline on managing overweight and 12 obesity for treating fertility problems unless as part of research into their 13 efficacy and safety when used for reproductive outcomes. [NICE 2026 14 and MU 2023; IG recommendation 5.9.1] 15 This recommendation, marked [NICE 2026 and MU 2023], is the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. 16 For details of the NICE committee’s discussion, see adaptation report 5: assessment 17 and treatment of infertility. 18"
+    },
+    {
+      "chunkId": "nice2026-p38-1",
+      "page": 38,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 38 of 43 1.22 Pregnancy 1 Pregnancy outcomes 2 1.22.1 Explain to women, trans men and non-binary people aged 18 and over 3 who are planning a pregnancy that they, and their baby, have a higher risk 4 of developing the following conditions or complications during pregnancy 5 but that, if needed, these will be assessed and they will be offered 6 monitoring and management: 7 • gestational diabetes 8 • gestational weight gain 9 • hypertension in pregnancy and pre-eclampsia 10 • having a baby affected by intrauterine growth restriction 11 • miscarriage 12 • having a baby with a low birth weight 13 • preterm delivery 14 • having a baby who is small for their gestational age."
+    },
+    {
+      "chunkId": "nice2026-p38-2",
+      "page": 38,
+      "text": "[NICE 2026 and 15 MU 2023; IG recommendation 4.10.2] 16 1.22.2 During pregnancy, assess and monitor for the risks, conditions and 17 complications in recommendation 1.22.1. [NICE 2026 and MU 2023; IG 18 recommendation 4.10.1] 19 1.22.3 Provide care before, during and after pregnancy in line with NICE’s 20 guidelines on: 21 • antenatal care 22 • intrapartum care 23 • intrapartum care for women with existing medical conditions or obstetric 24 complications and their babies 25 • postnatal care 26 • preterm labour and birth 27 • diabetes in pregnancy 28 • hypertension in pregnancy. [NICE 2026] 29"
+    },
+    {
+      "chunkId": "nice2026-p39-1",
+      "page": 39,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 39 of 43 Metformin use in pregnancy 1 1.22.4 To reduce preterm delivery and limit excess gestational weight gain, 2 consider metformin during pregnancy in women, trans men and non- 3 binary people aged 18 and over with PMOS who have additional risk 4 factors for either of these complications, such as people who have had a 5 preterm baby, or experienced marked, excess gestational weight gain. 6 [NICE 2026 and MU 2023; IG recommendation 4.11.2] 7 8 In July 2026 this was an off-label use of metformin. See NICE’s 9 information on prescribing medicines."
+    },
+    {
+      "chunkId": "nice2026-p39-2",
+      "page": 39,
+      "text": "10 1.22.5 Explain that metformin use in pregnant women with PMOS has not been 11 shown to prevent the following: 12 • gestational diabetes 13 • second trimester pregnancy loss 14 • hypertension during pregnancy 15 • pre-eclampsia 16 • macrosomia or a birth weight of more than 4,000 g. [NICE 2026 and 17 MU 2023; IG recommendation 4.11.1] 18 The recommendations marked [NICE 2026 and MU 2023] are the result of adapting Monash University’s international evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023. The recommendation marked [NICE 2026] is based on the NICE committee's knowledge and experience of clinical practice in the UK related to PMOS and associated conditions."
+    },
+    {
+      "chunkId": "nice2026-p39-3",
+      "page": 39,
+      "text": "19 For details of the NICE committee’s discussion, see adaptation report 4: 20 management of non-fertility features. 21"
+    },
+    {
+      "chunkId": "nice2026-p40-1",
+      "page": 40,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 40 of 43 Terms used in this guideline 1 This section defines terms that have been used in a particular way for this guideline. 2 For other definitions see the NICE glossary and the Think Local, Act Personal Care 3 and Support Jargon Buster. 4 Effective contraception 5 Methods designated by the MHRA as ‘effective’ or ‘highly effective’ based on their 6 failure rates in typical use in the first year. Barrier methods like condoms are not 7 designated by the MHRA as ‘effective’ or ‘highly effective’. See the MHRA’s drug 8 safety update on medicines with teratogenic potential: what is effective contraception 9 and how often is pregnancy testing needed?"
+    },
+    {
+      "chunkId": "nice2026-p40-2",
+      "page": 40,
+      "text": "10 Full lipid profile 11 This involves taking a blood sample to measure total cholesterol, HDL cholesterol 12 and triglyceride levels and then calculating non-HDL cholesterol and LDL cholesterol 13 (a fasting sample is not mandated). LDL cholesterol results may not be reported in 14 participants with triglyceride levels more than 4.5 mmol per litre or 9 mmol per litre 15 depending on the formula used by local laboratories. 16 Hyperandrogenaemia 17 Abnormally high levels of androgen in the blood. Hyperandrogenaemia is sometimes 18 referred to as biochemical hyperandrogenism. 19 Hyperandrogenism 20 Symptoms and signs that suggest there are higher androgen levels in the body, such 21 as hirsutism, moderate to severe acne, or hair loss with an androgen-dependent 22 pattern."
+    },
+    {
+      "chunkId": "nice2026-p40-3",
+      "page": 40,
+      "text": "Hyperandrogenism is sometimes referred to as clinical hyperandrogenism. 23 Recommendations for research 24 The NICE committee for this guideline has made a recommendation for research on 25 mechanical laser and light therapies for hair reduction, an area where NICE carried 26 out its own economic evaluation and resource impact assessment. For details, see 27 adaptation report 4: management of non-fertility features. 28"
+    },
+    {
+      "chunkId": "nice2026-p41-1",
+      "page": 41,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 41 of 43 NICE has not made any other recommendations for research. This is because NICE 1 did not carry out any original systematic reviews when producing this guideline and 2 making recommendations for research would have duplicated the effort of adapting 3 Monash University’s international evidence-based guideline for the assessment and 4 management of polycystic ovary syndrome 2023, which identified research priorities. 5 The James Lind Alliance has also completed a Priority Setting Exercise on PCOS, 6 which was informed by the uncertainties identified in the Monash University 7 guideline."
+    },
+    {
+      "chunkId": "nice2026-p41-2",
+      "page": 41,
+      "text": "8 Finding more information and committee details 9 To find NICE guidance on related topics, including guidance in development, see the 10 NICE topic page on metabolic conditions. 11 For details of the guideline committee see the committee member list. 12 ISBN: 978-1-4731-9577-6 13 Acknowledgement, territorial application and copyright 14 Acknowledgement 15 These recommendations draw on the international evidence-based guideline for the 16 assessment and management of polycystic ovary syndrome 2023 (PCOS guideline), 17 produced by Monash University, Australia. 18 The PCOS guideline is subject to regular review and updating. Monash University 19 accepts no responsibility for the use of its content in this publication. 20 Territorial application 21 This NICE guideline is for the UK only."
+    },
+    {
+      "chunkId": "nice2026-p41-3",
+      "page": 41,
+      "text": "It has been adapted from the international 22 evidence-based guideline for the assessment and management of polycystic ovary 23 syndrome 2023, produced by Monash University and partners. 24"
+    },
+    {
+      "chunkId": "nice2026-p42-1",
+      "page": 42,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 42 of 43 Copyright 1 NICE owns the copyright in all recommendations labelled [NICE 2026]. For 2 recommendations labelled [NICE 2026 and MU 2023], NICE owns the copyright in 3 the format, typographical arrangement and branding of the recommendations, but 4 the copyright in elements of content is owned by Monash University, Melbourne, 5 Australia, 2023. 6 All content whose copyright is owned by Monash University is reproduced with 7 permission from Monash University. 8 International guideline copyright information 9 © Monash University 10 Paper-based publication: This work is subject to copyright."
+    },
+    {
+      "chunkId": "nice2026-p42-2",
+      "page": 42,
+      "text": "Apart from any use 11 permitted under the Copyright Act 1968, no part may be reproduced by any process 12 without written permission from Monash University (helena.teede@monash.edu). 13 Elements of this guideline were updated from the 2018 PCOS guideline and are 14 included here with permission. 15 Electronic documents: This work is subject to copyright. You may download, print 16 and link to this material in unaltered form only (retaining this notice) for your personal 17 use or use within your organisation. Apart from any use as permitted under the 18 Copyright Act 1968, all other rights are reserved."
+    },
+    {
+      "chunkId": "nice2026-p42-3",
+      "page": 42,
+      "text": "Copies of the guideline and the 19 technical report containing all relevant evidence are freely accessible at: 20 • Monash University’s webpage for the international evidence-based guideline for 21 the assessment and management of polycystic ovary syndrome 2023 and its 22 supporting documents 23 • Monash University’s international evidence-based guideline for the assessment 24 and management of polycystic ovary syndrome 2023 25 • Technical report for the international evidence-based guideline for the assessment 26 and management of polycystic ovary syndrome 2023 27 Suggested citation: Helena Teede et al. 28"
+    },
+    {
+      "chunkId": "nice2026-p43-1",
+      "page": 43,
+      "text": "DRAFT FOR CONSULTATION Polyendocrine metabolic ovarian syndrome: NICE guideline DRAFT (July 2026) 43 of 43 International evidence-based guideline for the assessment and management of 1 polycystic ovary syndrome 2023. Monash University. 2 Copyright Monash University, 3 Melbourne, Australia 2023 4 Monash University ISBN: 978-0-6458209-0-4. 5"
+    }
+  ]
+}

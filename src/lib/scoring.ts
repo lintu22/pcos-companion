@@ -20,13 +20,22 @@ export const RecommendationSchema = z.object({
   communityRecommendationId: z.string().optional(),
 });
 
+// Supplements get their own schema/section (rather than being folded into
+// RecommendationSchema) so the UI can show them in a clearly separate area
+// with a safety disclaimer. Always research-grounded — citationIds must
+// resolve to a real citation, same hard rule as everything else.
+export const SupplementSchema = z.object({
+  text: z.string(),
+  citationIds: z.array(z.string()),
+});
+
 export const ProfileAnalysisSchema = z.object({
   likelihoodPercent: z
     .number()
     .min(0)
     .max(97)
     .describe(
-      "Estimated likelihood the described symptom pattern is consistent with PCOS, as a screening signal only — never a diagnosis."
+      "Estimated likelihood the described symptom pattern is consistent with PMOS (formerly known as PCOS), as a screening signal only — never a diagnosis."
     ),
   confidenceNote: z
     .string()
@@ -41,6 +50,11 @@ export const ProfileAnalysisSchema = z.object({
     .array(RecommendationSchema)
     .describe(
       "2-5 actionable suggestions for the user's dominant symptoms, each grounded in either the research recommendation list (source: research, with citationIds) or the community recommendation list (source: community, with communityRecommendationId). Never invent a suggestion beyond these two lists."
+    ),
+  supplements: z
+    .array(SupplementSchema)
+    .describe(
+      "0-3 dietary supplement suggestions for the user's dominant symptoms, picked only from the provided supplement reference list, each with citationIds from that entry. Never invent a supplement or claim beyond that list; omit entirely if nothing in the list is relevant."
     ),
   summary: z.string().describe("A warm, empowering 2-3 sentence summary written directly to the user."),
 });
@@ -106,7 +120,7 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
 
   const insights = dominant.slice(0, 5).map((symptomKey) => {
     const info = getSymptomInfo(symptomKey);
-    const statement = info?.insights[0] ?? "This symptom is tracked in current PCOS literature.";
+    const statement = info?.insights[0] ?? "This symptom is tracked in current PMOS literature.";
     const citationIds = info?.citations ?? [];
     return { symptom: symptomKey, statement, citationIds };
   });
@@ -119,6 +133,14 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     }
     for (const rec of COMMUNITY_RECOMMENDATIONS.filter((r) => r.symptom === symptomKey)) {
       recommendations.push({ text: rec.suggestion, source: "community", citationIds: [], communityRecommendationId: rec.id });
+    }
+  }
+
+  const supplements: ProfileAnalysis["supplements"] = [];
+  for (const symptomKey of dominant) {
+    const info = getSymptomInfo(symptomKey);
+    for (const sup of info?.supplements ?? []) {
+      supplements.push({ text: sup.text, citationIds: sup.citations });
     }
   }
 
@@ -135,8 +157,9 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     dominantSymptoms: dominant,
     insights,
     recommendations: recommendations.slice(0, 5),
+    supplements: supplements.slice(0, 3),
     summary: dominantLabels
-      ? `Your answers show a pattern most consistent with ${dominantLabels}. That combination shows up often in PCOS research, and there's solid evidence behind ways to understand and manage it.`
+      ? `Your answers show a pattern most consistent with ${dominantLabels}. That combination shows up often in PMOS research, and there's solid evidence behind ways to understand and manage it.`
       : "Your answers don't show a strong symptom pattern yet — that's genuinely useful information too. Keep checking in as things change.",
   };
 }

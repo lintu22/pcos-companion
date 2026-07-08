@@ -4,6 +4,11 @@
 //
 // To add a new PDF: run the ingestion script, then add its id below.
 import jiskoot2022 from "../../pdf-sources/processed/jiskoot2022.json";
+import barber2021 from "../../pdf-sources/processed/barber2021.json";
+import han2024 from "../../pdf-sources/processed/han2024.json";
+import moinijazani2019 from "../../pdf-sources/processed/moinijazani2019.json";
+import nhs2026medicines from "../../pdf-sources/processed/nhs2026medicines.json";
+import nice2026 from "../../pdf-sources/processed/nice2026.json";
 import { CITATIONS, Citation } from "./research-data";
 
 export interface PdfChunk {
@@ -26,7 +31,14 @@ export interface PdfDoc {
 }
 
 // Add newly-ingested PDFs to this list (import the JSON above, then list it here).
-const PDF_DOCS: PdfDoc[] = [jiskoot2022 as PdfDoc];
+const PDF_DOCS: PdfDoc[] = [
+  jiskoot2022 as PdfDoc,
+  barber2021 as PdfDoc,
+  han2024 as PdfDoc,
+  moinijazani2019 as PdfDoc,
+  nhs2026medicines as PdfDoc,
+  nice2026 as PdfDoc,
+];
 
 export const PDF_CITATIONS: Record<string, Citation> = Object.fromEntries(
   PDF_DOCS.map((doc) => [

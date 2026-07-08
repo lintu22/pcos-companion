@@ -1,4 +1,11 @@
-# PCOS Companion — How It Works (Team Guide)
+# PMOS Companion — How It Works (Team Guide)
+
+> **Naming note:** PCOS was renamed to PMOS (polyendocrine metabolic ovarian
+> syndrome) in 2026 — see NICE's draft guideline, ingested as `nice2026` in
+> our PDF sources. Our app copy, prompts, and our own written insight text
+> use "PMOS" going forward. We do **not** rewrite the titles of real,
+> published papers (many predate the rename and literally say "PCOS" in
+> their title) — those stay verbatim as bibliographic citations should.
 
 This doc explains the app in plain language: what happens when a user goes
 through it, exactly what we tell the AI, where our "facts" come from, and how
@@ -191,6 +198,28 @@ both sources:**
 This is why every recommendation on the Profile page carries a visible tag —
 "Research-backed" (with a clickable source) or "From the community" (with a
 real % and its own basis) — there is no third, ungrounded kind.
+
+---
+
+## 2.7. Supplements — a separate, more cautious area
+
+Dietary supplements (e.g. myo-inositol, vitamin D) get their own card on the
+Profile page, "Supplements the research points to," kept deliberately apart
+from the general "What might help" recommendations. Two reasons: supplements
+carry different risks (interactions, contraindications in pregnancy), and we
+want a clearly visible safety disclaimer next to them, not folded into a
+generic list.
+
+The grounding rule is identical to research recommendations — every
+supplement suggestion lives in `research-data.ts` as a `supplements` list on
+a symptom, each entry citing a real source (currently the Han et al. 2024
+dietary-supplements review). Same three-layer pattern: the full list is
+pasted into the prompt with a "never invent a supplement or claim" rule
+(Layer 1+2), and the Profile page drops any supplement whose citations don't
+resolve in `ALL_CITATIONS` (Layer 3). The card also always ends with a fixed
+disclaimer to check with a doctor or pharmacist before starting anything —
+that text is hardcoded, not AI-generated, so it can never be dropped or
+reworded by the model.
 
 ---
 
@@ -393,6 +422,12 @@ with a unique `id`, which `symptom` it applies to, the `suggestion` text, an
 illustrative `percentReportingHelpful`, and which `FORUM_POSTS` ids it's
 based on (for traceability).
 
+### To add or edit a supplement suggestion
+Same file (`research-data.ts`) → find the symptom in `SYMPTOMS` → add/edit its
+`supplements` list. Same shape as recommendations (`text` + `citations`), but
+rendered in the separate, disclaimer-bearing "Supplements the research points
+to" card rather than "What might help" — see §2.7.
+
 ### To change the 5 intake questions
 Open `src/lib/questions.ts` → `INTAKE_QUESTIONS` → edit the `prompt` (the
 question text) or `helper` (the small grey subtext) for any of the 5
@@ -419,17 +454,17 @@ about different things, etc.
 
 | File | What it controls |
 |---|---|
-| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic + PDF excerpt injection + recommendation grounding |
-| `src/lib/scoring.ts` | The answer template (schema) + fallback scoring formula + fallback recommendations |
-| `src/lib/research-data.ts` | **The dataset**: citations + symptoms + insights + research-backed recommendations |
+| `src/app/api/analyze/route.ts` | The AI prompt + fallback trigger logic + PDF excerpt injection + recommendation/supplement grounding |
+| `src/lib/scoring.ts` | The answer template (schema) + fallback scoring formula + fallback recommendations/supplements |
+| `src/lib/research-data.ts` | **The dataset**: citations + symptoms + insights + research-backed recommendations + supplements |
 | `scripts/ingest-pdf.mjs` | Turns a PDF into searchable text chunks (§3.5) |
-| `pdf-sources/raw/` | Where you drop the original PDF files |
+| `pdf-sources/raw/` | Where you drop the original PDF files (incl. `nice2026.pdf`, the 2026 PMOS rename source) |
 | `pdf-sources/processed/` | The extracted chunks (auto-generated, do not hand-edit) |
 | `src/lib/pdf-sources.ts` | Registers ingested PDFs, merges their citations, does the keyword search |
 | `src/lib/community-data.ts` | **Mock dataset**: community stats + forum posts + community-reported recommendations |
 | `src/lib/questions.ts` | The 5 intake questions + 2 free-text prompts |
 | `src/lib/storage.ts` | Saves the user's profile/check-ins on their own device |
 | `src/app/intake/page.tsx` | The question-by-question intake screen |
-| `src/app/profile/page.tsx` | The results screen (score, insights, citations, recommendations, community) |
+| `src/app/profile/page.tsx` | The results screen (score, insights, citations, recommendations, supplements, community) |
 | `src/app/checkin/page.tsx` | The weekly check-in screen |
 | `src/app/community/page.tsx` | The mock forum screen |

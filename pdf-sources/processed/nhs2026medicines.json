@@ -1,0 +1,18 @@
+{
+  "id": "nhs2026medicines",
+  "title": "Medicines for PMOS",
+  "authorsYear": "NHS, 2026",
+  "journal": "NHS.uk patient information",
+  "url": "https://www.nhs.uk/conditions/polyendocrine-metabolic-ovarian-syndrome-pmos/",
+  "summary": "NHS patient-facing summary of medicines commonly used to treat PMOS (formerly PCOS) symptoms: cycle regulation, fertility, hair growth, and acne.",
+  "sourceFile": "NHS-PMOS_medicines.pdf",
+  "totalPages": 1,
+  "chunkCount": 1,
+  "chunks": [
+    {
+      "chunkId": "nhs2026medicines-p1-1",
+      "page": 1,
+      "text": "NHS - source url: https://www.nhs.uk/conditions/polyendocrine-metabolic-ovarian-syndrome-pmos/ Medicines for PMOS PMOS symptoms are sometimes treated with: ● the combined pill, progestogen-only pill or an intrauterine system (IUS), to help with irregular periods ● clomifene, a medicine used to improve fertility ● spironolactone or eflornithine to help reduce hair growth on the face and body ● metformin, a type 2 diabetes medicine to help tiredness and weight problems ● skins creams or tablets that can help acne"
+    }
+  ]
+}

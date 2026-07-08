@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PCOS Companion",
-  description: "Evidence-based PCOS symptom profiling, powered by research and community data.",
+  title: "PMOS Companion",
+  description:
+    "Evidence-based PMOS (formerly known as PCOS) symptom profiling, powered by research and community data.",
 };
 
 export default function RootLayout({

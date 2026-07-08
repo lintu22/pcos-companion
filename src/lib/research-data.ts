@@ -1,6 +1,9 @@
 // Mock evidence base. In production these would be pulled from a live literature
 // database (PubMed/Semantic Scholar) — for this demo they are curated, illustrative
-// entries loosely reflecting real PCOS literature themes, not verbatim quotes.
+// entries loosely reflecting real PMOS (formerly known as PCOS) literature themes,
+// not verbatim quotes. Citation titles below are real, published paper titles and
+// are left as originally published (many predate the 2026 PMOS renaming), even
+// where our own summaries/insights use the current term.
 
 export type SymptomKey =
   | "irregular_periods"
@@ -28,6 +31,14 @@ export interface ResearchRecommendation {
   citations: string[]; // citation ids this suggestion is grounded in — never shown without these
 }
 
+// Same shape as ResearchRecommendation, kept as a distinct type so the UI can
+// show supplement suggestions in their own clearly-labelled area (never mixed
+// in with general treatment recommendations) and pair them with a safety note.
+export interface SupplementRecommendation {
+  text: string;
+  citations: string[];
+}
+
 export interface SymptomInfo {
   key: SymptomKey;
   label: string;
@@ -35,6 +46,7 @@ export interface SymptomInfo {
   citations: string[]; // citation ids — look up in CITATIONS (hand-curated) or ALL_CITATIONS (incl. ingested PDFs)
   insights: string[]; // evidence-based statements, paired 1:1 with citations by index where possible
   recommendations?: ResearchRecommendation[]; // what the research suggests actually helps (optional — not every symptom has a clear one)
+  supplements?: SupplementRecommendation[]; // dietary supplements with research evidence for this symptom (optional)
 }
 
 export const CITATIONS: Record<string, Citation> = {
@@ -45,7 +57,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Human Reproduction",
     url: "https://doi.org/10.1093/humrep/dey256",
     summary:
-      "International guideline synthesizing evidence on diagnosis, lifestyle management, and treatment priorities for PCOS.",
+      "International guideline synthesizing evidence on diagnosis, lifestyle management, and treatment priorities for PMOS (formerly known as PCOS).",
   },
   azziz2016: {
     id: "azziz2016",
@@ -54,7 +66,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Nature Reviews Disease Primers",
     url: "https://doi.org/10.1038/nrdp.2016.57",
     summary:
-      "Comprehensive review of PCOS pathophysiology, including insulin resistance and hyperandrogenism mechanisms.",
+      "Comprehensive review of PMOS pathophysiology, including insulin resistance and hyperandrogenism mechanisms.",
   },
   escobarmorreale2018: {
     id: "escobarmorreale2018",
@@ -63,7 +75,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Nature Reviews Endocrinology",
     url: "https://doi.org/10.1038/nrendo.2018.24",
     summary:
-      "Review covering hyperandrogenic symptoms (acne, hirsutism, alopecia) and their hormonal drivers in PCOS.",
+      "Review covering hyperandrogenic symptoms (acne, hirsutism, alopecia) and their hormonal drivers in PMOS.",
   },
   legro2013: {
     id: "legro2013",
@@ -81,7 +93,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Cochrane Database of Systematic Reviews",
     url: "https://doi.org/10.1002/14651858.CD007506.pub3",
     summary:
-      "Systematic review of lifestyle intervention trials (diet, exercise) and their effect on PCOS symptoms.",
+      "Systematic review of lifestyle intervention trials (diet, exercise) and their effect on PMOS symptoms.",
   },
   cooney2017: {
     id: "cooney2017",
@@ -90,7 +102,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Human Reproduction",
     url: "https://doi.org/10.1093/humrep/dex044",
     summary:
-      "Meta-analysis finding significantly elevated rates of depression and anxiety symptoms among people with PCOS.",
+      "Meta-analysis finding significantly elevated rates of depression and anxiety symptoms among people with PMOS.",
   },
   lim2012: {
     id: "lim2012",
@@ -99,7 +111,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Human Reproduction Update",
     url: "https://doi.org/10.1093/humupd/dms030",
     summary:
-      "Meta-analysis quantifying the increased prevalence of overweight/obesity and central adiposity in PCOS.",
+      "Meta-analysis quantifying the increased prevalence of overweight/obesity and central adiposity in PMOS.",
   },
   stepto2013: {
     id: "stepto2013",
@@ -108,7 +120,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Human Reproduction",
     url: "https://doi.org/10.1093/humrep/det278",
     summary:
-      "Clamp-study evidence that insulin resistance in PCOS is intrinsic, independent of body weight, in many patients.",
+      "Clamp-study evidence that insulin resistance in PMOS is intrinsic, independent of body weight, in many patients.",
   },
   balen2016: {
     id: "balen2016",
@@ -117,7 +129,7 @@ export const CITATIONS: Record<string, Citation> = {
     journal: "Human Reproduction Update",
     url: "https://doi.org/10.1093/humupd/dmw012",
     summary:
-      "ESHRE guideline review on ovulatory dysfunction and fertility management approaches in PCOS.",
+      "ESHRE guideline review on ovulatory dysfunction and fertility management approaches in PMOS.",
   },
   gibsonhelm2017: {
     id: "gibsonhelm2017",
@@ -137,13 +149,19 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Cycles longer than 35 days, unpredictable timing, or missed periods.",
     citations: ["teede2018", "legro2013"],
     insights: [
-      "Irregular ovulation is one of the three core diagnostic criteria for PCOS under the Rotterdam consensus, alongside hyperandrogenism and polycystic ovarian morphology.",
-      "Cycle irregularity in PCOS is driven by disrupted LH pulsatility and anovulation, not just 'stress' — guidelines recommend it as a primary red flag to raise with a clinician.",
+      "Irregular ovulation is one of the three core diagnostic criteria for PMOS under the Rotterdam consensus, alongside hyperandrogenism and polycystic ovarian morphology.",
+      "Cycle irregularity in PMOS is driven by disrupted LH pulsatility and anovulation, not just 'stress' — guidelines recommend it as a primary red flag to raise with a clinician.",
     ],
     recommendations: [
       {
         text: "International guidelines recommend lifestyle modification (diet and exercise) as first-line management to help restore more regular ovulation, particularly alongside weight considerations.",
         citations: ["teede2018"],
+      },
+    ],
+    supplements: [
+      {
+        text: "Oral myo-inositol supplementation has been shown in clinical studies to improve hyperandrogenism and menstrual cycle regularity, and to restore spontaneous ovulation in some women with PMOS.",
+        citations: ["han2024"],
       },
     ],
   },
@@ -153,7 +171,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Acne along the jawline, chin, or chest that doesn't respond to typical skincare.",
     citations: ["escobarmorreale2018"],
     insights: [
-      "Jawline/chin acne in adults is a recognised sign of hyperandrogenism, one of the three Rotterdam diagnostic criteria for PCOS.",
+      "Jawline/chin acne in adults is a recognised sign of hyperandrogenism, one of the three Rotterdam diagnostic criteria for PMOS.",
     ],
   },
   {
@@ -162,7 +180,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Coarse hair growth on the face, chest, or back.",
     citations: ["escobarmorreale2018", "legro2013"],
     insights: [
-      "Hirsutism affects up to 70% of people with PCOS and is directly linked to elevated androgen levels, making it one of the most specific visible symptoms.",
+      "Hirsutism affects up to 70% of people with PMOS and is directly linked to elevated androgen levels, making it one of the most specific visible symptoms.",
     ],
   },
   {
@@ -171,7 +189,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Thinning at the crown or widening part line.",
     citations: ["escobarmorreale2018"],
     insights: [
-      "Androgenic alopecia (scalp thinning) shares the same hormonal driver as hirsutism and acne in PCOS — elevated free androgens acting on hair follicles.",
+      "Androgenic alopecia (scalp thinning) shares the same hormonal driver as hirsutism and acne in PMOS — elevated free androgens acting on hair follicles.",
     ],
   },
   {
@@ -180,8 +198,8 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Weight gain, especially around the abdomen, that feels disproportionate to diet/exercise changes.",
     citations: ["lim2012", "stepto2013"],
     insights: [
-      "A meta-analysis of over 30 studies found women with PCOS have significantly higher rates of overweight, obesity, and central (abdominal) adiposity than the general population.",
-      "Clamp studies show insulin resistance in PCOS is often intrinsic — present independent of body weight — which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
+      "A meta-analysis of over 30 studies found women with PMOS have significantly higher rates of overweight, obesity, and central (abdominal) adiposity than the general population.",
+      "Clamp studies show insulin resistance in PMOS is often intrinsic — present independent of body weight — which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
     ],
     recommendations: [
       {
@@ -196,7 +214,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Low energy that doesn't improve with rest.",
     citations: ["stepto2013"],
     insights: [
-      "Fatigue in PCOS is frequently linked to underlying insulin resistance and blood-sugar volatility rather than sleep quantity alone.",
+      "Fatigue in PMOS is frequently linked to underlying insulin resistance and blood-sugar volatility rather than sleep quantity alone.",
     ],
   },
   {
@@ -205,12 +223,12 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Increased anxiety, low mood, or mood swings.",
     citations: ["cooney2017", "jiskoot2022"],
     insights: [
-      "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PCOS compared to controls — this is a recognised part of the condition, not 'just stress'.",
-      "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PCOS compared with usual care — a concrete, evidence-based option to raise with a clinician or therapist.",
+      "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PMOS compared to controls — this is a recognised part of the condition, not 'just stress'.",
+      "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PMOS compared with usual care — a concrete, evidence-based option to raise with a clinician or therapist.",
     ],
     recommendations: [
       {
-        text: "Cognitive behavioural therapy (CBT) is a first-line, evidence-based option for depression in PCOS — a 2022 meta-analysis found a large effect size in favour of CBT compared with usual care.",
+        text: "Cognitive behavioural therapy (CBT) is a first-line, evidence-based option for depression in PMOS — a 2022 meta-analysis found a large effect size in favour of CBT compared with usual care.",
         citations: ["jiskoot2022"],
       },
     ],
@@ -221,13 +239,19 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Intense cravings, energy crashes after meals, or shakiness between meals.",
     citations: ["stepto2013", "moran2013"],
     insights: [
-      "Insulin resistance — present in a majority of PCOS cases regardless of weight — can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
+      "Insulin resistance — present in a majority of PMOS cases regardless of weight — can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
       "Cochrane review evidence shows structured lifestyle/dietary approaches (not necessarily weight loss) can meaningfully improve insulin sensitivity and related symptoms.",
     ],
     recommendations: [
       {
         text: "Structured dietary changes aimed at stabilising blood sugar (not necessarily a weight-loss diet) are supported by Cochrane review evidence for improving insulin sensitivity and related cravings/energy symptoms.",
         citations: ["moran2013"],
+      },
+    ],
+    supplements: [
+      {
+        text: "Antioxidant supplements including vitamin E and myo-inositol have been associated in clinical studies with improved insulin resistance (lower HOMA-IR), fasting insulin, and glucose levels in women with PMOS.",
+        citations: ["han2024"],
       },
     ],
   },
@@ -237,12 +261,18 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Trying to conceive for 6+ months without success, or concerns about future fertility.",
     citations: ["balen2016"],
     insights: [
-      "PCOS is the leading cause of anovulatory infertility, but ESHRE guidelines note the large majority of cases respond well to first-line ovulation induction treatment.",
+      "PMOS is the leading cause of anovulatory infertility, but ESHRE guidelines note the large majority of cases respond well to first-line ovulation induction treatment.",
     ],
     recommendations: [
       {
-        text: "ESHRE guidelines recommend first-line ovulation induction treatment for anovulatory infertility in PCOS, which the large majority of patients respond well to — worth raising with a fertility specialist.",
+        text: "ESHRE guidelines recommend first-line ovulation induction treatment for anovulatory infertility in PMOS, which the large majority of patients respond well to — worth raising with a fertility specialist.",
         citations: ["balen2016"],
+      },
+    ],
+    supplements: [
+      {
+        text: "Vitamin D supplementation has been associated in clinical studies with reduced FSH, LH, and androgen levels and fewer early miscarriages, and myo-inositol has been shown to help restore spontaneous ovulation — worth discussing with a fertility specialist before starting.",
+        citations: ["han2024"],
       },
     ],
   },
@@ -252,7 +282,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Cramping or discomfort not tied to your period.",
     citations: ["teede2018"],
     insights: [
-      "Pelvic discomfort is a less specific PCOS symptom and guidelines recommend it be evaluated to rule out overlapping conditions like endometriosis.",
+      "Pelvic discomfort is a less specific PMOS symptom and guidelines recommend it be evaluated to rule out overlapping conditions like endometriosis.",
     ],
   },
 ];

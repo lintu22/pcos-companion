@@ -6,7 +6,7 @@ import { SymptomKey } from "./research-data";
 export interface CommunityBaseline {
   symptom: SymptomKey;
   percentOfCommunityReporting: number; // of all app users
-  percentOfDiagnosedReporting: number; // of users who report a formal PCOS diagnosis
+  percentOfDiagnosedReporting: number; // of users who report a formal PMOS diagnosis
 }
 
 export const COMMUNITY_BASELINES: CommunityBaseline[] = [

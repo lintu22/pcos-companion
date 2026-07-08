@@ -1,0 +1,468 @@
+{
+  "id": "moinijazani2019",
+  "title": "A comprehensive review of clinical studies with herbal medicine on polycystic ovary syndrome (PCOS)",
+  "authorsYear": "Moini Jazani et al., 2019",
+  "journal": "DARU Journal of Pharmaceutical Sciences",
+  "url": "https://doi.org/10.1007/s40199-019-00312-0",
+  "summary": "Review of clinical trials testing herbal medicines (e.g. cinnamon, licorice, chasteberry) on PCOS symptoms including menstrual irregularity.",
+  "sourceFile": "research_herbal_medicine_as_treatment_for_irregular_menstration_symptoms.pdf",
+  "totalPages": 15,
+  "chunkCount": 91,
+  "chunks": [
+    {
+      "chunkId": "moinijazani2019-p1-1",
+      "page": 1,
+      "text": "REVIEW ARTICLE A comprehensive review of clinical studies with herbal medicine on polycystic ovary syndrome (PCOS) Arezoo Moini Jazani 1,2 & Hamidreza Nasimi Doost Azgomi 3 & Alireza Nasimi Doost Azgomi 3 & Ramin Nasimi Doost Azgomi 1,2 Received: 10 November 2018 / Accepted: 3 November 2019 / Published online: 18 November 2019 # Springer Nature Switzerland AG 2019 Abstract Background Polycystic ovary syndrome (PCOS) is a frequent medical condition characterized by both metabolic and reproductive disorders. Different pharmaceutical treatments have been proposed for PCOS. However, side effects of long-term treatments and their probable low efficacy have made complementary and alternative treatments a valuable option."
+    },
+    {
+      "chunkId": "moinijazani2019-p1-2",
+      "page": 1,
+      "text": "Recent reports have indicated the increased use of complementary treatments. Herbal medicine, as part of complementary medicine, was find introduced in traditional Persian and Chinese medicine. Medicinal herbs have used for a long time in the treatment of gynecological and infertility problems of PCOS patients. In this study, we aimed to review herbal medicines used for PCOS worldwide. Methods PubMed, Embase, Cochrane, and Scopus databases were searched for clinical trials and Randomized Controlled Trials based on related keywords. Data were collected from 1990 to 2019. Results According to a multitude of studies, a wide spectrum of herbs can be used to improve various aspects of PCOS."
+    },
+    {
+      "chunkId": "moinijazani2019-p1-3",
+      "page": 1,
+      "text": "Herbs such as Cinnamomum verum, Trigonella foenum-graecum L., and Vitex agnus-castus can impact on menstrual and ovulatory dysfunctions, obesity, insulin resistance, lipid-metabolism dysfunction, and androgen excess-related conditions. Conclusion Some plants as natural remedies may have beneficial effects on improving different aspects of PCOS; but further studies are needed to investigate their mechanisms and safety. Keywords Polycystic ovary syndrome . PCOS . Herbal medicine . Complementary medicine Introduction Polycystic Ovary Syndrome (PCOS) is one of the most fre- quent conditions, which affects both metabolic and reproduc- tive systems. PCOS is best known for irregular menstrual cycles, chronic anovulation, and hyper-androgenism [1, 2]."
+    },
+    {
+      "chunkId": "moinijazani2019-p1-4",
+      "page": 1,
+      "text": "According to the Rotterdam criteria, the prevalence of PCOS is 10%, while the prevalence of polycystic ovaries is 28% [3]. The pathogenesis of this disorder is not clear yet although it probably has epigenetic origins; therefore, there is no single effective treatment available for this disease [4, 5]. Different pharmaceutical treatments have been proposed for PCOS. However, they have disadvantages, such as adverse effects, low compliance of patients with long-term pharma- ceutical treatments, low efficacy, and contraindications in some cases; therefore, complementary treatments can be prop- er alternatives [6–9]. Today, oral contraceptives are the most common options for the treatment of PCOS."
+    },
+    {
+      "chunkId": "moinijazani2019-p1-5",
+      "page": 1,
+      "text": "They act by de- creasing free androgens in the blood and suppressing the se- cretion of gonadotropins [10]. Clomiphene citrate is a non- steroidal selective estrogen receptor modulator (SERM), and Letrozole is an aromatase inhibitor, widely used for ovulation induction. Clomiphene citrate is the first-line therapy although there is growing evidence that Letrozole has higher efficacy and safety for the mother and fetus [11, 12]. Metformin is used to treat insulin resistance, which is an important factor in the Rotterdam criteria, in patients with PCOS. Overall, treatment of insulin resistance along with hyper-androgenism improves hormonal, metabolic, and reproductive functions [13]."
+    },
+    {
+      "chunkId": "moinijazani2019-p1-6",
+      "page": 1,
+      "text": "Recently use of complementary treatments has increased, and today, approximately 40% of adults benefit from * Ramin Nasimi Doost Azgomi modir7060@yahoo.com 1 Department of Obstetrics and Gynecology, School of Medicine, Ardabil University of Medical Sciences, Ardabil, Iran 2 Pharmaceutical Sciences Research Center, Ardabil University of Medical Sciences, Ardabil, Iran 3 Students Research Committee, School of Medicine, Ardabil University of Medical Sciences, Ardabil, Iran DARU Journal of Pharmaceutical Sciences (2019) 27:863–877 https://doi.org/10.1007/s40199-019-00312-0"
+    },
+    {
+      "chunkId": "moinijazani2019-p2-1",
+      "page": 2,
+      "text": "complementary treatments [14, 15]. Women use complemen- tary medicine more than men, especially for self-treatment purposes [16]. Evidence suggests that 40%of non-pregnant/ non-postpartum women use complementary medicine, while the corresponding figure in pregnant and postpartum women is 37% and 28%,respectively [17]. Herbal medicine, as part of complementary medicine, was first introduced in traditional Persian and Chinese medicine [18]. Chinese herbs have a long history in the management of gynecological problems and infertility of PCOS patients [19]. In traditional Persian medicine, PCOS was referred to as oligo-amenorrhea, a prominent manifestation of the disease [20]. Various medicinal plants have been proposed as treat- ment for oligo-amenorrhea in traditional Persian medicine [21]."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-2",
+      "page": 2,
+      "text": "In this study, we reviewed different approaches of herbal medicine in the treatment of PCOS and examined their mech- anisms, and efficacy. We also investigated the direct effects of herbal extracts on reproduction, irregular menstruation, hyper- androgenism, and metabolic disorders in PCOS patients. Methods We conducted this comprehensive literature search of English- language studies in electronic databases, including PubMed, Science Direct, Scopus, and Cochrane Library from 1990to March 2019 in order to retrieve clinical studies on herbal treatments for PCOS."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-3",
+      "page": 2,
+      "text": "The keywords included” polycystic ovary syndrome”, “PCOS” in title/abstract AND” plant”, “herb”, “phyto”, “extract or root”, “fruit”, “water”, “alcohol- ic”, “powder”, “traditional medicine”, “complementary” or” alternative” in all fields. We reviewed articles based on their titles and abstracts according to the inclusion and exclusion criteria. The inclusion criteria in this study were English arti- cles, clinical trials, and randomized controlled trials (RCTs). On the other hands, reviews, case reports, short communica- tions, and letters to editors were excluded from the study. The full texts of some studies were not available, thus their data may not be fully completed. In some studies, the components of plant compounds were not clearly determined."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-4",
+      "page": 2,
+      "text": "Finally, a total of 42 articles were selected. Data were collected from the full text manuscripts and included different types of herbs, different parts of herbs, year of publication, type of study, sample size, and reproductive, metabolic, and other effects of plants on PCOS. Figure 1 presents a diagram of the study selection process. Results The etiology of PCOS remains unclear. This syndrome pre- sents with a variety of symptoms, such as hormonal imbalance, reproductive dysfunction, and metabolic disorders. Ovarian dysfunction is the main finding of PCOS [22]. According to the findings many herbal medicines exerted ther- apeutic effects on various aspects of PCOS."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-5",
+      "page": 2,
+      "text": "These herbs could affect menstrual and ovulatory dysfunc- tions, obesity, insulin resistance, hyperinsulinemia, lipid- metabolism dysfunction, hirsutism, and other excess- androgen-related conditions [23, 24]. Table 1A presents a brief summary of the results. Infertility/ovulatory dysfunction Few studies were found concerning infertility in spite of its importance. Trigonella foenum-graecum L., which improved the ovarian function and menstrual cycle regularity, could in- crease the fertility rate [29, 41]. Likewise, Danzhi xiaoyae and Linum usitatissimum L. powder had similar effects on fertility [47, 58]. In addition, Grifola frondosa ameliorated ovulation [34] and augmented fertility. Also, other herbs might influence impact infertility only in combination with other medications."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-6",
+      "page": 2,
+      "text": "Administration of Cimicifuga racemose along with Clomiphene, could increase the fertility potential of PCOS patients [36]. Another survey revealed that long-term treat- ment with Cimicifuga racemosa as a phytoestrogen could be used as an alternative to Clomiphene [46]. On the other hand, the combination of Berberine (Coptidis rhizome) and with Letrozole had no significant positive effects on the fertility rate [39] while, administration of Berberine along with Metformin showed promising results in in vitro fertilization (IVF) of PCOS patients [53]. Hormonal status/menstruation cycle Herbal medicines not only improve reproductive dysfunc- tions, but also play a remarkable role in balancing the hormon- al status and menstrual cycles."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-7",
+      "page": 2,
+      "text": "Use ofCinnamomum cassia supplement for at least six months could normalize the men- strual cycles [44]. Cinnamon, as a bioactive medication, re- sulted in the reduction of anti-mullerian hormone and had fewer side effects in comparison with Metformin [49]. In ad- dition cinnamon in conjunction with Glycyrrhiza spp., Paeonia lactiflora Pall., and Hypericum perforatum L. de- creased the level of luteinizing hormone (LH). However, it exerted no significant effects on the level of follicle- stimulating hormone (FSH) or testosterone levels [27]. It seems that cinnamon in all forms (extract, powder, and sup- plement) influenced the hormonal status and menstrual cycles [31, 45]."
+    },
+    {
+      "chunkId": "moinijazani2019-p2-8",
+      "page": 2,
+      "text": "Trigonella foenum-graecum L.was effective in the regulation of menstrual cycle and had promising effects on fertility [29]. In addition,Tian gui, a Chinese herb could de- crease the testosterone level and modify hyper-androgenism [35]. On the other hand, Unkei-to, a Japanese herb could cause a significant reduction in LH level and increase the level of 864 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p3-1",
+      "page": 3,
+      "text": "estradiol, leading to the improvement of menstrual cycles [40]. Based on previous studies,regular consumption of Chinese multi-herbs controlled the menstrual cycles substan- tially, and created a sense of well-being in patients [47]. A survey of Linum usitatissimum L.demonstrated its efficacy in the regulation of menstrual cycles without causing consid- erable alterations in hormone levels or hirsutism [52]. On the other hand, drinking marjoram tea improved the hormonal status [56]. It was revealed Vitex agnus-castus had similar advantages to oral contraceptives in the regulation of menstru- al cycles with notably fewer side effects. Vitex agnus-castus did not change the testosterone or prolactin levels [33]. Nevertheless Nigella sativa L."
+    },
+    {
+      "chunkId": "moinijazani2019-p3-2",
+      "page": 3,
+      "text": "[59] and Apium graveolens L along with Pimpinella anisum L. [62] regulated the menstrual cycles and decreased LH level in PCOS patientswith oligo- amenorrhea. Only few surveys are available regarding the anti- androgenic effects of herbs and their impact on hirsutism. It was found that spearmint tea [32], Anethum graveolens L., Asparagus racemosus Willd. [42],and Matricaria chamomilla L. [63] could reduce the testosterone level and severity of hirsutism. Although Camellia sinensis L. [28] and Tian gui [35] were reported to decrease the testosterone level, their impact on hirsutism has not been reported. It seems that more studies are needed to clarify the potential effects of herbs on hirsutism."
+    },
+    {
+      "chunkId": "moinijazani2019-p3-3",
+      "page": 3,
+      "text": "Moreover, the effect of Soy has been investigated in several studies with controversial findings. In one study, eight- week administration of Soy showed no considerable effects on LH, FSH, or estradiol levels [26]. On the other hand, another survey reported the advantageous impact of Soy on improving the hormonal status when used for 12 weeks [43]. Also, wood betony (as a phytoestrogen) could be used in the treatment of abnormal uterine bleeding (AUB) secondary to PCOS as an alternative to medroxyprogesterone [54]. Metabolic dysfunction There are studies regarding the impact of herbs on metabolic dysfunction with promising results reported in PCOS patients."
+    },
+    {
+      "chunkId": "moinijazani2019-p3-4",
+      "page": 3,
+      "text": "Cinnamon along with Glycyrrhiza spp., Paeonia lactiflora Pall., and Hypericum perforatum L reduced the body mass index (BMI) and insulin level with no significant impact on fasting blood sugar (FBS) [27]. Administration of Cinnamomum zeylanicum Blume and Nigella sativa L led to Fig. 1 Flow diagram of the study selection process DARU J Pharm Sci (2019) 27:863–877 865"
+    },
+    {
+      "chunkId": "moinijazani2019-p4-1",
+      "page": 4,
+      "text": "Table 1 Clinical trial studies on medicinal plants used for treatment of PCOS patients No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results 1 Borzoei A, et al., Iran 2017 [25] Cinnamomum zeylanicum Blume Cinnamon bark powder prepared as capsule 84 8 weeks Significant differences of serum TAC (P = 0.005) and MDA (P = 0.014) between cinnamon & placebo groups after the intervention. ↑ TAC (P = 0.001) without statistical decrease in serum MDA level (P = 0.102) in cinnamon group at the end of study compared to the baseline. ↓total cholesterol and LDL and ↑ HDL serum levels in cinnamon group at the end of the study compared to the baseline (P < 0.05). No significant change on serum TG level in cinnamon group."
+    },
+    {
+      "chunkId": "moinijazani2019-p4-2",
+      "page": 4,
+      "text": "2 Forouhari S, et al., Iran 2013 [26] Glycine max (L.) Merr. Soy flour as a loaf of soy bread 42 2 months No significant effects on serum FSH, Estradiol, and testosterone level following soy bread consumption after the intervention (P > 0.05). 3 Arentz S, et al., Australia 2017 [27] Cinnamomum verumj. Presl, Glycyrrhiza glabral., Hypericum perforatum L., Paeonia lactiflora Pall. and Tribulu s terrestri s L. Herbal extracts as tablets 122 3 months ↓Oligomenorrhoea of 32.9% in herbal medicine plus lifestyle group compared with lifestyle alone P < 0.01)."
+    },
+    {
+      "chunkId": "moinijazani2019-p4-3",
+      "page": 4,
+      "text": "↓ BMI (P < 0.01);↓Waist circumference (P < 0.01);↓ insulin (P = 0.02), and ↓ LH (P = 0.04);↓blood pressure (P = 0.01); improvement in the quality of life (P < 0.01), depression, anxiety, and stress (P < 0.01); and pregnancy rates (P = 0.01) in combination group compared with lifestyle intervention alone. 4 Tehrani HG, et al., Iran 2017 [28] Camellia sinensis L. Camellia sinensisL.as tablets (Green Teadin pills) 60 12 weeks ↓ Weight (P = 0.031), ↓ fasting insulin (P < 0.0001), and ↓ free testosterone (P < 0.0001) after treatment between groups (green tea & control). 5 Swaroop A, et al., India 2015 [29] Trigonella foenum-graecum L."
+    },
+    {
+      "chunkId": "moinijazani2019-p4-4",
+      "page": 4,
+      "text": "Hydro-alcoholic extract of seeds as capsules 50 3 months ↑ LH (p = 0.045) and ↑ FSH (P = 0.010), ↓ LH/FSH ratio (not statistically significant), ↓ ovari- an volume, ↓ cyst size in 47 subjects, complete resolving of cysts in 36 patients, regular men- strual cycles in 71% of subjects, ↑ Hb levels, ↓ ALP, no significant change in WBC, AST, ALT, BUN, and creatinine and 12% pregnancy after intervention compared to the baseline. No se- rious side effect in Agnugol group. 6 Shayan A, et al., Iran 2016 [30] Vitex agnus-castus L. Dry extract as Agnugol tablet 120 3 months No difference in the length of menstruation, intervals of menstrual cycles, and the number of pads in two groups (Agnugol 866 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p5-1",
+      "page": 5,
+      "text": "Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results & Metformin) after the intervention. No serious side effect in Agnugol group. 7 Hajimonfarednejad M, et al., Iran 2017 [31] Cinnamomum cassia (L.) J.Presl. Barks powder 66 12 weeks ↓ Weight, ↓ BMI, ↓ waist circumference (not statistically significant), ↓ fasting insulin (P = 0.024), HOMA-IR (P = 0.014), ↓ LDL (P = 0.049) and HDL (P = 0.033) after the intervention in cinnamon group in comparison with the placebo group. Both groups received medroxy progesterone acetate at the beginning of the study. No serious side effect in cinnamon group 8 Paul Grant, UK 2009 [32] Mentha spicata L."
+    },
+    {
+      "chunkId": "moinijazani2019-p5-2",
+      "page": 5,
+      "text": "tea 42 30 days ↓ Free and total testosterone, ↑ LH, ↑ FSH, ↓ degree of hirsutism scored by the modified DQLI in spearmint tea group (P < 0.05), ↓Ferriman-Galwey score of hirsutism (not statistically significant) between two groups (spearmint & placebo) at the end of the study (P = 0.12). No side effect was reported. 9 Shahnazi M, et al., Iran 2016 [33] Vitex agnus-castus L. Fruit extract 70 3 months Normalization the menstrual cycle duration in 68.6% of the LD group and 60% of the extract participants (no statistically significant difference between the two groups (P = 0.45). ↓ Free testosterone, prolactin, and DHEAS level in the LD and the extract groups at the end of study (no statistically significant difference between the two groups)."
+    },
+    {
+      "chunkId": "moinijazani2019-p5-3",
+      "page": 5,
+      "text": "Mood changes and Spotting were reported in Vitex group (no statistically significant difference between groups). 10 Chen J, et al. Japan 2010 [34] Grifola frondosa MSX tablets, containing Grifola frondosa extract and its dried powder 72 12–16 weeks Ovulation in 76.9% MSX and in 93.5% CC groups but not significant (P = 0.124). Epigastralgia in two MSX group patients. 11 Kuek S et al.,China 2011 [35] – A capsule containg 11 herbs 47 3 months ↓ Testosterone, ↓ SHBG, ↓ FAI, ↓ FINS, ↓ ovarian volume, ↑ DHEAS (P < 0.05), without change in FPG in Tian Gui group after treatment compared before. ↓ Testosterone in the three groups (Tian Gui, metformin and Dian), but no statistically significant difference between the groups. Significant changes in DHEA-S and SHBG between the three groups."
+    },
+    {
+      "chunkId": "moinijazani2019-p5-4",
+      "page": 5,
+      "text": "No side effect was re- ported. DARU J Pharm Sci (2019) 27:863–877 867"
+    },
+    {
+      "chunkId": "moinijazani2019-p6-1",
+      "page": 6,
+      "text": "Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results 12 Shahin A.Y and Mohammed S.A., Egypt 2014 [36] Cimicifuga racemosae (L.) Nutt.(CR) Dry extract of CR rhizomein the form of film-coated tablets 206 2 months ↓ Mid-cycle LH (P = 0.001), ↑ pro- gesterone (P = 0.001) and ↑ es- tradiol in the second half (P = 0.01), ↑endometrial thick- ness (P = 0.001), ↑pregnancy rate (P < 0.01) in CC + CR group compared to the CC group alone. 13 Chan C. et al., Hong Kong 2006 [37] – Lung Chen tea leaves as capsule 34 3 months ↓ Body weight (2.4%) after treatment in green tea group but not statistically significant. No remarkable change in hormone levels and biochemical profiles except TG between two groups after treatment."
+    },
+    {
+      "chunkId": "moinijazani2019-p6-2",
+      "page": 6,
+      "text": "↑ TG in green tea group compared to the placebo at the end of the study. No side effect was reported. 14 Ebrahimi-Mamaghani M, et al., Iran 2014 [38] Allium cepa L. Raw red onions 54 8 weeks ↓ Total cholesterol, ↓ LDL in two groups (high onion & low onion), but further in the high-onion group after treatment. No signifi- cant change in FBS, TG, and LDH by onion treatment. 15 Ke Wu X, et al., Chinese 2016 [39] – Berberine in the form of capsule 644 6 months ↑ Accumulative live births, ↑ conception, ↑ pregnancy, and ↑ ovulation rates in the letrozole and combination groups (letrozole + berberine) after treatment compared to berberine group. No serious side effect among the three groups (letrozole, berberine, and combination groups)."
+    },
+    {
+      "chunkId": "moinijazani2019-p6-3",
+      "page": 6,
+      "text": "16 Ushiroyama T, et al., Osaka 2001 [40] Paeonia lactiflora Pall. with Cinnamomum cassia (L.) J. Presll. Unkei-to 100 8 weeks ↓ LH and ↑ estradiol and making dominant follicle in Unkei-to group. Improvement of menstru- al cyclicity of 50% PCOS sub- jects in Ukei-to group, but no statistically significant difference between the two groups (Unkei-to & control). 17 Hassanzadeh Bashtian M, et al., Iran 2013 [41] Trigonella foenum-graecum L. Hydroalcoholic extract of seeds 58 8 weeks ↓ Significant in polycystic-appearing ovaries in ultrasound scans in extract group at the end of the study (P = 0.01)."
+    },
+    {
+      "chunkId": "moinijazani2019-p6-4",
+      "page": 6,
+      "text": "No significant changes in BMI, HOMA-IR, QUICKI, testosterone, 17-α hydroxy pro- gesterone levels, and Ferriman–Gallwey score in both groups (herbal extract & placebo) Normalizing menstrual cycle in 12 women with oligo-amenorrhea in extract group. Both groups re- ceived metformin during the study. 18 Kumarapeli M, et al. Sri Lanka 2018 [42] Satapushpa Shatavari Powder (SSP)5 g 60 2 weeks ↓ Ovarian volume, and normalized menstrual cycle at the end of the 868 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p7-1",
+      "page": 7,
+      "text": "Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results Anethum graveolens L. Asparagus racemosus Willd. TDS/.oral Satapushpa ShatavariGrita (SSG), 60 ml / daily /enema study compared to the baseline in three groups (oral, rectal and oral + rectal). Significant ↑ endometrial thickness, and ↓ hirsutism rate in oral+rectal group after intervention compared to other groups. 19 Jamilian M and Asemi Z., Iran 2016 [43] Glycine max (L.) Merr. Soy isoflavone supplements as capsule 70 12 weeks ↓ Insulin (P < 0.001), ↓ HOMA-IR andHOMA-B (P < 0.001), ↑ QUICKI (P = 0.01), ↓ free an- drogen index (P < 0.001),↓ TG (P = 0.04), ↑ plasma total gluta- thione (P = 0.04), ↓ MDA (P = 0.001) after treatment com- pared to the placebo group."
+    },
+    {
+      "chunkId": "moinijazani2019-p7-2",
+      "page": 7,
+      "text": "20 Kort DH, Lobo RA Columbia 2014 [44] Cinnamomum Verum J. Presl. Cinnamon as supplement 45 6 months Significant improvement in menstrual cyclicity and ovulatory cycle in cinnamon group compared with baseline and placebo. No considerable change in markers of insulin resistance, serum androgen, SHBG levels, weight, and ovarian volume in both groups. No serious adverse effect. 21 Wang J G et al., USA 2007 [45] Cinnamomum verum J. Presl. Extract 15 8 weeks ↓ FBS (P > 0.03), ↑ QUICKI (P > 0.03), ↓ HOMA-IR (P > 0.03), ↓ in mean 2hppbsand improved insulin sensitivity in the extract group but not statisti- cally different from the control (placebo). 22 Kamel Hany H. Egypt 2012 [46] Cimicifuga racimosa (L.) Nutt."
+    },
+    {
+      "chunkId": "moinijazani2019-p7-3",
+      "page": 7,
+      "text": "(CR) Extract 100 3 months ↓ LH (P = 0.007), ↓ FSH/LH ratio (P = 0.06), ↑ progesterone (P = 0.0001), ↑ endometrial thickness (P = 0.0004), ↑ ovula- tion (P = 0.0001) and fewer side-effects in CR compared to the CC group after intervention. ↑ Pregnancy rate in CR compared to CC group but not statistically significant. 23 Lai L, et al., Chinese2017 [47] – Granulated extracts as a tea from 14 to 20 herbs 40 6 months Significant improvement in menstrual rates in two groups (standardized Chinese hebal medicine & individualized chinese herbal medicine) but no statistically significant difference between groups (P = 0.26), ↓ hirsutism scores but not significant (P = 0.09) in two groups. No significant change in BMI or weight in two groups at the end of the study."
+    },
+    {
+      "chunkId": "moinijazani2019-p7-4",
+      "page": 7,
+      "text": "24 Kalgaonkar S et al., USA 2011 [48] Prunus dulcis (Mill.) Juglans regiaL. Walnuts, Almonds 36 6 weeks ↓ LDL (P = 0.05),↓Apo protein B (P < 0.03), ↑ insulin response (P < 0.02), ↑ PUFA, ↓ HgBA1c (P = 0.0006) and ↑ SHBG DARU J Pharm Sci (2019) 27:863–877 869"
+    },
+    {
+      "chunkId": "moinijazani2019-p8-1",
+      "page": 8,
+      "text": "Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results (P = 0.0038) in walnut group. ↓ LDL (not statistically significant) and ↓ FAI (P = 0.0470) in almond group. ↑ Adiponectin in two groups (walnuts or almonds). 25 Wiweko B and Susanto C. A. Indonesia 2017 [49] Lagerstroemia spesiosa (L.)and Cinnamomum burmanni Blume Extract as tablet 38 6 months ↓ AMH level in 2 groups after treatment but further reduction in metformin group with more side effects. Significant ↓ BMI in herbal group after treatment. All subjects received metformin during the study. 26 Mombaini E, et al., Iran 2017 [50] Camellia sinensisL. Camellia sinensis L."
+    },
+    {
+      "chunkId": "moinijazani2019-p8-2",
+      "page": 8,
+      "text": "leaf powder as tablets 50 45 days Significant ↓in weight, BMI, waist circumference, and body fat percentage after the intervention in the green tea group, but no significant difference between the two groups (green tea & placebo) was observed. No significant difference in the inflammatory factors in comparison with between- and within- groups at the end of the study. No serious side effect. 27 Khani B, et al. Iran 2011 [51] Glycine max (L.) Merr. Soy supplement as Genistein capsules 146 3 months Significant ↓ LH, ↓TG, ↓LDL, ↓DHEAS and ↓testosterone after treatment in the Genistein group. No significant difference in HDL and FSH serum levels in two groups (Genistein and placebo) before and after intervention. 28 Farzana F, et al., India 2015 [52] Linum usitatissimum L."
+    },
+    {
+      "chunkId": "moinijazani2019-p8-3",
+      "page": 8,
+      "text": "Flaxseed powder 32 3 months ↓ Ovarian volume, number of follicles (P < 0.01), improvement in menstrual cyclicity and pregnancy (40% and 10% respectively), Ns change in hirsutism, BW, and BS after intervention compared to before. 29 An Y, et al., China 2014 [53] – Berberine hydrochloride as tablets 150 3 months ↓ Testosterone, ↓ free androgen, ↓ FBS, ↓ fasting insulin, ↓ HOMA-IR, ↑ SHBG, ↑ pregnancy rate, and ↓ severe ovarian hyperstimulation syndrome in berberine and metformin group compared to placebo after treatment.↓ BMI, ↓ lipid parameters and ↓ FSH, ↑ live birth rate (P = 0.047) and less frequent unwanted events in berberine compared to metformin group after treatment. ."
+    },
+    {
+      "chunkId": "moinijazani2019-p8-4",
+      "page": 8,
+      "text": "30 Jalilian N, et al., Iran 2013 [54] Stachys lavandulifolia Vahl Dried aerial parts of wood betony (AWB) 66 3 months ↓ Prevalence rate of AUB symptoms in two groups (AWB & MPA). Adverse events in 24.2% cases of MPA compared to 45.5% in AWB but less serious side effects for AWB compared to MPA. The odds for adverse 870 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p9-1",
+      "page": 9,
+      "text": "Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results reaction of MPA = 0.40 (95% CIs: 0.14–1.19, P value = 0.099) time odds of AWB. Remarkable changes of sonographic findings in AWB after treatment compared to MPA (P = 0.036). 31 Mirmasoumi G, et al., Iran 2017 [55] Linum usitatissimum L. Flaxseed oil in form of capsule 60 12 weeks ↓ Insulin values, ↓ HOMA-IR (P = 0.01), ↓ Ferriman–Gallwey score (P = 0.001), ↑ QUICKI (P = 0.01), ↓ TG (P = 0.01), ↓ VLDL (P = 0.01), ↓ CRP (P = 0.004) in treatment group compared to placebo after inter- vention. Ns change in hormonal profile and plasma nitric oxide at the end of the study in treatment group. No adverse event in treat- ment group."
+    },
+    {
+      "chunkId": "moinijazani2019-p9-2",
+      "page": 9,
+      "text": "32 Haj-Husein Iet al., Jordan 2015 [56] Origanum majorana L. Marjoram tea 25 1 month ↓ DHEAS, ↓ fasting insulin (P < 0.05), in marjoram groups after treatment. ↓ HOMA-IR in intervention group compared to placebo (P < 0.05). 33 Liang, Y et al., China 2016 [57] – Chinese medical decoction (CCD) 40 2 months ↑ Oocyte retrieval number, ↑ 2pronuclear fertilization rate, ↑ embryo rate and ↓ ROS in treatment group compared to control. 34 Liu Y, Mao LH., China 2013 [58] – Dan-zhi Xiao-yao (Chinese medicine formulation) as pills 60 3 menstrual cycles Significant↓ Insulin, ↓ LH, ↓ testosterone after treatment compared to before in two groups (P < 0.05) but no significant difference between the groups. No remarkable change in BMI between two groups after treatment."
+    },
+    {
+      "chunkId": "moinijazani2019-p9-3",
+      "page": 9,
+      "text": "Significant improvement in PMS and menstrual symptoms in integrative group. Higher ovulation and pregnancy rate in integrative versus western group (86.01% vs 65.5% and 60% vs 36.7%, respectively). 35 Naeimi S A et al., Iran 2018 [59] Nigella sativa L. powdered seed in form of capsule 10 4 menstrual cycles Significant ↓ cholesterol, ↓ TG, ↓ FBS, ↓ Insulin, ↓ AST, ↓ LH, and ↓ HOMA-IR, ↑ menstrual cycle/ month and ↓ menstrual cycle in- terval after intervention. 36 Borzoei A, et al., Iran 2017 [60] Cinnamomum zeylanicum Blume Cinnamon bark powder prepared as capsule 84 8 weeks Significant FBS, ↓ Insulin, ↓ HOMA-IR,↓ cholesterol, ↓ LDL, ↓weight and ↑ HDL in cinnamon group compared to placebo. Significant ↓ TG, ↓ BMI in cinnamon group compared to its base line."
+    },
+    {
+      "chunkId": "moinijazani2019-p9-4",
+      "page": 9,
+      "text": "No remarkable change in adiponectin in both groups. 37 Esmaeilinezhad Z, et al., Iran 2019 [61] PunicagranatumL. juice 92 8 weeks Significant ↓ HOMA-IR, ↓BMI, weight and waist circumferences in synbiotic pomegranate juice DARU J Pharm Sci (2019) 27:863–877 871"
+    },
+    {
+      "chunkId": "moinijazani2019-p10-1",
+      "page": 10,
+      "text": "a substantial decrease in the serum level of FBS, insulin, and insulin resistance, as well as cholesterol, triglyceride, and low- density lipoprotein (LDL) levels [25, 31, 44]. It should be noted that this reduction occurred by all forms of Cinnamomum cassia including supplements [25, 44], powder [31], and extract [45]. The supplement form seems to have greater efficacy when used for more than 12 weeks. In addi- tion, use of Lagerstroemia spesiosa L. and Cinnamomum burmanii for six months considerably reduced the patients’ BMI [49]."
+    },
+    {
+      "chunkId": "moinijazani2019-p10-2",
+      "page": 10,
+      "text": "Different findings have been reported regarding the effec- tiveness of different species of green tea in metabolic Table 1 (continued) No Authors /country/ year Scientific name Part/ compound Sample size Duration of study Results and synbiotic beverage compared to baseline and control group. Significant ↓ testosterone in synbiotic pomegranate juice and synbiotic beverage compared with baseline 38 Moini A, et al., Iran 2018 [62] Apium graveolens L.and Pimpinella anisum L. powdered seeds in form of capsule 72 4 menstrual cycles ↑ menstrual cyclicity, ↓ testosterone and ↓ LH/FSH in intervention group compared to the metformin group 39 Heidary M, et al., Iran 2018 [63] Matricaria chamomilla L. Chamomilpowder as capsule 80 3 months Significant ↓ testosterone after treatment in chamomile group."
+    },
+    {
+      "chunkId": "moinijazani2019-p10-3",
+      "page": 10,
+      "text": "No remarkable change in LDL, HDL, TG, DHEA, and LH/FSH in treatment and control group. 40 Armanini D, et al., Italy 2006 [64] Glycyrrhiza glabra L. licorice powder 32 – No remarkable change in blood pressure and no complain of symptoms related to volume depletion in spironolactone plus licorice group compared to spironolactone treatment. 41 Mokaberinejad R, et al., Iran, 2019 [65] Foeniculum vulgare Mill. Fennel seed infusion 61 6 months ↓ Menstrual cycle interval and ↓ dysmenorrhea severity in treatment group compared to metformin group after 3 and 6 months. No adverse event in treatment group. 42 Ding CF."
+    },
+    {
+      "chunkId": "moinijazani2019-p10-4",
+      "page": 10,
+      "text": "et al., China 2014 [66] – Chinese medicine formulation as decoction 355 3menstrual cycles Significant ↓ spiral artery pulsatility index,↓ resistance index, ↑endometrial thickness, in group 2 (clomiphene + human menopause gonadotropin + human chorionic gonadotropin + Cangfu daotan) compared to group 1 (clomiphene + human menopause gonadotropin + human chorionic gonadotropin). ↓ HOMA-IR in group 2 after treat- ment compared to before."
+    },
+    {
+      "chunkId": "moinijazani2019-p10-5",
+      "page": 10,
+      "text": "N.S; not significant, ↑; increased, ↓; decreased TAC; total antioxidant capacity, MDA; malondialdehyde, LDL; low-density lipoprotein, HDL; high- density lipoprotein, VLDL; very low-density lipoprotein cholesterol, TG; triglycerid, FSH; follicle-stimulating hormone, LH; luteinizing hormone, Hb; hemoglobin, HgBA1c;hemoglobin A1c or glycosylated hemoglobin, BMI; body mass index, CC; clomifene citrate, HOMA-IR; homeostatic model assessment insulin resistance, HOMA-B;homeostasis model of assessment β-cell function DQLI; dermatology quality of life index, LD; combined low- dose oral contraceptives, DHEAS;dehydroepiandrosterone sulfate, CC; clomiphene citrate, AST; aspartate transaminase, ALT; alanine transaminase, ALP; alkaline phosphatase, BUN; blood urea nitrogen, WBC; white blood cell, SHBG; sex hormone-binding globulin, T; testosterone, LDH; lactate dehydrogenase, FBS; fasting blood sugar, FAI; free androgen index, FINS; fasting insulin, FPG;fasting plasma glucose, QUICKI; quantitative insulin sensitivity check index, PMS; premenstrual syndrome, AMH; anti-müllerian hormone, BS; blood suger, BW; body weight, AUB; abnormal uterine bleeding, ROS; reactive oxygen species, CRP; C-reactive protein, LDH; lactate dehydrogenase, PUFA; polyunsaturated fatty acids, MPA; medroxyprogesterone acetate, Met; metformin, 2hppbs; 2 h postprandial blood suger 872 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p11-1",
+      "page": 11,
+      "text": "dysfunction of PCOS patients [28]. It was found that con- sumption of Camellia sinensis L. and Punica granatum L. juice could reduce body weight, BMI, waist circumference, serum insulin, and insulin resistance [50]. However, Chinese green tea showed no effects on BMI, lipid profile, or serum insulin level [37]. In addition Nigella sativa L. could reduce insulin, insulin resistance indices, cholesterol, and triglyceride level after four months [59]. Vitex agnus-castus [30], Tian-gui [35], and Berberine [53] were found to have similar therapeutic effects to Metformin on metabolic dysfunction in PCOS patients."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-2",
+      "page": 11,
+      "text": "Administration of Soy supplements (isoflavon and Soy-phytoestrogen) for at least 12 weeks decreased insulin resistance and serum level of triglyceride, there by modifying metabolic dysfunction [43, 51]. In addition to herbs, consumption of foods such as red onion (Allium cepa L.) [38], flaxseed oil [55], walnut, and almond [48] was showed to ameliorate the lipid-profile and metabolic dysfunctions in PCOS patients. In addition, Dan- zhixia- oyae and Marjoram tea induced favorable effects on decreasing fasting serum insulin level [53, 56]. Oxidative stress Reduction of oxidative stress is one of the possible mecha- nisms contributing to the therapeutic effects of herbs in PCOS."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-3",
+      "page": 11,
+      "text": "Although the majority of previous studies have described the anti-oxidative effects of herbs as the main therapeutic mecha- nism, only few papers have surveyed this phenomenon in details. In one study, Cinnamon supplement considerably re- duced Malondialdehyde level and increased the total serum antioxidant capacity [25]. Cangfu Congxian decoction de- creased the production of oxygen radicals and oxidative stress in granulosa cells of the ovaries [57]. Overall Soy supplements could alter oxidative stress through two different mechanisms: (i) reducing Malondialdehyde level, and (ii) increasing total glutathione [43]. Sonographic findings Since sonographic criteria are of paramount importance in the diagnosis of PCOS, effects of herbs on sonographic findings are worth being evaluated."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-4",
+      "page": 11,
+      "text": "A remarkable decrease in the ovar- ian volume as well as cyst number was reported in two sepa- rate studies evaluating the therapeutic effects of Trigonella foenum-graecumL.on PCOS [29, 41]. Likewise, Linum usitatissimum L.exhibited the same reducing effects on the ovarian volume and cyst numbers [52]. In line with these findings, Tian- gui was shown to decrease the ovarian volume when administered for three months [35]. Furthermore, treat- ment with Unkei-toled to a considerable improvements in dominant follicle formation on sonography [40]. Eight-week treatment with wood betony (Stachys lavandulifolia) resulted in the considerable reduction of polycystic-appearing ovaries [54]. Administrat on Anethum graveolens L. and Asparagus racemosus Willd."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-5",
+      "page": 11,
+      "text": "not only decreased the ovarian volume but also increased the endometrial thickness [42]. In addition, the impact of Cinnamomum verumJ. Presl on PCOS patients was investigated in a previous study. Although improvements were observed in the menstrual cycles,hormonal status, and metabolic dysfunction, no considerable sonographic findings were reported [44]. Adverse effects The adverse effects of herbs have not been precisely addressed in the majority of studies, and limited information is available in this area. However, previous studies reported minimum side effects."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-6",
+      "page": 11,
+      "text": "Three independent studies comparing Vitex agnus- castus [30], Lagerstroemia spesiosa L.,Cinnamomum burmanii [49], and berberine [53] with metformin as an established treatment concluded that herbs had considerably fewer adverse effects. In addition, wood betony (Stachys lavandulifolia) was reported to have fewer adverse effects in comparison with medroxyprogesterone acetate [54]. Regarding the adverse effects, administrationCimicifuga racimosa was as safe as clomiphene citrate in 100 PCOS patients [46]. Also, in another study,on664 patients, adminis- tration of berberine and letrozolefor six months caused no remarkable difference in the presentation of adverse effects [39]."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-7",
+      "page": 11,
+      "text": "Also, no complication was reported following treatment with Cinnamomum cassiafor three months and spearmint tea for eight weeks [31, 32]. A limited number of PCOS patients receiving Grifola frondosa exhibited mild epigastric pain and discomfort [34]. In addition, mild adverse gastrointestinal events, constipation, and nausea were reported after the ad- ministration of berberine [39]. In a survey evaluating the im- pact of Cinnamomum in combination with Glycyrrhiza spp., Paeonia lactiflora, and Hypericum perforatum L .only two out of 122 patients experienced complications; one patient presented with a flu-like syndrome, and one with abnormal uterine bleeding [27]."
+    },
+    {
+      "chunkId": "moinijazani2019-p11-8",
+      "page": 11,
+      "text": "It is worth mentioning that the adverse effects attributed to Grifola frondosa, Cinnamon, and berber- ine resolved after a short period of withdrawal [27, 34, 39]. Discussion PCOS is a multi-organ disorder with an unclear pathophysi- ology, multiple clinical manifestations, and serious complica- tions. Management of PCOS requires a multidisciplinary ap- proach. Since common treatments for PCOS are not fully effective and have some unwanted side-effects, attempts must be made to find more advantageous therapeutic options with minimal adverse effects. Accordingly, medicinal plants, which contain multiple active components without major adverse effects, have become popular. DARU J Pharm Sci (2019) 27:863–877 873"
+    },
+    {
+      "chunkId": "moinijazani2019-p12-1",
+      "page": 12,
+      "text": "A multitude of studies have revealed that a wide spectrum of herbs could be used in the treatment of of clinical and laboratory symptoms of PCOS, including menstrual irregularities, infertility, hormonal status, insulin resistance, lipid profile, and anthropomet- ric indices. These herbs have been used together or in combination with conventional treatments; however, review of previous studies showed that most of these herbs were used alone. According to the present study, some researchers investi- gated various therapeutic effects of plants on PCOS. Overall, herbs, including Cinnamon species, Vitex agnus- castus, Foeniculum vulgare Mill, and Linum usitatissimum L. seem to be helpful in regulating the menstryal cycles and improving hormonal and metabolic indices [31, 45, 52]."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-2",
+      "page": 12,
+      "text": "The main mechanisms of the effectiveness of medicinal plants in PCOS are not yet fully understood. Nevertheless, these mech- anisms seem to improve the hormonal balance of LH, FSH, and testosterone, and enhance oxidative stress and metabolic disorders. Evidence suggests that Vitex agnus- castus can regulate the menstrual cycles and improve fertility by inducing an increase in the level of midluteal progesterone, mild inhibition of FSH release, stimulation of LH release [67, 68], inhibition of type II dopamine receptors, increase of CAMP level, and prolactin depletion [68]."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-3",
+      "page": 12,
+      "text": "In addition, the presence of flavonoid com- pounds in the vitex extract converts testosterone to estradiol and decreases the serum testosterone level by increasing the activity of aromatase [69]; this herb can reduce oxidative stress in PCOS due to its flavonoid and phenolic content [70]. Furthermore, cinnamon species have been frequently used in various studies. They have been administered as powder, extract, or supplement for PCOS patients to (i) improve the menstrual cycle and serum antioxidant level, (ii) reduce FBS/ insulin, (iii) modify insulin resistance indices, and (iv) de- crease weight/BMI [25, 31, 44, 45]."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-4",
+      "page": 12,
+      "text": "In fact, cinnamon- extracted bioactive agents can stimulate glycogen synthesis, increase glucose uptake, and increase insulin sensitivity by activating insulin receptors and inhibiting dephosphorylation of these receptors [71, 72]. Antioxidant compounds in plants, such as celery and cinnamon, protect the ovarian tissue against oxidative stress in PCOS by decreasing lipid peroxidation, superoxide dismutase, glutathione peroxidase, and reactive oxygen species in the ovarian tissue [73]. Trigonella foenum-graecum L.can reduce blood glucose and insulin resistance by inhibiting alpha-amylase and sucrose activity [74, 75]. Moreover, Trigonella foenum-graecum L."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-5",
+      "page": 12,
+      "text": "extract reduces blood lipid and cholesterol storage by decreasing carbohydrate reabsorption and increasing the secretion of natural sterols [76, 77]. Fenugreek compounds, including linoleic acid, decrease the level of LH by reducing leptin, nitric oxide, and gonadotropin- releasing hormone release [78]. Also, the findings showed that progesterone levels increased in PCOS mice treated with Trigonella foenum-graecum L. seed extract, which might be attrib- uted to the presence of diosgenin compounds in Trigonella foenum-graecum L. seeds as progesterone precursors [79]. Cimicifuga racemosa decreases LH due to the selective inhibition of alpha-estrogen receptors in PCOS patients [80]."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-6",
+      "page": 12,
+      "text": "Soybeans may improve insulin resistance markers by inhibiting protein tyrosine kinase as a regulator of insulin se- cretion from pancreatic beta cells [81]. Soy also reduces lipid synthesis by decreasing glucose conversion to fat and increas- ing lipolysis [82]. Isoflavones in soybean may regulate the function of steroidogenic enzymes, such as P450 aromatase and 3β-steroid dehydrogenase, by binding to estrogen recep- tors. Inhibition of 3β-steroid dehydrogenase enzyme by phytoestrogens, including soy, also reduces the serum testos- terone level [83–85]. This enzyme acts as a catalyst for the conversion of androstenedione to testosterone [84, 85]. Phytoestrogens also decreases the serum level of androgens by increasing the level of sex hormone binding globulin (SHBG) [86, 87]."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-7",
+      "page": 12,
+      "text": "However, some articles reported no change in SHBG level [88]. Differences in sample size, dosage, du- ration of use, and different drug forms appear to contribute to different effects of soy on testosterone level in PCOS patients. Moreover, use of some herbs (e.g., Cimicifuga racemosa), along with conventional treatments (e.g., clomiphene citrate, letrozole, and metformin), has several advantages, such as improvement of ovulation, increased pregnancy rate, in- creased live birth rate, improvement of uterine wall thickness, and improvement of menstrual cycle. On the other hand, mild and reversible adverse effects were reported in some studies."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-8",
+      "page": 12,
+      "text": "Conclusion According to the present study, several medicinal plants, such as Vitex agnus- castus, cinnamon species, Cimicifuga racemosae (L.) Nutt., and Trigonellafoenum-graecumL could be helpful in the management of PCOS, based on current clinical evidence. However, their effectiveness is not certain due to some limitations, such as small sample size and short duration of studies. Therefore, further preclinical and clinical studies are essential with a larger sample size and a more structured methodology in order to evaluate the safety and pharmacological mechanisms of herbal medicines in PCOS. Compliance with ethical standards Conflict of interest The authors declare no conflict of interest or finan- cial relationships. References 1."
+    },
+    {
+      "chunkId": "moinijazani2019-p12-9",
+      "page": 12,
+      "text": "Eshre TR, Asrm-Sponsored PCOS Consensus Workshop Group. Revised 2003 consensus on diagnostic criteria and long-term health risks related to polycystic ovary syndrome. Fertil Steril. 2004;81(1): 19–25. 874 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p13-1",
+      "page": 13,
+      "text": "2. Ozcan Dag Z, Alpua M, Isik Y, Buturak SV, Tulmac OB, Turkel Y. The evaluation of temperament and quality of life in patients with polycystic ovary syndrome. Gynecological endocrinology : the of- ficial journal of the International Society of Gynecological Endocrinology. 2017;33(3):250–3. 3. Bozdag G, Mumusoglu S, Zengin D, Karabulut E, Yildiz BO. The prevalence and phenotypic features of polycystic ovary syndrome: a systematic review and meta-analysis. Hum Reprod. 2016;31(12): 2841–55. 4. Celik O, Acbay O. Effects of metformin plus rosuvastatin on hyperandrogenism in polycystic ovary syndrome patients with hy- perlipidemia and impaired glucose tolerance. J Endocrinol Investig. 2012;35(10):905–10. 5. Norman RJ, Dewailly D, Legro RS, Hickey TE. Polycystic ovary syndrome. Lancet."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-2",
+      "page": 13,
+      "text": "2007;370(9588):685–97. 6. Helvaci N, Yildiz BO. Oral contraceptives in polycystic ovary syn- drome. Minerva Endocrinol. 2014;39(3):175–87. 7. Seaman HE, de Vries CS, Farmer RD. Venous thromboembolism associated with cyproterone acetate in combination with ethinyloestradiol (Dianette): observational studies using the UK general practice research database. Pharmacoepidemiol Drug Saf. 2004;13(7):427–36. 8. Messinis IE. Ovulation induction: a mini review. Hum Reprod. 2005;20(10):2688–97. 9. Tannus S, Burke YZ, Kol S. Treatment strategies for the infertile polycystic ovary syndrome patient. Womens Health (Lond). 2015;11(6):901–12. 10. Vrbikova J, Cibula D. Combined oral contraceptives in the treat- ment of polycystic ovary syndrome. Hum Reprod Update. 2005;11(3):277–91. 11."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-3",
+      "page": 13,
+      "text": "Franik S, Kremer JA, Nelen WL, Farquhar C. Aromatase inhibitors for subfertile women with polycystic ovary syndrome. Cochrane Database Syst Rev. 2014;2:CD010287. 12. Balen AH, Morley LC, Misso M, Franks S, Legro RS, Wijeyaratne CN, et al. The management of anovulatory infertility in women with polycystic ovary syndrome: an analysis of the evidence to support the development of global WHO guidance. Hum Reprod Update. 2016;22(6):687–708. 13. Abu HH. Twenty years of ovulation induction with metformin for PCOS; what is the best available evidence? Reprod BioMed Online. 2016;32(1):44–53. 14. Lunny CA, Fraser SN. The use of complementary and alternative medicines among a sample of Canadian menopausal-aged women. J Midwifery Womens Health. 2010;55(4):335–43. 15. Barnes PM, Bloom B, Nahin RL."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-4",
+      "page": 13,
+      "text": "Complementary and alternative medicine use among adults and children; United States. Natl Health Stat Report. 2007. 16. Bishop JL, Northstone K, Green J, Thompson EA. The use of complementary and alternative medicine in pregnancy: data from the Avon longitudinal study of parents and children (ALSPAC). Complement Ther Med. 2011;19(6):303–10. 17. Birdee GS, Kemper KJ, Rothman R, Gardiner P. Use of comple- mentary and alternative medicine during pregnancy and the post- partum period: an analysis of the National Health Interview Survey. J Womens Health (Larchmt) (2002). 2014;23(10):824–9. 18. Hosseinkhani A, Asadi N, Pasalar M, Zarshenas MM. Traditional Persian medicine and management of metabolic dysfunction in polycystic ovary syndrome. J Tradit Complement Med. 2017. 19."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-5",
+      "page": 13,
+      "text": "Ong M, Peng J, Jin X, Qu X. Chinese herbal medicine for the optimal management of polycystic ovary syndrome. Am J Chin Med. 2017;45(03):405–22. 20. Mokaberinejad R, Zafarghandi N, Bioos S, Dabaghian FH, Naseri M, Kamalinejad M, et al. Mentha longifolia syrup in secondary amenorrhea: a double-blind, placebo-controlled, randomized trials. Daru. 2012;20(1):97. 21. Moini Jazani A, Hamdi K, Tansaz M, Nazemiyeh H, Sadeghi Bazargani H, Fazljou SMB, et al. Herbal medicine for Oligomenorrhea and amenorrhea: a systematic review of ancient and conventional medicine. Biomed Res Int. 2018;2018. 22. Mohammad MB, Seghinsara AM. Polycystic ovary syndrome (PCOS), diagnostic criteria, and AMH. Asian Pac J Cancer Prev: APJCP. 2017;18(1):17. 23. Lujan ME, Chizen DR, Pierson RA."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-6",
+      "page": 13,
+      "text": "Diagnostic criteria for poly- cystic ovary syndrome: pitfalls and controversies. J Obstet Gynaecol Can. 2008;30(8):671–9. 24. Wood JR, Dumesic DA, Abbott DH, Strauss JF III. Molecular abnormalities in oocytes from women with polycystic ovary syn- drome revealed by microarray analysis. J Clin Endocrinol Metab. 2006;92(2):705–13. 25. Borzoei A, Rafraf M, Niromanesh S, Farzadi L, Narimani F, Doostan F. Effects of cinnamon supplementation on antioxidant status and serum lipids in women with polycystic ovary syndrome. J Tradit Complement Med. 2018;8(1):128–33. 26. Forouhari S, Heidari Z, Tavana Z, Salehi M, Sayadi M. The effect of soya on some hormone levels in women with polycystic ovary syndrome (balance diet): a cross over randomized clinical trial. Bull Env Pharmacol Life Sci."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-7",
+      "page": 13,
+      "text": "2013;3(1):246–50. 27. Arentz S, Smith CA, Abbott J, Fahey P, Cheema BS, Bensoussan A. Combined lifestyle and herbal medicine in overweight women with polycystic ovary syndrome (PCOS): a randomized controlled trial. Phytother Res. 2017;31(9):1330–40. 28. Tehrani HG, Allahdadian M, Zarre F, Ranjbar H, Allahdadian F. Effect of green tea on metabolic and hormonal aspect of polycystic ovarian syndrome in overweight and obese women suffering from polycystic ovarian syndrome: a clinical trial. J Educ Health Promot. 2017;6. 29. Swaroop A, Jaipuriar AS, Gupta SK, Bagchi M, Kumar P, Preuss HG, et al. Efficacy of a novel fenugreek seed extract (Trigonella foenum-graecum, FurocystTM) in polycystic ovary syndrome (PCOS). Int J Med Sci. 2015;12(10):825–31. 30."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-8",
+      "page": 13,
+      "text": "Shayan A, Masoumi SZ, Shobeiri F, Tohidi S, Khalili A. Comparing the effects of agnugol and metformin on oligomenor- rhea in patients with polycystic ovary syndrome: a randomized clinical trial. J Clin Diagn Res: JCDR. 2016;10(12):QC13–6. 31. Hajimonfarednejad M, Nimrouzi M, Heydari M, Zarshenas MM, Raee MJ, Jahromi BN. Insulin resistance improvement by cinna- mon powder in polycystic ovary syndrome: a randomized double- blind placebo controlled clinical trial. Phytother Res. 2018;32(2): 276–83. 32. Grant P. Spearmint herbal tea has significant anti-androgen effects in polycystic ovarian syndrome. A randomized controlled trial. Phytother Res: An International Journal Devoted to Pharmacological and Toxicological Evaluation of Natural Product Derivatives. 2010;24(2):186–8. 33."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-9",
+      "page": 13,
+      "text": "Shahnazi M, Khalili AF, Hamdi K, Ghahremaninasab P. The effects of combined low-dose oral contraceptives and Vitex agnus on the improvement of clinical and paraclinical parameters of polycystic ovarian syndrome: A triple-blind, randomized, controlled clinical trial. Iran Red Crescent Med J. 2016;18(12). 34. Chen J-T, Tominaga K, Sato Y, Anzai H, Matsuoka R. Maitake mushroom (Grifola frondosa) extract induces ovulation in patients with polycystic ovary syndrome: a possible monotherapy and a combination therapy after failure with first-line clomiphene citrate. J Altern Complement Med. 2010;16(12):1295–9. 35. Kuek S, Wang W, Gui S. Efficacy of Chinese patent medicine Tian Gui Capsule in patients with polycystic ovary syndrome: a random- ized controlled trial."
+    },
+    {
+      "chunkId": "moinijazani2019-p13-10",
+      "page": 13,
+      "text": "Zhong xi yi jie he xue bao= J Chin Integr Med. 2011;9(9):965–72. 36. Shahin AY, Mohammed SA. Adding the phytoestrogen Cimicifugae Racemosae to clomiphene induction cycles with timed intercourse in polycystic ovary syndrome improves cycle DARU J Pharm Sci (2019) 27:863–877 875"
+    },
+    {
+      "chunkId": "moinijazani2019-p14-1",
+      "page": 14,
+      "text": "outcomes and pregnancy rates–a randomized trial. Gynecol Endocrinol. 2014;30(7):505–10. 37. Chan CC, Koo MW, Ng EH, Tang O-S, Yeung WS, Ho P-C. Effects of Chinese green tea on weight, and hormonal and biochemical profiles in obese patients with polycystic ovary syndrome—a ran- domized placebo-controlled trial. J Soc Gynecol Investig. 2006;13(1):63–8. 38. Ebrahimi-Mamaghani M, Saghafi-Asl M, Pirouzpanah S, Asghari- Jafarabadi M. Effects of raw red onion consumption on metabolic features in overweight or obese women with polycystic ovary syn- drome: a randomized controlled clinical trial. J Obstet Gynaecol Res. 2014;40(4):1067–76. 39. Wu XK, Wang YY, Liu JP, Liang RN, Xue HY, Ma HX, Shao XG, Ng EH, Hou LH, Tian F, Xie YM."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-2",
+      "page": 14,
+      "text": "Randomized controlled trial of letrozole, berberine, or a combination for infertility in the polycystic ovary syndrome. Fertil Steril. 2016;106(3):757–65. 40. Ushiroyama T, Ikeda A, Sakai M, Hosotani T, Suzuki Y, Tsubokura S, et al. Effects of unkei-to, an herbal medicine, on endocrine func- tion and ovulation in women with high basal levels of luteinizing hormone secretion. J Reprod Med. 2001;46(5):451–6. 41. Bashtian MH, Emami SA, Mousavifar N, Esmaily HA, Mahmoudi M, Poor AHM. Evaluation of fenugreek (Trigonella foenum- graceum L.), effects seeds extract on insulin resistance in women with polycystic ovarian syndrome. Iran J Pharm Res: IJPR. 2013;12(2):475. 42. Kumarapeli M, Karunagoda K, Perera PK."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-3",
+      "page": 14,
+      "text": "A randomized clinical trial to evaluate the efficacy of Satapushpashatavari powered drug with Satapushpa-shatavari grita for the management of polycystic ovary syndrome (PCOS). IJPSR. 2018;9(6):2494–9. 43. Jamilian M, Asemi Z. The effects of soy isoflavones on metabolic status of patients with polycystic ovary syndrome. J Clin Endocrinol Metab. 2016;101(9):3386–94. 44. Kort DH, Lobo RA. Preliminary evidence that cinnamon improves menstrual cyclicity in women with polycystic ovary syndrome: a randomized controlled trial. Am J Obstet Gynecol. 2014;211(5): 487. e1–6. 45. Wang JG, Anderson RA, Graham GM III, Chu MC, Sauer MV, Guarnaccia MM, et al. The effect of cinnamon extract on insulin resistance parameters in polycystic ovary syndrome: a pilot study. Fertil Steril. 2007;88(1):240–3. 46."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-4",
+      "page": 14,
+      "text": "Kamel HH. Role of phyto-oestrogens in ovulation induction in women with polycystic ovarian syndrome. Eur J Obstet Gynecol Reprod Biol. 2013;168(1):60–3. 47. Lai L, Flower A, Prescott P, Wing T, Moore M, Lewith G. Standardised versus individualised multiherb Chinese herbal med- icine for oligomenorrhoea and amenorrhoea in polycystic ovary syndrome: a randomised feasibility and pilot study in the UK. BMJ Open. 2017;7(2):e011709. 48. Kalgaonkar S, Almario R, Gurusinghe D, Garamendi E, Buchan W, Kim K, et al. Differential effects of walnuts vs almonds on improv- ing metabolic and endocrine parameters in PCOS. Eur J Clin Nutr. 2011;65(3):386–93. 49. Wiweko B, Susanto CA."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-5",
+      "page": 14,
+      "text": "The effect of metformin and cinnamon on serum anti-mullerian hormone in women having PCOS: a double- blind, randomized, controlled trial. J Hum Reprod Sci. 2017;10(1): 31–6. 50. Mombaini E, Jafarirad S, Husain D, Haghighizadeh MH, Padfar P. The impact of green tea supplementation on anthropometric indices and inflammatory cytokines in women with polycystic ovary syn- drome. Phytother Res. 2017;31(5):747–54. 51. Khani B, Mehrabian F, Khalesi E, Eshraghi A. Effect of soy phy- toestrogen on metabolic and hormonal disturbance of women with polycystic ovary syndrome. Journal Res Med Sci: the official jour- nal of Isfahan University of Medical Sciences. 2011;16(3):297– 302. 52. Farzana F, Sulaiman A, Ruckmani A, Vijayalakshmi K, Karunya Lakshmi G, Shri RS."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-6",
+      "page": 14,
+      "text": "Effects of flax seeds supplementation in poly- cystic ovarian syndrome. J Res Med Sci. 2015;31(1):113–9. 53. An Y, Sun Z, Zhang Y, Liu B, Guan Y, Lu M. The use of berberine for women with polycystic ovary syndrome undergoing IVF treat- ment. Clin Endocrinol. 2014;80(3):425–31. 54. Jalilian N, Modarresi M, Rezaie M, Ghaderi L, Bozorgmanesh M. Phytotherapeutic management of polycystic ovary syndrome: role of aerial parts of wood betony (Stachys lavandulifolia). Phytother Res. 2013;27(11):1708–13. 55. Mirmasoumi G, Fazilati M, Foroozanfard F, Vahedpoor Z, Mahmoodi S, Taghizadeh M, et al. The effects of flaxseed oil omega-3 fatty acids supplementation on metabolic status of patients with polycystic ovary syndrome: a randomized, double-blind, placebo-controlled trial."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-7",
+      "page": 14,
+      "text": "Exp Clin Endocrinol Diabetes. 2018;126(04):222–8. 56. Haj-Husein I, Tukan S, Alkazaleh F. The effect of marjoram (O riganum majorana) tea on the hormonal profile of women with polycystic ovary syndrome: a randomised controlled pilot study. J Hum Nutr Diet. 2016;29(1):105–11. 57. Liang Y, Tian Q, Mu Y, Du H. Effects of Cangfu Congxian decoc- tion on oxidative stress in polycystic ovary syndrome patients. Zhongguo Zhong xi yi jie he za zhi Zhongguo Zhongxiyi jiehe zazhi= Zhongguo Zhong Xi Yi Jie He Za Zhi. 2016;36(6):685–9. 58. Liu Y, Mao L-H. Effect of danzhi xiaoyao pill on ovulation induc- tion of polycystic ovarian syndrome patients of pathogenic fire derived from stagnation of gan-qi. Zhongguo Zhong xi yi jie he za zhi Zhongguo Zhongxiyi jiehe zazhi= Zhongguo Zhong Xi Yi Jie He Za Zhi."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-8",
+      "page": 14,
+      "text": "2013;33(9):1191–5. 59. Naeimi SA, Tansaz M, Sohrabvand F, Hajimehdipoor H, Nabimeybodi R, Saber S, et al. Assessing the effect of processed nigella sativa on oligomenorrhea and amenorrhea in patients with polycystic ovarian syndrome: a pilot study. Int J Pharm Sci Res. 2018;9(11):4716–22. 60. Borzoei A, Rafraf M, Asghari-Jafarabadi M. Cinnamon improves metabolic factors without detectable effects on adiponectin in wom- en with polycystic ovary syndrome. Asia Pac J Clin Nutr. 2018;27(3):556–63. 61. Esmaeilinezhad Z, Babajafari S, Sohrabi Z, Eskandari M-H, Amooee S, Barati-Boldaji R. Effect of synbiotic pomegranate juice on glycemic, sex hormone profile and anthropometric indices in PCOS: a randomized, triple blind, controlled trial. Nutr Metab Cardiovasc Dis. 2019;29(2):201–8. 62."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-9",
+      "page": 14,
+      "text": "Moini Jazani A. Celery plus Anise versus metformin for the treat- ment of oligomenorrhea in the polycystic ovary syndrome: a triple- blind randomized clinical trial: Tabriz University of Medical Sciences, School of Traditional Medicine; 2018. 63. Heidary M, Yazdanpanahi Z, Dabbaghmanesh MH, Parsanezhad ME, Emamghoreishi M, Akbarzadeh M. Effect of chamomile cap- sule on lipid-and hormonal-related parameters among women of reproductive age with polycystic ovary syndrome. J Res Med Sci. 2018;23. 64. Armanini D, Castello R, Scaroni C, Bonanni G, Faccini G, Pellati D, et al. Treatment of polycystic ovary syndrome with spironolactone plus licorice. Eur J Obstet Gynecol Reprod Biol. 2007;131(1):61–7. 65. Mokaberinejad R, Rampisheh Z, Aliasl J, Akhtari E."
+    },
+    {
+      "chunkId": "moinijazani2019-p14-10",
+      "page": 14,
+      "text": "The compar- ison of fennel infusion plus dry cupping versus metformin in man- agement of oligomenorrhoea in patients with polycystic ovary syn- drome: a randomised clinical trial. J Obstet Gynaecol. 2019:1–7. 66. Ding C-F, Wang C-Y, Yang X, Zheng R-H, Yan Z-Z, Chen W-Q. Effect of modified cangfu daotan decoction in improving endome- trial receptivity in infertility patients with polycystic ovarian syn- drome. Zhongguo Zhong xi yi jie he za zhi Zhongguo Zhongguo Zhong Xi Yi Jie He Za Zhi. 2014;34(11):1297–301. 876 DARU J Pharm Sci (2019) 27:863–877"
+    },
+    {
+      "chunkId": "moinijazani2019-p15-1",
+      "page": 15,
+      "text": "67. Roemheld-Hamm B. Chasteberry. Am Fam Physician. 2005;72(5): 821–4. 68. Wuttke W, Jarry H, Christoffel V, Spengler B, Seidlova-Wuttke D. Chaste tree (Vitex agnus-castus)–pharmacology and clinical indica- tions. Phytomedicine. 2003;10(4):348–57. 69. Webster D, Lu J, Chen S-N, Farnsworth N, Wang ZJ. Activation of the μ-opiate receptor by Vitex agnus-castus methanol extracts: im- plication for its use in PMS. JJ Ethnopharmacol. 2006;106(2):216– 21. 70. Ahangarpour A, Najimi SA, Farbood Y. Effects of Vitex agnus- castus fruit on sex hormones and antioxidant indices in a D- galactose-induced aging female mouse model. J Chin Med Assoc. 2016;79(11):589–96. 71. Sigal RJ, Kenny GP, Boulé NG, Wells GA, Prud'homme D, Fortier M, et al."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-2",
+      "page": 15,
+      "text": "Effects of aerobic training, resistance training, or both on glycemic control in type 2 diabetes: a randomized trial. Ann Intern Med. 2007;147(6):357–69. 72. Heibashy M, Mazen G, Shahin M. Metabolic changes and hormon- al disturbances in polycystic ovarian syndrome rats and the amelio- ration effects of metformin and/or cinnamon extraction. J Am Sci. 2013;9(12):54–p62. 73. Khodaeifar F, Fazljou SMB, Khaki A, Torbati M, Madarek EOS, Khaki AA, et al. Investigating the role of Hydroalcoholic extract of Apium graveolens and cinnamon zeylanicum on metabolically change and ovarian oxidative injury in a rat model of polycystic ovary syndrome. Int J Womens Health Reprod Sci. 2019;7:92–8. 74. Ulbricht C, Basch E, Burke D, Cheung L, Ernst E, Giese N, et al. Fenugreek (Trigonella foenum-graecum L."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-3",
+      "page": 15,
+      "text": "Leguminosae): an evidence-based systematic review by the natural standard research collaboration. J Herb Pharmacother. 2008;7(3–4):143–77. 75. Geil P, Shane-McWhorter L. Dietary supplements in the manage- ment of diabetes: potential risks and benefits. J Am Diet Assoc. 2008;108(4):S59–65. 76. Kandasamy S, Inmozhi Sivagamasundari R, Bupathy A, Sethupathy S. The plasma nitric oxide and homocysteine levels and their association with insulin resistance in south Indian women with polycystic ovary syndrome. Int J Res Med Sci. 2016;4(11): 4829. 77. Kafali H, Iriadam M, Ozardalı I, Demir N. Letrozole-induced poly- cystic ovaries in the rat: a new model for cystic ovarian disease. Arch Med Res. 2004;35(2):103–8. 78. Tamanini C, Basini G, Grasselli F, Tirelli M. Nitric oxide and the ovary."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-4",
+      "page": 15,
+      "text": "J Anim Sci. 2003;81(14_suppl_2):E1–7. 79. Modaresi M, Mahdian B, Jalalizand A, editors. The effect of hydro- alcoholic extract of fenugreek seeds on female reproductive hormones in mice. International Conference on Applied Life Sciences; 2012: IntechOpen. 80. Seidlová-Wuttke D, Hesse O, Jarry H, Christoffel V, Spengler B, Becker T, et al. Evidence for selective estrogen receptor modulator activity in a black cohosh (Cimicifuga racemosa) extract: compar- ison with estradiol-17beta. Eur J Endocrinol. 2003;149(4):351–62. 81. Bhathena SJ, Velasquez MT. Beneficial role of dietary phytoestrogens in obesity and diabetes. Am J Clin Nutr. 2002;76(6):1191–201. 82. Qin Y, Shu F, Zeng Y, Meng X, Wang B, Diao L, et al."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-5",
+      "page": 15,
+      "text": "Daidzein supplementation decreases serum triglyceride and uric acid concen- trations in hypercholesterolemic adults with the effect on triglycer- ides being greater in those with the GA compared with the GG genotype of ESR-β Rsa I. J Nutr. 2013;144(1):49–54. 83. Nynca A, Sadowska A, Orlowska K, Jablonska M, Ciereszko RE. The effects of phytoestrogen genistein on steroidogenesis and es- trogen receptor expression in porcine granulosa cells of large folli- cles. Folia Biol (Krakow). 2015;63(2):119–28. 84. Whitehead SA, Rice S. Endocrine-disrupting chemicals as modu- lators of sex steroid synthesis. Best Pract Res Clin Endocrinol Metab. 2006;20(1):45–61. 85. Lacey M, Bohday J, Fonseka SM, Ullah AI, Whitehead SA."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-6",
+      "page": 15,
+      "text": "Dose– response effects of phytoestrogens on the activity and expression of 3β-hydroxysteroid dehydrogenase and aromatase in human granulosa-luteal cells. J Steroid Biochem Mol Biol. 2005;96(3–4): 279–86. 86. Low Y-L, Dunning AM, Dowsett M, Folkerd E, Doody D, Taylor J, et al. Phytoestrogen exposure is associated with circulating sex hormone levels in postmenopausal women and interact with ESR1 and NR1I2 gene variants. Cancer Epidemiol Biomark Prev. 2007;16(5):1009–16. 87. Törmälä R, Appt S, Clarkson TB, Mueck A, Seeger H, Mikkola T, et al. Impact of soy supplementation on sex steroids and vascular inflammation markers in postmenopausal women using tibolone: role of equol production capability. Climacteric. 2008;11(5):409– 15. 88."
+    },
+    {
+      "chunkId": "moinijazani2019-p15-7",
+      "page": 15,
+      "text": "Tatsch E, Bochi GV, da Silva PR, Kober H, Agertt VA, de Campos MMA, et al. A simple and inexpensive automated technique for measurement of serum nitrite/nitrate. Clin Biochem. 2011;44(4): 348–50. Publisher’s note Springer Nature remains neutral with regard to jurisdic- tional claims in published maps and institutional affiliations. DARU J Pharm Sci (2019) 27:863–877 877"
+    }
+  ]
+}

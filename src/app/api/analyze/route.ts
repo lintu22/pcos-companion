@@ -4,6 +4,7 @@ import { anthropic } from "@ai-sdk/anthropic";
 import { ProfileAnalysisSchema, computeFallbackAnalysis, IntakeAnswers } from "@/lib/scoring";
 import { SYMPTOMS } from "@/lib/research-data";
 import { ALL_CITATIONS, findRelevantChunks } from "@/lib/pdf-sources";
+import { COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
 
 export const maxDuration = 30;
 
@@ -45,6 +46,16 @@ export async function POST(req: NextRequest) {
           .join("\n")
       : "";
 
+    // Two more reference lists, same "never invent, only pick from what's given" rule as
+    // citations: what the research suggests helps, and what the community reports helped.
+    const researchRecommendationReference = SYMPTOMS.filter((s) => s.recommendations?.length)
+      .flatMap((s) => s.recommendations!.map((r) => `- (${s.key}) "${r.text}" — citations: ${r.citations.join(", ")}`))
+      .join("\n");
+    const communityRecommendationReference = COMMUNITY_RECOMMENDATIONS.map(
+      (r) =>
+        `- id=${r.id} (${r.symptom}): "${r.suggestion}" — ${r.percentReportingHelpful}% of community members who tried this reported it helped`
+    ).join("\n");
+
     const answeredFrequencies = Object.entries(body.frequencies)
       .map(([k, v]) => `${k}: ${v}/4`)
       .join(", ");
@@ -57,7 +68,15 @@ export async function POST(req: NextRequest) {
         "You only cite from the provided citation list by id — never invent studies or links. " +
         "Every insight's citationIds must come from the reference list below. " +
         "Symptom keys in dominantSymptoms and insights[].symptom must be chosen from the provided symptom key list exactly as written.\n\n" +
-        `Symptom keys:\n${symptomReference}\n\nCitation reference:\n${citationReference}${excerptsBlock}`,
+        "For `recommendations`, only ever pick from the two reference lists below — never invent a suggestion, " +
+        "a percentage, or a study that isn't listed. For a research-backed suggestion, set source='research' and " +
+        "citationIds to (a subset of) that suggestion's listed citations. For a community-backed suggestion, set " +
+        "source='community' and communityRecommendationId to the exact id shown — never make up a percentage " +
+        "yourself. Always phrase community suggestions as what other members report trying, not as medical advice. " +
+        "If neither list has anything relevant to this person's dominant symptoms, return an empty recommendations array.\n\n" +
+        `Symptom keys:\n${symptomReference}\n\nCitation reference:\n${citationReference}${excerptsBlock}\n\n` +
+        `Research-backed recommendations available:\n${researchRecommendationReference || "(none)"}\n\n` +
+        `Community-reported recommendations available:\n${communityRecommendationReference || "(none)"}`,
       prompt:
         `Frequency answers (0=never,4=almost always): ${answeredFrequencies || "none provided"}\n` +
         `What they've tried so far: ${body.triedSoFar || "(nothing shared)"}\n` +

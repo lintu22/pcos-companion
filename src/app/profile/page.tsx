@@ -8,8 +8,8 @@ import { Separator } from "@/components/ui/separator";
 import { useStoredProfile } from "@/lib/storage";
 import { SYMPTOMS } from "@/lib/research-data";
 import { ALL_CITATIONS } from "@/lib/pdf-sources";
-import { COMMUNITY_BASELINES, COMMUNITY_STATS } from "@/lib/community-data";
-import { Download, ExternalLink, ArrowRight, Users, Sparkles } from "lucide-react";
+import { COMMUNITY_BASELINES, COMMUNITY_STATS, COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
+import { Download, ExternalLink, ArrowRight, Users, Sparkles, Lightbulb, BookOpenCheck, MessagesSquare } from "lucide-react";
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
@@ -126,6 +126,75 @@ export default function ProfilePage() {
               {i < analysis.insights.length - 1 && <Separator className="mt-5" />}
             </div>
           ))}
+        </CardContent>
+      </Card>
+
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Lightbulb className="h-5 w-5" /> What might help
+          </CardTitle>
+          <CardDescription>
+            Suggestions grounded in either the research or the community — never generic advice.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {(() => {
+            const grounded = (analysis.recommendations ?? [])
+              .map((rec) => {
+                if (rec.source === "research") {
+                  const citations = rec.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
+                  if (citations.length === 0) return null; // ungrounded — never shown
+                  return { rec, citations, community: null as (typeof COMMUNITY_RECOMMENDATIONS)[number] | null };
+                }
+                const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
+                if (!community) return null; // ungrounded — never shown
+                return { rec, citations: [], community };
+              })
+              .filter((x): x is NonNullable<typeof x> => x !== null);
+
+            if (grounded.length === 0) {
+              return <p className="text-sm text-muted-foreground">No specific suggestions for this profile yet.</p>;
+            }
+
+            return grounded.map(({ rec, citations, community }, i) => (
+              <div key={i}>
+                <div className="flex items-center gap-2 text-xs font-medium">
+                  {rec.source === "research" ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-primary">
+                      <BookOpenCheck className="h-3 w-3" /> Research-backed
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-secondary-foreground">
+                      <MessagesSquare className="h-3 w-3" /> From the community
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1.5 text-sm text-muted-foreground">{rec.text}</p>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  {citations.map((c) => (
+                    <a
+                      key={c.id}
+                      href={c.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
+                      title={c.summary}
+                    >
+                      {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ))}
+                  {community && (
+                    <span className="text-xs text-muted-foreground">
+                      <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of community
+                      members who tried this reported it helped
+                    </span>
+                  )}
+                </div>
+                {i < grounded.length - 1 && <Separator className="mt-4" />}
+              </div>
+            ));
+          })()}
         </CardContent>
       </Card>
 

@@ -37,7 +37,7 @@ export interface CommunityRecommendation {
   basedOnPostIds: string[]; // which FORUM_POSTS this is drawn from, for traceability
 }
 
-// "What the community says helped" — deliberately separate from COMMUNITY_BASELINES
+// "What the community says helped", deliberately separate from COMMUNITY_BASELINES
 // (which is just symptom prevalence). Kept small and hand-curated for the demo, same
 // spirit as the research citations: nothing the AI can expand beyond this list.
 export const COMMUNITY_RECOMMENDATIONS: CommunityRecommendation[] = [
@@ -98,7 +98,7 @@ export const FORUM_POSTS: ForumPost[] = [
     author: "hedgehog_hanna",
     symptomTags: ["irregular_periods"],
     title: "It took me 3 years and 4 doctors to get diagnosed",
-    body: "Wish I'd had something like this to track patterns earlier — kept getting told 'irregular periods are normal for some people.' Bring data next time, it changes the conversation.",
+    body: "Wish I'd had something like this to track patterns earlier. Kept getting told 'irregular periods are normal for some people.' Bring data next time, it changes the conversation.",
     replies: 58,
     helpfulVotes: 340,
     timeAgo: "5d ago",
@@ -117,7 +117,7 @@ export const FORUM_POSTS: ForumPost[] = [
     id: "p4",
     author: "mkultra_matcha",
     symptomTags: ["mood_changes"],
-    title: "Anxiety spikes around ovulation window — anyone else?",
+    title: "Anxiety spikes around ovulation window, anyone else?",
     body: "Didn't realise this was a documented pattern until I saw the research citations here. Made me feel a lot less like I was overreacting.",
     replies: 22,
     helpfulVotes: 150,
@@ -128,7 +128,7 @@ export const FORUM_POSTS: ForumPost[] = [
     author: "riverstone_rae",
     symptomTags: ["weight_gain", "cravings_blood_sugar"],
     title: "Strength training > cardio for my symptoms, personally",
-    body: "Not medical advice, just sharing — resistance training 3x/week moved the needle on cravings more than the running ever did.",
+    body: "Not medical advice, just sharing: resistance training 3x/week moved the needle on cravings more than the running ever did.",
     replies: 19,
     helpfulVotes: 98,
     timeAgo: "6d ago",

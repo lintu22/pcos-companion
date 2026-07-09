@@ -14,7 +14,7 @@ const MAX_RADIUS = 95;
 const LABEL_OFFSET = 25;
 const MAX_VALUE = 4;
 const RINGS = [1, 2, 3, 4];
-// Crop viewBox top/bottom to remove excess whitespace — chart uses ~y:50-350, so crop to that
+// Crop viewBox top/bottom to remove excess whitespace: chart uses ~y:50-350, so crop to that
 const VIEWBOX_HEIGHT = 300;
 const VIEWBOX_TOP = (SIZE - VIEWBOX_HEIGHT) / 2;
 
@@ -24,8 +24,8 @@ const LABEL_BREAKS: Partial<Record<SymptomKey, [string, string]>> = {
   cravings_blood_sugar: ["Cravings/", "energy"],
 };
 
-// Short axis labels so text fits within the SVG viewBox without clipping —
-// the full symptom label is still used everywhere else on the page.
+// Short axis labels so text fits within the SVG viewBox without clipping.
+// The full symptom label is still used everywhere else on the page.
 const SHORT_LABELS: Partial<Record<SymptomKey, string>> = {
   irregular_periods: "Irregular period",
   weight_gain: "Weight gain",
@@ -113,7 +113,7 @@ export function SymptomRadarChart({
       {/* data polygon */}
       <polygon points={polygonPoints} className="fill-primary/15 stroke-primary" strokeWidth={2} />
 
-      {/* center reset target — only interactive while a symptom is focused */}
+      {/* center reset target, only interactive while a symptom is focused */}
       {selected && onReset && (
         <g
           role="button"

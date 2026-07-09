@@ -38,6 +38,7 @@ import {
   Pill,
   MessagesSquare,
   Info,
+  BookOpenCheck,
 } from "lucide-react";
 
 const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
@@ -49,6 +50,26 @@ const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
+}
+
+function SectionHeading({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="mb-3 mt-10 flex items-start gap-3 border-b pb-3 first:mt-0">
+      <span className="mt-0.5 text-primary">{icon}</span>
+      <div>
+        <h2 className="text-xl font-bold tracking-tight">{title}</h2>
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </div>
+    </div>
+  );
 }
 
 function EvidenceInfoButton() {
@@ -69,7 +90,7 @@ function EvidenceInfoButton() {
         <DialogHeader>
           <DialogTitle>How we grade evidence</DialogTitle>
           <DialogDescription>
-            Each badge reflects our own read of the underlying study design — not a rating the
+            Each badge reflects our own read of the underlying study design, not a rating the
             researchers assigned themselves.
           </DialogDescription>
         </DialogHeader>
@@ -148,7 +169,14 @@ export default function ProfilePage() {
     : analysis.insights;
   const fallbackInsights =
     selectedSymptom && rawVisibleInsights.length === 0 && selectedInfo
-      ? [{ symptom: selectedSymptom, statement: selectedInfo.insights[0], citationIds: selectedInfo.citations }]
+      ? [
+          {
+            symptom: selectedSymptom,
+            statement: selectedInfo.insights[0],
+            citationIds: selectedInfo.citations,
+            meaning: "This is based on the pattern in your answers overall.",
+          },
+        ]
       : rawVisibleInsights;
   const visibleInsights =
     scienceSort === "evidence"
@@ -267,6 +295,12 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
 
+      <SectionHeading
+        icon={<BookOpenCheck className="h-5 w-5" />}
+        title="Backed by science"
+        description="Insights, suggestions, and supplements grounded in published research. Every statement links to a real study."
+      />
+
       {/* What science says */}
       <Card className="mb-6">
         <CardHeader>
@@ -286,10 +320,10 @@ export default function ProfilePage() {
         <CardContent className="space-y-5">
           {visibleInsights.map((insight, i) => {
             const level = bestEvidenceLevel(insight.citationIds);
-            const leadCitation = insight.citationIds.map((id) => ALL_CITATIONS[id]).find(Boolean);
             return (
               <div key={i}>
-                <div className="flex flex-wrap items-center gap-2">
+                <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>
+                <div className="mt-1 flex flex-wrap items-center gap-2">
                   {level && (
                     <span className="inline-flex items-center gap-1">
                       <span
@@ -300,14 +334,13 @@ export default function ProfilePage() {
                       <EvidenceInfoButton />
                     </span>
                   )}
-                  <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>
                 </div>
                 <p className="mt-1.5 text-sm text-muted-foreground">{insight.statement}</p>
-                {leadCitation?.summary && (
-                  <p className="mt-1.5 text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">What this means: </span>
-                    {leadCitation.summary}
-                  </p>
+                {insight.meaning && (
+                  <div className="mt-2 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">What this means for you: </span>
+                    {insight.meaning}
+                  </div>
                 )}
                 <div className="mt-2 flex flex-wrap gap-2">
                   {insight.citationIds.map((id) => {
@@ -352,7 +385,7 @@ export default function ProfilePage() {
               <CardTitle className="flex items-center gap-2">
                 <Lightbulb className="h-5 w-5" /> What might help
               </CardTitle>
-              <CardDescription>Research-backed suggestions tied to your symptoms — never generic advice.</CardDescription>
+              <CardDescription>Research-backed suggestions tied to your symptoms, never generic advice.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {grounded.map(({ rec, citations }, i) => (
@@ -396,7 +429,7 @@ export default function ProfilePage() {
                 <Pill className="h-5 w-5" /> Supplements the research points to
               </CardTitle>
               <CardDescription>
-                Dietary supplements with research evidence for your symptoms — not a recommendation to start
+                Dietary supplements with research evidence for your symptoms, not a recommendation to start
                 taking anything without talking to a doctor or pharmacist first.
               </CardDescription>
             </CardHeader>
@@ -423,7 +456,7 @@ export default function ProfilePage() {
               ))}
               <Separator />
               <p className="text-xs text-muted-foreground">
-                Supplements can interact with medicines and aren&apos;t regulated the way medicines are — check with a
+                Supplements can interact with medicines and aren&apos;t regulated the way medicines are, so check with a
                 doctor or pharmacist before starting one, especially if you&apos;re pregnant, trying to conceive, or
                 on other medication.
               </p>
@@ -432,78 +465,88 @@ export default function ProfilePage() {
         );
       })()}
 
-      {/* What women with PMOS are trying (community) */}
-      {(() => {
-        const grounded = communityRecommendations
-          .map((rec) => {
-            const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
-            return community ? { rec, community } : null;
-          })
-          .filter((x): x is NonNullable<typeof x> => x !== null);
-        if (grounded.length === 0) return null;
-        return (
-          <Card className="mb-6">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] mb-6 w-screen bg-[#EDE4DB] py-8">
+        <div className="mx-auto max-w-3xl space-y-6 px-4">
+          <SectionHeading
+            icon={<Users className="h-5 w-5" />}
+            title="From the community"
+            description="What other members report trying and experiencing, shared anonymously, not medical advice."
+          />
+
+          {/* What women with PMOS are trying (community) */}
+          {(() => {
+            const grounded = communityRecommendations
+              .map((rec) => {
+                const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
+                return community ? { rec, community } : null;
+              })
+              .filter((x): x is NonNullable<typeof x> => x !== null);
+            if (grounded.length === 0) return null;
+            return (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                  </CardTitle>
+                  <CardDescription>
+                    Shared by other members: what they report trying, not medical advice.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {grounded.map(({ rec, community }, i) => (
+                      <div key={i} className="rounded-lg border bg-accent/30 p-4">
+                        <p className="text-sm">{rec.text}</p>
+                        <p className="mt-2 text-xs text-muted-foreground">
+                          Backed by{" "}
+                          <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
+                          members who tried it
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                    Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })()}
+
+          {/* Community comparison */}
+          <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                <Users className="h-5 w-5" /> How you compare to the community
               </CardTitle>
               <CardDescription>
-                Shared by other members — what they report trying, not medical advice.
+                Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {grounded.map(({ rec, community }, i) => (
-                  <div key={i} className="rounded-lg border bg-accent/30 p-4">
-                    <p className="text-sm">{rec.text}</p>
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      Backed by{" "}
-                      <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of members
-                      who tried it
-                    </p>
+            <CardContent className="space-y-3">
+              {visibleCommunitySymptoms.map((s) => {
+                const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
+                if (!baseline) return null;
+                return (
+                  <div key={s} className="flex items-center justify-between gap-4 text-sm">
+                    <span>{labelFor(s)}</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of
+                      community members also report this
+                    </span>
                   </div>
-                ))}
-              </div>
-              <Button render={<Link href="/community" />} variant="outline" className="mt-4">
-                Go to community <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+                );
+              })}
+              <Separator />
+              <p className="text-xs text-muted-foreground">
+                On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
+                diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one
+                supplement recommended online with no clinical backing before finding evidence-based info.
+              </p>
             </CardContent>
           </Card>
-        );
-      })()}
-
-      {/* Community comparison */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Users className="h-5 w-5" /> How you compare to the community
-          </CardTitle>
-          <CardDescription>
-            Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {visibleCommunitySymptoms.map((s) => {
-            const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
-            if (!baseline) return null;
-            return (
-              <div key={s} className="flex items-center justify-between gap-4 text-sm">
-                <span>{labelFor(s)}</span>
-                <span className="text-muted-foreground">
-                  <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of community
-                  members also report this
-                </span>
-              </div>
-            );
-          })}
-          <Separator />
-          <p className="text-xs text-muted-foreground">
-            On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
-            diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one
-            supplement recommended online with no clinical backing before finding evidence-based info.
-          </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       <div className="flex flex-wrap gap-3">
         <Button render={<Link href="/checkin" />}>Do a check-in</Button>

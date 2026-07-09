@@ -71,7 +71,7 @@ export const PDF_CITATIONS: Record<string, Citation> = Object.fromEntries(
 // source was hand-curated (research-data.ts) or ingested from a PDF.
 export const ALL_CITATIONS: Record<string, Citation> = { ...CITATIONS, ...PDF_CITATIONS };
 
-// The strongest evidence grade among a set of citation ids — used to badge and
+// The strongest evidence grade among a set of citation ids, used to badge and
 // sort a "what science says" item. Returns undefined if none of the cited
 // sources carry a grade (so the UI can simply omit the badge).
 export function bestEvidenceLevel(citationIds: string[]): EvidenceLevel | undefined {
@@ -89,7 +89,7 @@ export function bestEvidenceLevel(citationIds: string[]): EvidenceLevel | undefi
 
 /**
  * Very small "search": scores each chunk by how many keywords it contains and
- * returns the top matches. No embeddings/vector DB — fine for a handful of
+ * returns the top matches. No embeddings/vector DB, fine for a handful of
  * PDFs. If we ingest many more documents, swap this for embedding similarity.
  */
 export function findRelevantChunks(

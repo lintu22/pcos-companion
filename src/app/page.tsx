@@ -15,7 +15,7 @@ export default function Home() {
               Make sense of your PMOS symptoms with confidence
             </h1>
             <p className="mt-4 max-w-md text-lg text-muted-foreground">
-              Vera turns a few minutes of questions into a research-backed symptom profile — with
+              Vera turns a few minutes of questions into a research-backed symptom profile, with
               citations, community comparisons, and a record you own.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">
@@ -44,7 +44,7 @@ export default function Home() {
             <p className="mt-1 text-sm font-medium text-primary">Backed by science</p>
             <p className="mt-4 text-muted-foreground">
               Every insight on your profile links back to a real study, graded by how strong the
-              evidence is — so you can tell a guideline-backed fact from a promising early finding, and
+              evidence is, so you can tell a guideline-backed fact from a promising early finding, and
               bring both to your next appointment.
             </p>
             <div className="mt-6">

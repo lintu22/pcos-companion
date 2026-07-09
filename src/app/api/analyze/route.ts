@@ -66,6 +66,12 @@ export async function POST(req: NextRequest) {
     const { object } = await generateObject({
       model,
       schema: ProfileAnalysisSchema,
+      // Abort well before Vercel's own function timeout (maxDuration above) so a
+      // slow/unresponsive provider hits our catch block and returns the fallback
+      // analysis, rather than the whole function being killed with an opaque 504
+      // that skips the catch entirely.
+      maxRetries: 1,
+      timeout: 20_000,
       system:
         "You are a careful, evidence-based PMOS (polyendocrine metabolic ovarian syndrome, formerly known as PCOS, " +
         "renamed in 2026) symptom triage assistant. You never diagnose. " +

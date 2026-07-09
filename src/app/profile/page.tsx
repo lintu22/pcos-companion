@@ -6,8 +6,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useStoredProfile } from "@/lib/storage";
-import { SYMPTOMS, SymptomKey, getSymptomInfo, EVIDENCE_LABEL, EVIDENCE_RANK, EvidenceLevel } from "@/lib/research-data";
+import {
+  SYMPTOMS,
+  SymptomKey,
+  getSymptomInfo,
+  EVIDENCE_LABEL,
+  EVIDENCE_RANK,
+  EVIDENCE_INFO,
+  EvidenceLevel,
+} from "@/lib/research-data";
 import { ALL_CITATIONS, bestEvidenceLevel } from "@/lib/pdf-sources";
 import { COMMUNITY_BASELINES, COMMUNITY_STATS, COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
 import { SymptomRadarChart, RadarDatum } from "@/components/symptom-radar-chart";
@@ -21,16 +37,59 @@ import {
   Lightbulb,
   Pill,
   MessagesSquare,
+  Info,
 } from "lucide-react";
 
 const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
   strong: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300",
   moderate: "bg-amber-100 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300",
   limited: "bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300",
+  low: "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300",
 };
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
+}
+
+function EvidenceInfoButton() {
+  return (
+    <Dialog>
+      <DialogTrigger
+        render={
+          <button
+            type="button"
+            aria-label="What do the evidence levels mean?"
+            className="text-muted-foreground hover:text-primary"
+          />
+        }
+      >
+        <Info className="h-3.5 w-3.5" />
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>How we grade evidence</DialogTitle>
+          <DialogDescription>
+            Each badge reflects our own read of the underlying study design — not a rating the
+            researchers assigned themselves.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="space-y-4">
+          {(Object.keys(EVIDENCE_INFO) as EvidenceLevel[]).map((level) => {
+            const info = EVIDENCE_INFO[level];
+            return (
+              <div key={level} className="flex gap-3">
+                <span className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${info.dot}`} />
+                <div>
+                  <p className="text-sm font-semibold">{info.title}</p>
+                  <p className="text-sm text-muted-foreground">{info.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
 }
 
 export default function ProfilePage() {
@@ -232,10 +291,13 @@ export default function ProfilePage() {
               <div key={i}>
                 <div className="flex flex-wrap items-center gap-2">
                   {level && (
-                    <span
-                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
-                    >
-                      {EVIDENCE_LABEL[level]}
+                    <span className="inline-flex items-center gap-1">
+                      <span
+                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
+                      >
+                        {EVIDENCE_LABEL[level]}
+                      </span>
+                      <EvidenceInfoButton />
                     </span>
                   )}
                   <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>

@@ -21,7 +21,7 @@ export type SymptomKey =
 // study design (guidelines/Cochrane/meta-analyses = strong; narrative reviews or
 // single studies = moderate; small/herbal/patient-info = limited). Not a grade the
 // papers assign themselves; used only to colour the UI badge and sort by evidence.
-export type EvidenceLevel = "strong" | "moderate" | "limited";
+export type EvidenceLevel = "strong" | "moderate" | "limited" | "low" ;
 
 export interface Citation {
   id: string;
@@ -33,12 +33,38 @@ export interface Citation {
   evidenceLevel?: EvidenceLevel;
 }
 
-export const EVIDENCE_RANK: Record<EvidenceLevel, number> = { strong: 3, moderate: 2, limited: 1 };
+export const EVIDENCE_RANK: Record<EvidenceLevel, number> = { strong: 3, moderate: 2, limited: 1, low: 0 };
 
 export const EVIDENCE_LABEL: Record<EvidenceLevel, string> = {
   strong: "Strong evidence",
   moderate: "Moderate evidence",
   limited: "Limited evidence",
+  low: "Very low evidence"
+};
+
+// Plain-language legend shown in the "How we grade evidence" info modal —
+// frames each level as a confidence level rather than research jargon.
+export const EVIDENCE_INFO: Record<EvidenceLevel, { dot: string; title: string; description: string }> = {
+  strong: {
+    dot: "bg-emerald-500",
+    title: "Strong evidence",
+    description: "Supported by multiple high-quality studies with consistent results.",
+  },
+  moderate: {
+    dot: "bg-amber-400",
+    title: "Moderate evidence",
+    description: "Research is promising, but more studies are needed to confirm the findings.",
+  },
+  limited: {
+    dot: "bg-orange-500",
+    title: "Limited evidence",
+    description: "Early research exists, but studies are small, limited, or have mixed results.",
+  },
+  low: {
+    dot: "bg-red-500",
+    title: "Very low evidence",
+    description: "There is not enough reliable research yet to know how effective this might be.",
+  },
 };
 
 export interface ResearchRecommendation {

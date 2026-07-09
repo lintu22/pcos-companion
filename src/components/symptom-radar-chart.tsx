@@ -8,12 +8,21 @@ export interface RadarDatum {
   value: number; // 0-4
 }
 
-const SIZE = 320;
+const SIZE = 400;
 const CENTER = SIZE / 2;
-const MAX_RADIUS = 78;
-const LABEL_OFFSET = 20;
+const MAX_RADIUS = 95;
+const LABEL_OFFSET = 25;
 const MAX_VALUE = 4;
 const RINGS = [1, 2, 3, 4];
+// Crop viewBox top/bottom to remove excess whitespace — chart uses ~y:50-350, so crop to that
+const VIEWBOX_HEIGHT = 300;
+const VIEWBOX_TOP = (SIZE - VIEWBOX_HEIGHT) / 2;
+
+// Split long labels into two lines for readability
+const LABEL_BREAKS: Partial<Record<SymptomKey, [string, string]>> = {
+  irregular_periods: ["Irregular", "periods"],
+  cravings_blood_sugar: ["Cravings/", "energy"],
+};
 
 // Short axis labels so text fits within the SVG viewBox without clipping —
 // the full symptom label is still used everywhere else on the page.
@@ -62,8 +71,8 @@ export function SymptomRadarChart({
 
   return (
     <svg
-      viewBox={`0 0 ${SIZE} ${SIZE}`}
-      className="mx-auto w-full max-w-[416px]"
+      viewBox={`0 ${VIEWBOX_TOP} ${SIZE} ${VIEWBOX_HEIGHT}`}
+      className="mx-auto w-full max-w-[500px]"
       role="img"
       aria-label="Symptom severity radar chart"
     >
@@ -128,6 +137,7 @@ export function SymptomRadarChart({
         const anchor = labelAnchor(i, count);
         const isSelected = selected === d.symptom;
         const shortLabel = SHORT_LABELS[d.symptom] ?? d.label;
+        const lines = LABEL_BREAKS[d.symptom];
         return (
           <g key={d.symptom}>
             <text
@@ -140,7 +150,18 @@ export function SymptomRadarChart({
               }`}
               onClick={() => onSelect(d.symptom)}
             >
-              {shortLabel.length > 16 ? `${shortLabel.slice(0, 14)}…` : shortLabel}
+              {lines ? (
+                <>
+                  <tspan x={labelPoint.x} dy="0">
+                    {lines[0]}
+                  </tspan>
+                  <tspan x={labelPoint.x} dy="1.2em">
+                    {lines[1]}
+                  </tspan>
+                </>
+              ) : (
+                shortLabel.length > 16 ? `${shortLabel.slice(0, 14)}…` : shortLabel
+              )}
             </text>
             <g
               role="button"

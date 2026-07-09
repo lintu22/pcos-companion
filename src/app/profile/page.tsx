@@ -106,7 +106,7 @@ export default function ProfilePage() {
           Answer a few questions about your symptoms to build your evidence-based profile.
         </p>
         <Button render={<Link href="/intake" />} className="mt-6">
-          Start intake <ArrowRight className="ml-1 h-4 w-4" />
+          Create your Profile <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
       </div>
     );

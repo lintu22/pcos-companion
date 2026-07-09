@@ -20,17 +20,20 @@ const VIEWBOX_TOP = (SIZE - VIEWBOX_HEIGHT) / 2;
 
 // Split long labels into two lines for readability
 const LABEL_BREAKS: Partial<Record<SymptomKey, [string, string]>> = {
-  irregular_periods: ["Irregular", "periods"],
+  irregular_periods: ["Irregular", "period"],
   cravings_blood_sugar: ["Cravings/", "energy"],
 };
 
 // Short axis labels so text fits within the SVG viewBox without clipping —
 // the full symptom label is still used everywhere else on the page.
 const SHORT_LABELS: Partial<Record<SymptomKey, string>> = {
-  irregular_periods: "Irregular periods",
+  irregular_periods: "Irregular period",
   weight_gain: "Weight gain",
-  hair_growth: "Hair growth",
+  hair_growth: "Hair changes",
+  hair_loss: "Hair changes",
   acne: "Acne",
+  fatigue: "Fatigue",
+  mood_changes: "Mood",
   cravings_blood_sugar: "Cravings/energy",
 };
 

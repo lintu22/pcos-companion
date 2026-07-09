@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PMOS Companion",
+  title: "Vera — make sense of your PMOS symptoms",
   description:
-    "Evidence-based PMOS (formerly known as PCOS) symptom profiling, powered by research and community data.",
+    "Vera turns your PMOS (formerly known as PCOS) symptoms into an evidence-based profile, backed by research and community data.",
 };
 
 export default function RootLayout({

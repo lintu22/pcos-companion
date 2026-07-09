@@ -41,10 +41,12 @@ export function SymptomRadarChart({
   data,
   selected,
   onSelect,
+  onReset,
 }: {
   data: RadarDatum[];
   selected: SymptomKey | null;
   onSelect: (symptom: SymptomKey) => void;
+  onReset?: () => void;
 }) {
   const count = data.length;
   if (count < 3) {
@@ -61,7 +63,7 @@ export function SymptomRadarChart({
   return (
     <svg
       viewBox={`0 0 ${SIZE} ${SIZE}`}
-      className="mx-auto w-full max-w-[280px]"
+      className="mx-auto w-full max-w-[320px]"
       role="img"
       aria-label="Symptom severity radar chart"
     >
@@ -79,9 +81,10 @@ export function SymptomRadarChart({
         );
       })}
 
-      {/* axis lines */}
-      {data.map((_, i) => {
+      {/* axis lines (selected one highlighted) */}
+      {data.map((d, i) => {
         const p = pointFor(i, count, MAX_RADIUS);
+        const isSelected = selected === d.symptom;
         return (
           <line
             key={i}
@@ -89,14 +92,34 @@ export function SymptomRadarChart({
             y1={CENTER}
             x2={p.x}
             y2={p.y}
-            className="stroke-muted"
-            strokeWidth={1}
+            className={isSelected ? "stroke-primary" : "stroke-muted"}
+            strokeWidth={isSelected ? 2 : 1}
           />
         );
       })}
 
       {/* data polygon */}
       <polygon points={polygonPoints} className="fill-primary/15 stroke-primary" strokeWidth={2} />
+
+      {/* center reset target — only interactive while a symptom is focused */}
+      {selected && onReset && (
+        <g
+          role="button"
+          tabIndex={0}
+          aria-label="Return to all symptoms"
+          onClick={onReset}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onReset();
+            }
+          }}
+          className="cursor-pointer outline-none"
+        >
+          <circle cx={CENTER} cy={CENTER} r={12} className="fill-background stroke-primary" strokeWidth={1.5} />
+          <circle cx={CENTER} cy={CENTER} r={3} className="fill-primary" />
+        </g>
+      )}
 
       {/* labels + clickable vertices */}
       {data.map((d, i) => {

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { COMMUNITY_STATS } from "@/lib/community-data";
-import { ArrowRight, BookOpenCheck, Smartphone } from "lucide-react";
+import { AppPreviewChart } from "@/components/app-preview-chart";
+import { ArrowRight, BookOpenCheck } from "lucide-react";
 
 export default function Home() {
   return (
@@ -47,7 +48,7 @@ export default function Home() {
               bring both to your next appointment.
             </p>
             <div className="mt-6">
-              <Button render={<Link href="/intake" />} variant="outline">
+              <Button render={<Link href="/community" />} variant="outline">
                 <BookOpenCheck className="mr-2 h-4 w-4" /> Explore research
               </Button>
             </div>
@@ -84,12 +85,11 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-// Lightweight placeholder standing in for a product screenshot in the mockup.
+// Product preview shown in the landing mockups — a real, editable radar.
 function AppMockup() {
   return (
-    <div className="flex h-56 w-40 flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-primary/30 bg-background text-muted-foreground">
-      <Smartphone className="h-8 w-8 text-primary/50" />
-      <span className="text-[10px]">App preview</span>
+    <div className="w-full max-w-md rounded-3xl border bg-background p-4">
+      <AppPreviewChart />
     </div>
   );
 }

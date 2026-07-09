@@ -6,12 +6,18 @@ import { SYMPTOMS } from "@/lib/research-data";
 import { ALL_CITATIONS, findRelevantChunks } from "@/lib/pdf-sources";
 import { COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
 
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 // Direct Anthropic key takes precedence (no Gateway account needed); otherwise use
 // the AI Gateway model string, which also works via Vercel's OIDC token when deployed.
 const model = process.env.ANTHROPIC_API_KEY ? anthropic("claude-sonnet-5") : "anthropic/claude-sonnet-5";
-const hasLiveKey = Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.VERCEL_OIDC_TOKEN);
+// FORCE_FALLBACK=1 is a guaranteed kill switch, independent of any provider
+// env var (including Vercel's auto-injected OIDC token) — set it in Vercel
+// project settings to force every request onto the deterministic fallback
+// scorer, no live AI call attempted at all.
+const hasLiveKey =
+  process.env.FORCE_FALLBACK !== "1" &&
+  Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.VERCEL_OIDC_TOKEN);
 
 export async function POST(req: NextRequest) {
   const body = (await req.json()) as IntakeAnswers;
@@ -69,9 +75,13 @@ export async function POST(req: NextRequest) {
       // Abort well before Vercel's own function timeout (maxDuration above) so a
       // slow/unresponsive provider hits our catch block and returns the fallback
       // analysis, rather than the whole function being killed with an opaque 504
-      // that skips the catch entirely.
+      // that skips the catch entirely. Keep at least ~15s of headroom below
+      // maxDuration for the fallback computation + response to complete.
+      // NOTE: generateObject has no `timeout` option (it's silently dropped by
+      // prepareCallSettings) — abortSignal is the only mechanism it actually
+      // wires through to the underlying provider call, so that's what we use.
       maxRetries: 1,
-      timeout: 20_000,
+      abortSignal: AbortSignal.timeout(45_000),
       system:
         "You are a careful, evidence-based PMOS (polyendocrine metabolic ovarian syndrome, formerly known as PCOS, " +
         "renamed in 2026) symptom triage assistant. You never diagnose. " +

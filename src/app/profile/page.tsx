@@ -56,17 +56,29 @@ function SectionHeading({
   icon,
   title,
   description,
+  size = "default",
+  noBorder = false,
 }: {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  description?: string;
+  size?: "default" | "large";
+  noBorder?: boolean;
 }) {
   return (
-    <div className="mb-3 mt-10 flex items-start gap-3 border-b pb-3 first:mt-0">
-      <span className="mt-0.5 text-primary">{icon}</span>
+    <div
+      className={`mb-3 mt-10 flex items-start gap-3 pb-3 first:mt-0 ${noBorder ? "" : "border-b"}`}
+    >
+      <span
+        className={`mt-0.5 flex shrink-0 items-center justify-center text-primary [&_svg]:h-full [&_svg]:w-full ${
+          size === "large" ? "h-10 w-10" : "h-5 w-5"
+        }`}
+      >
+        {icon}
+      </span>
       <div>
-        <h2 className="text-xl font-bold tracking-tight">{title}</h2>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <h2 className={`font-bold tracking-tight ${size === "large" ? "text-3xl" : "text-xl"}`}>{title}</h2>
+        {description && <p className="text-sm text-muted-foreground">{description}</p>}
       </div>
     </div>
   );
@@ -296,19 +308,22 @@ export default function ProfilePage() {
       </Card>
 
       <SectionHeading
-        icon={<BookOpenCheck className="h-5 w-5" />}
+        icon={<BookOpenCheck />}
         title="Backed by science"
-        description="Insights, suggestions, and supplements grounded in published research. Every statement links to a real study."
+        description="Insights, suggestions, and supplements grounded in published research."
+        size="large"
+        noBorder
       />
 
       {/* What science says */}
       <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>What science says</CardTitle>
+        <CardHeader className="border-b pb-6">
+          <CardTitle className="text-2xl font-bold">What science says</CardTitle>
           <CardDescription>
             Each statement links to a real study, graded by how strong the evidence type is.
           </CardDescription>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-medium text-muted-foreground">Filter by:</span>
             <SortTab active={scienceSort === "relevant"} onClick={() => setScienceSort("relevant")}>
               Most relevant to me
             </SortTab>
@@ -317,32 +332,30 @@ export default function ProfilePage() {
             </SortTab>
           </div>
         </CardHeader>
-        <CardContent className="space-y-5">
+        <CardContent className="space-y-8">
           {visibleInsights.map((insight, i) => {
             const level = bestEvidenceLevel(insight.citationIds);
             return (
               <div key={i}>
-                <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>
-                <div className="mt-1 flex flex-wrap items-center gap-2">
-                  {level && (
-                    <span className="inline-flex items-center gap-1">
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
-                      >
-                        {EVIDENCE_LABEL[level]}
-                      </span>
-                      <EvidenceInfoButton />
+                <p className="text-base font-semibold">{labelFor(insight.symptom)}</p>
+                {level && (
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    <span
+                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
+                    >
+                      {EVIDENCE_LABEL[level]}
                     </span>
-                  )}
-                </div>
-                <p className="mt-1.5 text-sm text-muted-foreground">{insight.statement}</p>
+                    <EvidenceInfoButton />
+                  </div>
+                )}
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{insight.statement}</p>
                 {insight.meaning && (
-                  <div className="mt-2 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">
+                  <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground">
                     <span className="font-semibold text-foreground">What this means for you: </span>
                     {insight.meaning}
                   </div>
                 )}
-                <div className="mt-2 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-col gap-2">
                   {insight.citationIds.map((id) => {
                     const c = ALL_CITATIONS[id];
                     if (!c) return null;
@@ -352,15 +365,21 @@ export default function ProfilePage() {
                         href={c.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
+                        className="flex items-start gap-2.5 rounded-lg border px-3.5 py-3 text-sm text-muted-foreground hover:border-primary hover:text-primary"
                         title={c.summary}
                       >
-                        View study · {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                        <ExternalLink className="mt-0.5 h-4 w-4 shrink-0" />
+                        <span>
+                          <span className="block font-medium text-foreground">{c.title}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {c.authorsYear} · {c.journal}
+                          </span>
+                        </span>
                       </a>
                     );
                   })}
                 </div>
-                {i < visibleInsights.length - 1 && <Separator className="mt-5" />}
+                {i < visibleInsights.length - 1 && <Separator className="mt-8" />}
               </div>
             );
           })}
@@ -468,9 +487,11 @@ export default function ProfilePage() {
       <div className="relative left-1/2 right-1/2 -mx-[50vw] mb-6 w-screen bg-[#EDE4DB] py-8">
         <div className="mx-auto max-w-3xl space-y-6 px-4">
           <SectionHeading
-            icon={<Users className="h-5 w-5" />}
+            icon={<Users />}
             title="From the community"
             description="What other members report trying and experiencing, shared anonymously, not medical advice."
+            size="large"
+            noBorder
           />
 
           {/* What women with PMOS are trying (community) */}
@@ -571,7 +592,7 @@ function SortTab({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+      className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
         active
           ? "bg-primary text-primary-foreground"
           : "border text-muted-foreground hover:border-primary hover:text-primary"

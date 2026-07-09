@@ -244,6 +244,13 @@ export default function ProfilePage() {
               <ArrowLeft className="h-3.5 w-3.5" /> Back to all symptoms
             </button>
           )}
+          {chartData.length >= 3 && (
+            <p className="mb-2 text-center text-sm font-bold">
+              {selectedSymptom
+                ? "Tap the centre of the chart to return to all symptoms."
+                : "Tap a symptom to focus your profile on just that one."}
+            </p>
+          )}
           {chartData.length >= 3 ? (
             <SymptomRadarChart
               data={chartData}
@@ -254,11 +261,6 @@ export default function ProfilePage() {
           ) : (
             <p className="text-sm text-muted-foreground">Not enough answered symptoms yet to draw a chart.</p>
           )}
-          <p className="mt-1 text-center text-xs text-muted-foreground">
-            {selectedSymptom
-              ? "Tap the centre of the chart to return to all symptoms."
-              : "Tap a symptom to focus your profile on just that one."}
-          </p>
 
           <Separator className="my-5" />
 

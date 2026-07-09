@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vera
 
-## Getting Started
+Vera turns a few minutes of questions about PMOS (polyendocrine metabolic
+ovarian syndrome, formerly known as PCOS) symptoms into an evidence-based
+profile: a symptom radar chart, citation-backed insights, "what might help"
+suggestions, and community comparisons, all traceable back to real research
+or real (mock, illustrative) community data. It never diagnoses.
 
-First, run the development server:
+For a full explanation of how the app works end to end (the AI prompt,
+the anti-hallucination grounding, the dataset, the fallback scorer, and how
+to edit the content), see [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md).
+
+## Getting started
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### AI analysis (optional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app works out of the box with no configuration: without an API key it
+falls back to a deterministic, rule-based scorer (see `HOW_IT_WORKS.md` §4),
+so the demo never breaks. To enable live Claude analysis instead, set one of
+these environment variables (e.g. in `.env.local`):
 
-## Learn More
+```bash
+ANTHROPIC_API_KEY=sk-ant-...
+# or, if using the Vercel AI Gateway
+AI_GATEWAY_API_KEY=...
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/`: pages (landing, intake, profile, check-in, community) and the
+  `/api/analyze` route
+- `src/lib/`: the research/community datasets, the AI prompt schema, and the
+  fallback scorer
+- `src/components/`: shared UI, including the interactive symptom radar
+  chart
+- `pdf-sources/`: ingested research PDFs used to ground AI answers in real
+  source text (see `HOW_IT_WORKS.md` §3.5)
+- `scripts/ingest-pdf.mjs`: turns a PDF into searchable text chunks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Learn more about Next.js
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is built with [Next.js](https://nextjs.org). See the
+[Next.js documentation](https://nextjs.org/docs) for framework-level
+questions, or [Vercel](https://vercel.com/docs/app/building-your-application/deploying)
+for deployment.

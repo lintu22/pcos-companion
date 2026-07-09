@@ -85,7 +85,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-// Product preview shown in the landing mockups — a real, editable radar.
+// Product preview shown in the landing mockups: a real, editable radar.
 function AppMockup() {
   return (
     <div className="w-full max-w-md rounded-3xl border bg-background p-4">

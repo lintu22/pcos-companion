@@ -15,6 +15,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Carousel } from "@/components/carousel";
 import { useStoredProfile } from "@/lib/storage";
 import {
   SYMPTOMS,
@@ -227,7 +228,7 @@ export default function ProfilePage() {
             <Download className="mr-2 h-4 w-4" /> Download my data
           </Button>
           <Button render={<Link href="/intake" />} variant="outline">
-            Retake intake
+            Retake the quiz
           </Button>
         </div>
       </div>
@@ -526,18 +527,20 @@ export default function ProfilePage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {grounded.map(({ rec, community }, i) => (
-                      <div key={i} className="rounded-lg border bg-accent/30 p-4">
-                        <p className="text-sm">{rec.text}</p>
-                        <p className="mt-2 text-xs text-muted-foreground">
+                  <Carousel
+                    items={grounded}
+                    autoplayMs={5000}
+                    renderItem={({ rec, community }) => (
+                      <div className="rounded-lg border bg-accent/30 p-6">
+                        <p className="text-base">{rec.text}</p>
+                        <p className="mt-3 text-sm text-muted-foreground">
                           Backed by{" "}
                           <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
                           members who tried it
                         </p>
                       </div>
-                    ))}
-                  </div>
+                    )}
+                  />
                   <Button render={<Link href="/community" />} variant="outline" className="mt-4">
                     Go to community <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>

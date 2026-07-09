@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Vera: make sense of your PMOS symptoms",
   description:
     "Vera turns your PMOS (formerly known as PCOS) symptoms into an evidence-based profile, backed by research and community data.",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { COMMUNITY_STATS } from "@/lib/community-data";
 import { AppPreviewChart } from "@/components/app-preview-chart";
-import { ArrowRight, BookOpenCheck } from "lucide-react";
+import { BookOpenCheck } from "lucide-react";
 
 export default function Home() {
   return (
@@ -22,8 +22,8 @@ export default function Home() {
               PMOS (polyendocrine metabolic ovarian syndrome) is the new name for PCOS, renamed in 2026.
             </p>
             <div className="mt-8">
-              <Button render={<Link href="/intake" />} size="lg">
-                Manage your symptoms <ArrowRight className="ml-1 h-4 w-4" />
+              <Button render={<Link href="/intake" />} size="lg" className="h-14 px-8 text-base">
+                Understand your symptoms
               </Button>
             </div>
           </div>
@@ -48,8 +48,8 @@ export default function Home() {
               bring both to your next appointment.
             </p>
             <div className="mt-6">
-              <Button render={<Link href="/community" />} variant="outline">
-                <BookOpenCheck className="mr-2 h-4 w-4" /> Explore research
+              <Button render={<Link href="/community" />} variant="outline" size="lg" className="h-14 px-8 text-base">
+                <BookOpenCheck className="mr-2 h-5 w-5" /> Explore research
               </Button>
             </div>
           </div>

@@ -73,15 +73,20 @@ export async function POST(req: NextRequest) {
         "Every insight's citationIds must come from the reference list below. " +
         "Symptom keys in dominantSymptoms and insights[].symptom must be chosen from the provided symptom key list exactly as written.\n\n" +
         "For `recommendations`, only ever pick from the two reference lists below — never invent a suggestion, " +
-        "a percentage, or a study that isn't listed. For a research-backed suggestion, set source='research' and " +
+        "a percentage, or a study that isn't listed. Set `symptom` to the exact symptom key shown in parentheses " +
+        "next to the entry you picked. For a research-backed suggestion, set source='research' and " +
         "citationIds to (a subset of) that suggestion's listed citations. For a community-backed suggestion, set " +
         "source='community' and communityRecommendationId to the exact id shown — never make up a percentage " +
         "yourself. Always phrase community suggestions as what other members report trying, not as medical advice. " +
         "If neither list has anything relevant to this person's dominant symptoms, return an empty recommendations array.\n\n" +
         "For `supplements`, only ever pick from the supplement reference list below — never invent a supplement, " +
-        "a study, or a health claim beyond what's listed. Always frame these as things to discuss with a doctor " +
+        "a study, or a health claim beyond what's listed. Set `symptom` to the exact symptom key shown in " +
+        "parentheses next to the entry you picked. Always frame these as things to discuss with a doctor " +
         "or pharmacist before starting, not as a standalone recommendation. If nothing in the list is relevant to " +
         "this person's dominant symptoms, return an empty supplements array.\n\n" +
+        "For `symptomOverviews`, produce exactly one entry per symptom key in `dominantSymptoms`, each a 1-2 " +
+        "sentence synthesis based only on the insights/recommendations/supplements you already produced for that " +
+        "symptom elsewhere in this same response — do not introduce any new claim, study, or citation here.\n\n" +
         `Symptom keys:\n${symptomReference}\n\nCitation reference:\n${citationReference}${excerptsBlock}\n\n` +
         `Research-backed recommendations available:\n${researchRecommendationReference || "(none)"}\n\n` +
         `Community-reported recommendations available:\n${communityRecommendationReference || "(none)"}\n\n` +

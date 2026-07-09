@@ -1,22 +1,101 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useStoredProfile } from "@/lib/storage";
-import { SYMPTOMS } from "@/lib/research-data";
-import { ALL_CITATIONS } from "@/lib/pdf-sources";
+import {
+  SYMPTOMS,
+  SymptomKey,
+  getSymptomInfo,
+  EVIDENCE_LABEL,
+  EVIDENCE_RANK,
+  EVIDENCE_INFO,
+  EvidenceLevel,
+} from "@/lib/research-data";
+import { ALL_CITATIONS, bestEvidenceLevel } from "@/lib/pdf-sources";
 import { COMMUNITY_BASELINES, COMMUNITY_STATS, COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
-import { Download, ExternalLink, ArrowRight, Users, Sparkles, Lightbulb, BookOpenCheck, MessagesSquare, Pill } from "lucide-react";
+import { SymptomRadarChart, RadarDatum } from "@/components/symptom-radar-chart";
+import {
+  Download,
+  ExternalLink,
+  ArrowRight,
+  ArrowLeft,
+  Users,
+  Sparkles,
+  Lightbulb,
+  Pill,
+  MessagesSquare,
+  Info,
+} from "lucide-react";
+
+const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
+  strong: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300",
+  moderate: "bg-amber-100 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300",
+  limited: "bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300",
+  low: "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300",
+};
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
 }
 
+function EvidenceInfoButton() {
+  return (
+    <Dialog>
+      <DialogTrigger
+        render={
+          <button
+            type="button"
+            aria-label="What do the evidence levels mean?"
+            className="text-muted-foreground hover:text-primary"
+          />
+        }
+      >
+        <Info className="h-3.5 w-3.5" />
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>How we grade evidence</DialogTitle>
+          <DialogDescription>
+            Each badge reflects our own read of the underlying study design — not a rating the
+            researchers assigned themselves.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="space-y-4">
+          {(Object.keys(EVIDENCE_INFO) as EvidenceLevel[]).map((level) => {
+            const info = EVIDENCE_INFO[level];
+            return (
+              <div key={level} className="flex gap-3">
+                <span className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${info.dot}`} />
+                <div>
+                  <p className="text-sm font-semibold">{info.title}</p>
+                  <p className="text-sm text-muted-foreground">{info.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 export default function ProfilePage() {
   const profile = useStoredProfile();
+  const [selectedSymptom, setSelectedSymptom] = useState<SymptomKey | null>(null);
+  const [scienceSort, setScienceSort] = useState<"relevant" | "evidence">("relevant");
 
   if (profile === null) {
     return (
@@ -33,7 +112,7 @@ export default function ProfilePage() {
     );
   }
 
-  const { analysis, source, createdAt } = profile;
+  const { analysis, source, createdAt, answers } = profile;
 
   function downloadData() {
     if (!profile) return;
@@ -41,16 +120,62 @@ export default function ProfilePage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `pmos-companion-profile-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `vera-profile-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
   }
+
+  function toggleSymptom(key: SymptomKey) {
+    setSelectedSymptom((prev) => (prev === key ? null : key));
+  }
+
+  const chartData: RadarDatum[] = SYMPTOMS.filter((s) => answers.frequencies[s.key] !== undefined).map((s) => ({
+    symptom: s.key,
+    label: s.label,
+    value: answers.frequencies[s.key]!,
+  }));
+
+  const selectedInfo = selectedSymptom ? getSymptomInfo(selectedSymptom) : undefined;
+  const overviewText = selectedSymptom
+    ? analysis.symptomOverviews?.find((o) => o.symptom === selectedSymptom)?.overview ??
+      selectedInfo?.insights[0] ??
+      selectedInfo?.description ??
+      "No additional detail available for this symptom yet."
+    : analysis.summary;
+
+  const rawVisibleInsights = selectedSymptom
+    ? analysis.insights.filter((i) => i.symptom === selectedSymptom)
+    : analysis.insights;
+  const fallbackInsights =
+    selectedSymptom && rawVisibleInsights.length === 0 && selectedInfo
+      ? [{ symptom: selectedSymptom, statement: selectedInfo.insights[0], citationIds: selectedInfo.citations }]
+      : rawVisibleInsights;
+  const visibleInsights =
+    scienceSort === "evidence"
+      ? [...fallbackInsights].sort(
+          (a, b) =>
+            (EVIDENCE_RANK[bestEvidenceLevel(b.citationIds) ?? "limited"] ?? 0) -
+            (EVIDENCE_RANK[bestEvidenceLevel(a.citationIds) ?? "limited"] ?? 0)
+        )
+      : fallbackInsights;
+
+  const scopedRecommendations = selectedSymptom
+    ? (analysis.recommendations ?? []).filter((r) => r.symptom === selectedSymptom)
+    : analysis.recommendations ?? [];
+  const researchRecommendations = scopedRecommendations.filter((r) => r.source === "research");
+  const communityRecommendations = scopedRecommendations.filter((r) => r.source === "community");
+
+  const visibleSupplements = selectedSymptom
+    ? (analysis.supplements ?? []).filter((s) => s.symptom === selectedSymptom)
+    : analysis.supplements ?? [];
+
+  const visibleCommunitySymptoms = selectedSymptom ? [selectedSymptom] : analysis.dominantSymptoms;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Your profile</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Your PMOS symptoms at a glance</h1>
           <p className="text-sm text-muted-foreground">
             Built {new Date(createdAt).toLocaleDateString()} ·{" "}
             {source === "ai" ? "Claude-analyzed" : "Rule-based screening"}
@@ -66,26 +191,75 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <Card className="mb-6 border-primary/30 bg-primary/5">
-        <CardContent className="flex flex-col items-center gap-4 pt-6 sm:flex-row">
-          <LikelihoodGauge percent={analysis.likelihoodPercent} />
-          <div className="flex-1">
-            <p className="text-lg font-medium">{analysis.summary}</p>
-            <p className="mt-2 text-xs text-muted-foreground">{analysis.confidenceNote}</p>
-          </div>
+      {/* Chart + overview */}
+      <Card className="mb-6">
+        <CardContent className="pt-6">
+          {selectedSymptom && (
+            <button
+              type="button"
+              onClick={() => setSelectedSymptom(null)}
+              className="mb-2 inline-flex items-center gap-1 text-sm text-primary hover:underline"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" /> Back to all symptoms
+            </button>
+          )}
+          {chartData.length >= 3 ? (
+            <SymptomRadarChart
+              data={chartData}
+              selected={selectedSymptom}
+              onSelect={toggleSymptom}
+              onReset={() => setSelectedSymptom(null)}
+            />
+          ) : (
+            <p className="text-sm text-muted-foreground">Not enough answered symptoms yet to draw a chart.</p>
+          )}
+          <p className="mt-1 text-center text-xs text-muted-foreground">
+            {selectedSymptom
+              ? "Tap the centre of the chart to return to all symptoms."
+              : "Tap a symptom to focus your profile on just that one."}
+          </p>
+
+          <Separator className="my-5" />
+
+          {selectedSymptom ? (
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                Your most prominent focus
+              </p>
+              <p className="mt-1.5 text-2xl font-bold">{labelFor(selectedSymptom)}</p>
+              <p className="mt-2 text-base text-muted-foreground">{overviewText}</p>
+            </div>
+          ) : (
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-2xl font-bold">Your chart overview</p>
+                <span className="inline-flex items-center rounded-full bg-primary px-3 py-1.5 text-sm font-semibold text-primary-foreground">
+                  {analysis.likelihoodPercent}% screening signal
+                </span>
+              </div>
+              <p className="mt-2 text-base text-muted-foreground">{overviewText}</p>
+              <p className="mt-3 text-xs text-muted-foreground">{analysis.confidenceNote}</p>
+            </div>
+          )}
         </CardContent>
       </Card>
 
+      {/* Dominant symptom chips */}
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Your dominant symptoms</CardTitle>
-          <CardDescription>What stood out most in your answers.</CardDescription>
+          <CardDescription>What stood out most in your answers. Tap one to focus the profile.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
           {analysis.dominantSymptoms.map((s) => (
-            <Badge key={s} variant="secondary" className="px-3 py-1 text-sm">
-              {labelFor(s)}
-            </Badge>
+            <button key={s} type="button" onClick={() => toggleSymptom(s as SymptomKey)}>
+              <Badge
+                variant={selectedSymptom === s ? "default" : "secondary"}
+                className="cursor-pointer px-3 py-1 text-sm"
+              >
+                {labelFor(s)}
+              </Badge>
+            </button>
           ))}
           {analysis.dominantSymptoms.length === 0 && (
             <p className="text-sm text-muted-foreground">No dominant pattern detected yet.</p>
@@ -93,122 +267,128 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
 
+      {/* What science says */}
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle>What the research says</CardTitle>
+          <CardTitle>What science says</CardTitle>
           <CardDescription>
-            Evidence-based statements tied to your symptoms, with sources you can check yourself.
+            Each statement links to a real study, graded by how strong the evidence type is.
           </CardDescription>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <SortTab active={scienceSort === "relevant"} onClick={() => setScienceSort("relevant")}>
+              Most relevant to me
+            </SortTab>
+            <SortTab active={scienceSort === "evidence"} onClick={() => setScienceSort("evidence")}>
+              Strongest evidence first
+            </SortTab>
+          </div>
         </CardHeader>
         <CardContent className="space-y-5">
-          {analysis.insights.map((insight, i) => (
-            <div key={i}>
-              <p className="font-medium">{labelFor(insight.symptom)}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{insight.statement}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {insight.citationIds.map((id) => {
-                  const c = ALL_CITATIONS[id];
-                  if (!c) return null;
-                  return (
-                    <a
-                      key={id}
-                      href={c.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
-                      title={c.summary}
-                    >
-                      {c.authorsYear} <ExternalLink className="h-3 w-3" />
-                    </a>
-                  );
-                })}
-              </div>
-              {i < analysis.insights.length - 1 && <Separator className="mt-5" />}
-            </div>
-          ))}
-        </CardContent>
-      </Card>
-
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Lightbulb className="h-5 w-5" /> What might help
-          </CardTitle>
-          <CardDescription>
-            Suggestions grounded in either the research or the community — never generic advice.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {(() => {
-            const grounded = (analysis.recommendations ?? [])
-              .map((rec) => {
-                if (rec.source === "research") {
-                  const citations = rec.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
-                  if (citations.length === 0) return null; // ungrounded — never shown
-                  return { rec, citations, community: null as (typeof COMMUNITY_RECOMMENDATIONS)[number] | null };
-                }
-                const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
-                if (!community) return null; // ungrounded — never shown
-                return { rec, citations: [], community };
-              })
-              .filter((x): x is NonNullable<typeof x> => x !== null);
-
-            if (grounded.length === 0) {
-              return <p className="text-sm text-muted-foreground">No specific suggestions for this profile yet.</p>;
-            }
-
-            return grounded.map(({ rec, citations, community }, i) => (
+          {visibleInsights.map((insight, i) => {
+            const level = bestEvidenceLevel(insight.citationIds);
+            const leadCitation = insight.citationIds.map((id) => ALL_CITATIONS[id]).find(Boolean);
+            return (
               <div key={i}>
-                <div className="flex items-center gap-2 text-xs font-medium">
-                  {rec.source === "research" ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-primary">
-                      <BookOpenCheck className="h-3 w-3" /> Research-backed
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-secondary-foreground">
-                      <MessagesSquare className="h-3 w-3" /> From the community
-                    </span>
-                  )}
-                </div>
-                <p className="mt-1.5 text-sm text-muted-foreground">{rec.text}</p>
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  {citations.map((c) => (
-                    <a
-                      key={c.id}
-                      href={c.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
-                      title={c.summary}
-                    >
-                      {c.authorsYear} <ExternalLink className="h-3 w-3" />
-                    </a>
-                  ))}
-                  {community && (
-                    <span className="text-xs text-muted-foreground">
-                      <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of community
-                      members who tried this reported it helped
+                <div className="flex flex-wrap items-center gap-2">
+                  {level && (
+                    <span className="inline-flex items-center gap-1">
+                      <span
+                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
+                      >
+                        {EVIDENCE_LABEL[level]}
+                      </span>
+                      <EvidenceInfoButton />
                     </span>
                   )}
+                  <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>
                 </div>
-                {i < grounded.length - 1 && <Separator className="mt-4" />}
+                <p className="mt-1.5 text-sm text-muted-foreground">{insight.statement}</p>
+                {leadCitation?.summary && (
+                  <p className="mt-1.5 text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">What this means: </span>
+                    {leadCitation.summary}
+                  </p>
+                )}
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {insight.citationIds.map((id) => {
+                    const c = ALL_CITATIONS[id];
+                    if (!c) return null;
+                    return (
+                      <a
+                        key={id}
+                        href={c.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
+                        title={c.summary}
+                      >
+                        View study · {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                      </a>
+                    );
+                  })}
+                </div>
+                {i < visibleInsights.length - 1 && <Separator className="mt-5" />}
               </div>
-            ));
-          })()}
+            );
+          })}
+          {visibleInsights.length === 0 && (
+            <p className="text-sm text-muted-foreground">No specific research insight for this symptom yet.</p>
+          )}
         </CardContent>
       </Card>
 
+      {/* What might help (research-backed) */}
       {(() => {
-        const groundedSupplements = (analysis.supplements ?? [])
-          .map((sup) => {
-            const citations = sup.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
-            if (citations.length === 0) return null; // ungrounded — never shown
-            return { sup, citations };
+        const grounded = researchRecommendations
+          .map((rec) => {
+            const citations = rec.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
+            return citations.length ? { rec, citations } : null;
           })
           .filter((x): x is NonNullable<typeof x> => x !== null);
+        if (grounded.length === 0) return null;
+        return (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Lightbulb className="h-5 w-5" /> What might help
+              </CardTitle>
+              <CardDescription>Research-backed suggestions tied to your symptoms — never generic advice.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {grounded.map(({ rec, citations }, i) => (
+                <div key={i}>
+                  <p className="text-sm text-muted-foreground">{rec.text}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {citations.map((c) => (
+                      <a
+                        key={c.id}
+                        href={c.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
+                        title={c.summary}
+                      >
+                        View study · {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                      </a>
+                    ))}
+                  </div>
+                  {i < grounded.length - 1 && <Separator className="mt-4" />}
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        );
+      })()}
 
+      {/* Supplements */}
+      {(() => {
+        const groundedSupplements = visibleSupplements
+          .map((sup) => {
+            const citations = sup.citationIds.map((id) => ALL_CITATIONS[id]).filter(Boolean);
+            return citations.length ? { sup, citations } : null;
+          })
+          .filter((x): x is NonNullable<typeof x> => x !== null);
         if (groundedSupplements.length === 0) return null;
-
         return (
           <Card className="mb-6">
             <CardHeader>
@@ -234,7 +414,7 @@ export default function ProfilePage() {
                         className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
                         title={c.summary}
                       >
-                        {c.authorsYear} <ExternalLink className="h-3 w-3" />
+                        View study · {c.authorsYear} <ExternalLink className="h-3 w-3" />
                       </a>
                     ))}
                   </div>
@@ -252,6 +432,47 @@ export default function ProfilePage() {
         );
       })()}
 
+      {/* What women with PMOS are trying (community) */}
+      {(() => {
+        const grounded = communityRecommendations
+          .map((rec) => {
+            const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
+            return community ? { rec, community } : null;
+          })
+          .filter((x): x is NonNullable<typeof x> => x !== null);
+        if (grounded.length === 0) return null;
+        return (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+              </CardTitle>
+              <CardDescription>
+                Shared by other members — what they report trying, not medical advice.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {grounded.map(({ rec, community }, i) => (
+                  <div key={i} className="rounded-lg border bg-accent/30 p-4">
+                    <p className="text-sm">{rec.text}</p>
+                    <p className="mt-2 text-xs text-muted-foreground">
+                      Backed by{" "}
+                      <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of members
+                      who tried it
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                Go to community <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
+            </CardContent>
+          </Card>
+        );
+      })()}
+
+      {/* Community comparison */}
       <Card className="mb-6">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -262,17 +483,15 @@ export default function ProfilePage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
-          {analysis.dominantSymptoms.map((s) => {
+          {visibleCommunitySymptoms.map((s) => {
             const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
             if (!baseline) return null;
             return (
               <div key={s} className="flex items-center justify-between gap-4 text-sm">
                 <span>{labelFor(s)}</span>
                 <span className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    {baseline.percentOfCommunityReporting}%
-                  </strong>{" "}
-                  of community members also report this
+                  <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of community
+                  members also report this
                 </span>
               </div>
             );
@@ -296,29 +515,26 @@ export default function ProfilePage() {
   );
 }
 
-function LikelihoodGauge({ percent }: { percent: number }) {
-  const radius = 46;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percent / 100) * circumference;
+function SortTab({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="relative h-32 w-32 shrink-0">
-      <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-        <circle cx="50" cy="50" r={radius} strokeWidth="8" className="fill-none stroke-muted" />
-        <circle
-          cx="50"
-          cy="50"
-          r={radius}
-          strokeWidth="8"
-          strokeLinecap="round"
-          className="fill-none stroke-primary transition-all duration-700"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold">{percent}%</span>
-        <span className="text-[10px] text-muted-foreground">screening signal</span>
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+        active
+          ? "bg-primary text-primary-foreground"
+          : "border text-muted-foreground hover:border-primary hover:text-primary"
+      }`}
+    >
+      {children}
+    </button>
   );
 }

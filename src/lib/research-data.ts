@@ -17,6 +17,12 @@ export type SymptomKey =
   | "fertility_concerns"
   | "pelvic_pain";
 
+// Editorial grade of how strong the evidence type is — OUR classification based on
+// study design (guidelines/Cochrane/meta-analyses = strong; narrative reviews or
+// single studies = moderate; small/herbal/patient-info = limited). Not a grade the
+// papers assign themselves; used only to colour the UI badge and sort by evidence.
+export type EvidenceLevel = "strong" | "moderate" | "limited" | "low" ;
+
 export interface Citation {
   id: string;
   title: string;
@@ -24,7 +30,42 @@ export interface Citation {
   journal: string;
   url: string;
   summary: string;
+  evidenceLevel?: EvidenceLevel;
 }
+
+export const EVIDENCE_RANK: Record<EvidenceLevel, number> = { strong: 3, moderate: 2, limited: 1, low: 0 };
+
+export const EVIDENCE_LABEL: Record<EvidenceLevel, string> = {
+  strong: "Strong evidence",
+  moderate: "Moderate evidence",
+  limited: "Limited evidence",
+  low: "Very low evidence"
+};
+
+// Plain-language legend shown in the "How we grade evidence" info modal —
+// frames each level as a confidence level rather than research jargon.
+export const EVIDENCE_INFO: Record<EvidenceLevel, { dot: string; title: string; description: string }> = {
+  strong: {
+    dot: "bg-emerald-500",
+    title: "Strong evidence",
+    description: "Supported by multiple high-quality studies with consistent results.",
+  },
+  moderate: {
+    dot: "bg-amber-400",
+    title: "Moderate evidence",
+    description: "Research is promising, but more studies are needed to confirm the findings.",
+  },
+  limited: {
+    dot: "bg-orange-500",
+    title: "Limited evidence",
+    description: "Early research exists, but studies are small, limited, or have mixed results.",
+  },
+  low: {
+    dot: "bg-red-500",
+    title: "Very low evidence",
+    description: "There is not enough reliable research yet to know how effective this might be.",
+  },
+};
 
 export interface ResearchRecommendation {
   text: string; // an actionable suggestion, e.g. "Consider CBT..."
@@ -58,6 +99,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1093/humrep/dey256",
     summary:
       "International guideline synthesizing evidence on diagnosis, lifestyle management, and treatment priorities for PMOS (formerly known as PCOS).",
+    evidenceLevel: "strong",
   },
   azziz2016: {
     id: "azziz2016",
@@ -67,6 +109,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1038/nrdp.2016.57",
     summary:
       "Comprehensive review of PMOS pathophysiology, including insulin resistance and hyperandrogenism mechanisms.",
+    evidenceLevel: "moderate",
   },
   escobarmorreale2018: {
     id: "escobarmorreale2018",
@@ -76,6 +119,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1038/nrendo.2018.24",
     summary:
       "Review covering hyperandrogenic symptoms (acne, hirsutism, alopecia) and their hormonal drivers in PMOS.",
+    evidenceLevel: "moderate",
   },
   legro2013: {
     id: "legro2013",
@@ -85,6 +129,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1210/jc.2013-2350",
     summary:
       "Clinical guideline on diagnostic criteria and management, including metabolic and fertility considerations.",
+    evidenceLevel: "strong",
   },
   moran2013: {
     id: "moran2013",
@@ -94,6 +139,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1002/14651858.CD007506.pub3",
     summary:
       "Systematic review of lifestyle intervention trials (diet, exercise) and their effect on PMOS symptoms.",
+    evidenceLevel: "strong",
   },
   cooney2017: {
     id: "cooney2017",
@@ -103,6 +149,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1093/humrep/dex044",
     summary:
       "Meta-analysis finding significantly elevated rates of depression and anxiety symptoms among people with PMOS.",
+    evidenceLevel: "strong",
   },
   lim2012: {
     id: "lim2012",
@@ -112,6 +159,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1093/humupd/dms030",
     summary:
       "Meta-analysis quantifying the increased prevalence of overweight/obesity and central adiposity in PMOS.",
+    evidenceLevel: "strong",
   },
   stepto2013: {
     id: "stepto2013",
@@ -121,6 +169,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1093/humrep/det278",
     summary:
       "Clamp-study evidence that insulin resistance in PMOS is intrinsic, independent of body weight, in many patients.",
+    evidenceLevel: "moderate",
   },
   balen2016: {
     id: "balen2016",
@@ -130,6 +179,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1093/humupd/dmw012",
     summary:
       "ESHRE guideline review on ovulatory dysfunction and fertility management approaches in PMOS.",
+    evidenceLevel: "strong",
   },
   gibsonhelm2017: {
     id: "gibsonhelm2017",
@@ -139,6 +189,7 @@ export const CITATIONS: Record<string, Citation> = {
     url: "https://doi.org/10.1210/jc.2016-2963",
     summary:
       "Survey study documenting average diagnostic delay and patient dissatisfaction with information received.",
+    evidenceLevel: "limited",
   },
 };
 

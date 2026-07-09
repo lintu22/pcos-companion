@@ -9,7 +9,19 @@ import han2024 from "../../pdf-sources/processed/han2024.json";
 import moinijazani2019 from "../../pdf-sources/processed/moinijazani2019.json";
 import nhs2026medicines from "../../pdf-sources/processed/nhs2026medicines.json";
 import nice2026 from "../../pdf-sources/processed/nice2026.json";
-import { CITATIONS, Citation } from "./research-data";
+import { CITATIONS, Citation, EvidenceLevel, EVIDENCE_RANK } from "./research-data";
+
+// Editorial evidence grade per ingested PDF (see research-data.ts EvidenceLevel):
+// guidelines/meta-analyses = strong, narrative reviews = moderate, herbal/patient
+// info = limited. Keep in sync when adding a PDF above.
+const PDF_EVIDENCE_LEVELS: Record<string, EvidenceLevel> = {
+  jiskoot2022: "strong", // systematic review + meta-analysis
+  barber2021: "moderate", // narrative review
+  han2024: "moderate", // mini-review
+  moinijazani2019: "limited", // review of small herbal trials
+  nhs2026medicines: "limited", // patient-information page, not graded evidence
+  nice2026: "strong", // national clinical guideline
+};
 
 export interface PdfChunk {
   chunkId: string;
@@ -50,6 +62,7 @@ export const PDF_CITATIONS: Record<string, Citation> = Object.fromEntries(
       journal: doc.journal,
       url: doc.url,
       summary: doc.summary,
+      evidenceLevel: PDF_EVIDENCE_LEVELS[doc.id],
     },
   ])
 );
@@ -57,6 +70,22 @@ export const PDF_CITATIONS: Record<string, Citation> = Object.fromEntries(
 // Single merged lookup for rendering citation links, regardless of whether the
 // source was hand-curated (research-data.ts) or ingested from a PDF.
 export const ALL_CITATIONS: Record<string, Citation> = { ...CITATIONS, ...PDF_CITATIONS };
+
+// The strongest evidence grade among a set of citation ids — used to badge and
+// sort a "what science says" item. Returns undefined if none of the cited
+// sources carry a grade (so the UI can simply omit the badge).
+export function bestEvidenceLevel(citationIds: string[]): EvidenceLevel | undefined {
+  let best: EvidenceLevel | undefined;
+  let bestRank = 0;
+  for (const id of citationIds) {
+    const level = ALL_CITATIONS[id]?.evidenceLevel;
+    if (level && EVIDENCE_RANK[level] > bestRank) {
+      best = level;
+      bestRank = EVIDENCE_RANK[level];
+    }
+  }
+  return best;
+}
 
 /**
  * Very small "search": scores each chunk by how many keywords it contains and

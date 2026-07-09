@@ -15,6 +15,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Carousel } from "@/components/carousel";
+import { PercentRing } from "@/components/percent-ring";
 import { useStoredProfile } from "@/lib/storage";
 import {
   SYMPTOMS,
@@ -210,8 +212,6 @@ export default function ProfilePage() {
     ? (analysis.supplements ?? []).filter((s) => s.symptom === selectedSymptom)
     : analysis.supplements ?? [];
 
-  const visibleCommunitySymptoms = selectedSymptom ? [selectedSymptom] : analysis.dominantSymptoms;
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
@@ -227,7 +227,7 @@ export default function ProfilePage() {
             <Download className="mr-2 h-4 w-4" /> Download my data
           </Button>
           <Button render={<Link href="/intake" />} variant="outline">
-            Retake intake
+            Retake the quiz
           </Button>
         </div>
       </div>
@@ -244,6 +244,13 @@ export default function ProfilePage() {
               <ArrowLeft className="h-3.5 w-3.5" /> Back to all symptoms
             </button>
           )}
+          {chartData.length >= 3 && (
+            <p className="mb-2 text-center text-sm font-bold">
+              {selectedSymptom
+                ? "Tap the centre of the chart to return to all symptoms."
+                : "Tap a symptom to focus your profile on just that one."}
+            </p>
+          )}
           {chartData.length >= 3 ? (
             <SymptomRadarChart
               data={chartData}
@@ -254,11 +261,6 @@ export default function ProfilePage() {
           ) : (
             <p className="text-sm text-muted-foreground">Not enough answered symptoms yet to draw a chart.</p>
           )}
-          <p className="mt-1 text-center text-xs text-muted-foreground">
-            {selectedSymptom
-              ? "Tap the centre of the chart to return to all symptoms."
-              : "Tap a symptom to focus your profile on just that one."}
-          </p>
 
           <Separator className="my-5" />
 
@@ -413,8 +415,8 @@ export default function ProfilePage() {
         return (
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Lightbulb className="h-5 w-5" /> What might help
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Lightbulb className="h-6 w-6 shrink-0" /> What might help
               </CardTitle>
               <CardDescription>Research-backed suggestions tied to your symptoms, never generic advice.</CardDescription>
             </CardHeader>
@@ -456,8 +458,8 @@ export default function ProfilePage() {
         return (
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Pill className="h-5 w-5" /> Supplements the research points to
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Pill className="h-6 w-6 shrink-0" /> Supplements the research points to
               </CardTitle>
               <CardDescription>
                 Dietary supplements with research evidence for your symptoms, not a recommendation to start
@@ -514,63 +516,78 @@ export default function ProfilePage() {
                 return community ? { rec, community } : null;
               })
               .filter((x): x is NonNullable<typeof x> => x !== null);
-            if (grounded.length === 0) return null;
             return (
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                  <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                    <MessagesSquare className="h-6 w-6 shrink-0" /> What women with PMOS are trying
                   </CardTitle>
                   <CardDescription>
                     Shared by other members: what they report trying, not medical advice.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {grounded.map(({ rec, community }, i) => (
-                      <div key={i} className="rounded-lg border bg-accent/30 p-4">
-                        <p className="text-sm">{rec.text}</p>
-                        <p className="mt-2 text-xs text-muted-foreground">
-                          Backed by{" "}
-                          <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
-                          members who tried it
-                        </p>
+                  {grounded.length > 0 ? (
+                    <>
+                      <Carousel
+                        items={grounded}
+                        autoplayMs={5000}
+                        renderItem={({ rec, community }) => (
+                          <div className="rounded-lg border bg-accent/30 p-6">
+                            <p className="text-base">{rec.text}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">
+                              Backed by{" "}
+                              <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
+                              members who tried it
+                            </p>
+                          </div>
+                        )}
+                      />
+                      <Button render={<Link href="/community" />} variant="outline" size="lg" className="mt-4 h-12 px-6 text-base">
+                        Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <div className="rounded-lg border border-dashed bg-accent/10 p-6 text-sm text-muted-foreground">
+                        No community data available at the moment that relates to{" "}
+                        {selectedSymptom ? labelFor(selectedSymptom) : "your current profile"}. Check back as more
+                        members share what they&apos;ve tried.
                       </div>
-                    ))}
-                  </div>
-                  <Button render={<Link href="/community" />} variant="outline" className="mt-4">
-                    Go to community <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
+                      <Button render={<Link href="/community" />} variant="outline" size="lg" className="mt-4 h-12 px-6 text-base">
+                        Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             );
           })()}
 
-          {/* Community comparison */}
+          {/* Community comparison: always shows the full dominant-symptom set, never filtered by the selected symptom */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5" /> How you compare to the community
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Users className="h-6 w-6 shrink-0" /> How you compare to the community
               </CardTitle>
               <CardDescription>
                 Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
-              {visibleCommunitySymptoms.map((s) => {
-                const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
-                if (!baseline) return null;
-                return (
-                  <div key={s} className="flex items-center justify-between gap-4 text-sm">
-                    <span>{labelFor(s)}</span>
-                    <span className="text-muted-foreground">
-                      <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of
-                      community members also report this
-                    </span>
-                  </div>
-                );
-              })}
-              <Separator />
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {analysis.dominantSymptoms.map((s) => {
+                  const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
+                  if (!baseline) return null;
+                  return (
+                    <div key={s} className="flex items-center gap-4 rounded-lg border bg-accent/20 p-4">
+                      <span className="flex-1 text-sm font-medium">{labelFor(s)}</span>
+                      <PercentRing percent={baseline.percentOfCommunityReporting} />
+                    </div>
+                  );
+                })}
+              </div>
+              <Separator className="my-4" />
               <p className="text-xs text-muted-foreground">
                 On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
                 diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one
@@ -582,8 +599,10 @@ export default function ProfilePage() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button render={<Link href="/checkin" />}>Do a check-in</Button>
-        <Button render={<Link href="/community" />} variant="outline">
+        <Button render={<Link href="/checkin" />} size="lg" className="h-12 px-6 text-base">
+          Do a check-in
+        </Button>
+        <Button render={<Link href="/community" />} variant="outline" size="lg" className="h-12 px-6 text-base">
           Visit the community
         </Button>
       </div>

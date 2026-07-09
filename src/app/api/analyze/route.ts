@@ -71,8 +71,11 @@ export async function POST(req: NextRequest) {
       // analysis, rather than the whole function being killed with an opaque 504
       // that skips the catch entirely. Keep at least ~15s of headroom below
       // maxDuration for the fallback computation + response to complete.
+      // NOTE: generateObject has no `timeout` option (it's silently dropped by
+      // prepareCallSettings) — abortSignal is the only mechanism it actually
+      // wires through to the underlying provider call, so that's what we use.
       maxRetries: 1,
-      timeout: 45_000,
+      abortSignal: AbortSignal.timeout(45_000),
       system:
         "You are a careful, evidence-based PMOS (polyendocrine metabolic ovarian syndrome, formerly known as PCOS, " +
         "renamed in 2026) symptom triage assistant. You never diagnose. " +

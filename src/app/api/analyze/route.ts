@@ -11,7 +11,13 @@ export const maxDuration = 60;
 // Direct Anthropic key takes precedence (no Gateway account needed); otherwise use
 // the AI Gateway model string, which also works via Vercel's OIDC token when deployed.
 const model = process.env.ANTHROPIC_API_KEY ? anthropic("claude-sonnet-5") : "anthropic/claude-sonnet-5";
-const hasLiveKey = Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.VERCEL_OIDC_TOKEN);
+// FORCE_FALLBACK=1 is a guaranteed kill switch, independent of any provider
+// env var (including Vercel's auto-injected OIDC token) — set it in Vercel
+// project settings to force every request onto the deterministic fallback
+// scorer, no live AI call attempted at all.
+const hasLiveKey =
+  process.env.FORCE_FALLBACK !== "1" &&
+  Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.VERCEL_OIDC_TOKEN);
 
 export async function POST(req: NextRequest) {
   const body = (await req.json()) as IntakeAnswers;

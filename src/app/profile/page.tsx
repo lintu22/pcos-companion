@@ -413,8 +413,8 @@ export default function ProfilePage() {
         return (
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Lightbulb className="h-5 w-5" /> What might help
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Lightbulb className="h-6 w-6 shrink-0" /> What might help
               </CardTitle>
               <CardDescription>Research-backed suggestions tied to your symptoms, never generic advice.</CardDescription>
             </CardHeader>
@@ -456,8 +456,8 @@ export default function ProfilePage() {
         return (
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Pill className="h-5 w-5" /> Supplements the research points to
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Pill className="h-6 w-6 shrink-0" /> Supplements the research points to
               </CardTitle>
               <CardDescription>
                 Dietary supplements with research evidence for your symptoms, not a recommendation to start
@@ -517,8 +517,8 @@ export default function ProfilePage() {
             return (
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                  <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                    <MessagesSquare className="h-6 w-6 shrink-0" /> What women with PMOS are trying
                   </CardTitle>
                   <CardDescription>
                     Shared by other members: what they report trying, not medical advice.
@@ -541,7 +541,7 @@ export default function ProfilePage() {
                           </div>
                         )}
                       />
-                      <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                      <Button render={<Link href="/community" />} variant="outline" size="lg" className="mt-4 h-12 px-6 text-base">
                         Go to community <ArrowRight className="ml-1 h-4 w-4" />
                       </Button>
                     </>
@@ -552,7 +552,7 @@ export default function ProfilePage() {
                         {selectedSymptom ? labelFor(selectedSymptom) : "your current profile"}. Check back as more
                         members share what they&apos;ve tried.
                       </div>
-                      <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                      <Button render={<Link href="/community" />} variant="outline" size="lg" className="mt-4 h-12 px-6 text-base">
                         Go to community <ArrowRight className="ml-1 h-4 w-4" />
                       </Button>
                     </>
@@ -565,8 +565,8 @@ export default function ProfilePage() {
           {/* Community comparison: always shows the full dominant-symptom set, never filtered by the selected symptom */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5" /> How you compare to the community
+              <CardTitle className="flex items-center gap-2 text-2xl font-bold">
+                <Users className="h-6 w-6 shrink-0" /> How you compare to the community
               </CardTitle>
               <CardDescription>
                 Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
@@ -597,8 +597,10 @@ export default function ProfilePage() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button render={<Link href="/checkin" />}>Do a check-in</Button>
-        <Button render={<Link href="/community" />} variant="outline">
+        <Button render={<Link href="/checkin" />} size="lg" className="h-12 px-6 text-base">
+          Do a check-in
+        </Button>
+        <Button render={<Link href="/community" />} variant="outline" size="lg" className="h-12 px-6 text-base">
           Visit the community
         </Button>
       </div>

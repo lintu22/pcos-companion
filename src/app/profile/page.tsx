@@ -14,6 +14,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useStoredProfile } from "@/lib/storage";
 import {
   SYMPTOMS,
@@ -332,57 +333,68 @@ export default function ProfilePage() {
             </SortTab>
           </div>
         </CardHeader>
-        <CardContent className="space-y-8">
-          {visibleInsights.map((insight, i) => {
-            const level = bestEvidenceLevel(insight.citationIds);
-            return (
-              <div key={i}>
-                <p className="text-base font-semibold">{labelFor(insight.symptom)}</p>
-                {level && (
-                  <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <span
-                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
-                    >
-                      {EVIDENCE_LABEL[level]}
-                    </span>
-                    <EvidenceInfoButton />
-                  </div>
-                )}
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{insight.statement}</p>
-                {insight.meaning && (
-                  <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground">
-                    <span className="font-semibold text-foreground">What this means for you: </span>
-                    {insight.meaning}
-                  </div>
-                )}
-                <div className="mt-4 flex flex-col gap-2">
-                  {insight.citationIds.map((id) => {
-                    const c = ALL_CITATIONS[id];
-                    if (!c) return null;
-                    return (
-                      <a
-                        key={id}
-                        href={c.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-start gap-2.5 rounded-lg border px-3.5 py-3 text-sm text-muted-foreground hover:border-primary hover:text-primary"
-                        title={c.summary}
-                      >
-                        <ExternalLink className="mt-0.5 h-4 w-4 shrink-0" />
-                        <span>
-                          <span className="block font-medium text-foreground">{c.title}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {c.authorsYear} · {c.journal}
+        <CardContent>
+          <Accordion key={`${selectedSymptom ?? "all"}-${scienceSort}`} defaultValue={[0]}>
+            {visibleInsights.map((insight, i) => {
+              const level = bestEvidenceLevel(insight.citationIds);
+              return (
+                <AccordionItem key={i} value={i}>
+                  <div className="flex items-start justify-between gap-2">
+                    <AccordionTrigger className="flex-1 py-4">
+                      <div>
+                        <p className="text-base font-semibold">{labelFor(insight.symptom)}</p>
+                        {level && (
+                          <span
+                            className={`mt-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
+                          >
+                            {EVIDENCE_LABEL[level]}
                           </span>
-                        </span>
-                      </a>
-                    );
-                  })}
-                </div>
-                {i < visibleInsights.length - 1 && <Separator className="mt-8" />}
-              </div>
-            );
-          })}
+                        )}
+                      </div>
+                    </AccordionTrigger>
+                    {level && (
+                      <div className="pt-4">
+                        <EvidenceInfoButton />
+                      </div>
+                    )}
+                  </div>
+                  <AccordionContent>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{insight.statement}</p>
+                    {insight.meaning && (
+                      <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">What this means for you: </span>
+                        {insight.meaning}
+                      </div>
+                    )}
+                    <div className="mt-4 flex flex-col gap-2">
+                      {insight.citationIds.map((id) => {
+                        const c = ALL_CITATIONS[id];
+                        if (!c) return null;
+                        return (
+                          <a
+                            key={id}
+                            href={c.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-start gap-2.5 rounded-lg border px-3.5 py-3 text-sm text-muted-foreground hover:border-primary hover:text-primary"
+                            title={c.summary}
+                          >
+                            <ExternalLink className="mt-0.5 h-4 w-4 shrink-0" />
+                            <span>
+                              <span className="block font-medium text-foreground">{c.title}</span>
+                              <span className="text-xs text-muted-foreground">
+                                {c.authorsYear} · {c.journal}
+                              </span>
+                            </span>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
           {visibleInsights.length === 0 && (
             <p className="text-sm text-muted-foreground">No specific research insight for this symptom yet.</p>
           )}

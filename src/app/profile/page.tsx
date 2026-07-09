@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Carousel } from "@/components/carousel";
+import { PercentRing } from "@/components/percent-ring";
 import { useStoredProfile } from "@/lib/storage";
 import {
   SYMPTOMS,
@@ -210,8 +211,6 @@ export default function ProfilePage() {
   const visibleSupplements = selectedSymptom
     ? (analysis.supplements ?? []).filter((s) => s.symptom === selectedSymptom)
     : analysis.supplements ?? [];
-
-  const visibleCommunitySymptoms = selectedSymptom ? [selectedSymptom] : analysis.dominantSymptoms;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
@@ -515,7 +514,6 @@ export default function ProfilePage() {
                 return community ? { rec, community } : null;
               })
               .filter((x): x is NonNullable<typeof x> => x !== null);
-            if (grounded.length === 0) return null;
             return (
               <Card>
                 <CardHeader>
@@ -527,29 +525,44 @@ export default function ProfilePage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Carousel
-                    items={grounded}
-                    autoplayMs={5000}
-                    renderItem={({ rec, community }) => (
-                      <div className="rounded-lg border bg-accent/30 p-6">
-                        <p className="text-base">{rec.text}</p>
-                        <p className="mt-3 text-sm text-muted-foreground">
-                          Backed by{" "}
-                          <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
-                          members who tried it
-                        </p>
+                  {grounded.length > 0 ? (
+                    <>
+                      <Carousel
+                        items={grounded}
+                        autoplayMs={5000}
+                        renderItem={({ rec, community }) => (
+                          <div className="rounded-lg border bg-accent/30 p-6">
+                            <p className="text-base">{rec.text}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">
+                              Backed by{" "}
+                              <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
+                              members who tried it
+                            </p>
+                          </div>
+                        )}
+                      />
+                      <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                        Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <div className="rounded-lg border border-dashed bg-accent/10 p-6 text-sm text-muted-foreground">
+                        No community data available at the moment that relates to{" "}
+                        {selectedSymptom ? labelFor(selectedSymptom) : "your current profile"}. Check back as more
+                        members share what they&apos;ve tried.
                       </div>
-                    )}
-                  />
-                  <Button render={<Link href="/community" />} variant="outline" className="mt-4">
-                    Go to community <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
+                      <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                        Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             );
           })()}
 
-          {/* Community comparison */}
+          {/* Community comparison: always shows the full dominant-symptom set, never filtered by the selected symptom */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -559,21 +572,20 @@ export default function ProfilePage() {
                 Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
-              {visibleCommunitySymptoms.map((s) => {
-                const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
-                if (!baseline) return null;
-                return (
-                  <div key={s} className="flex items-center justify-between gap-4 text-sm">
-                    <span>{labelFor(s)}</span>
-                    <span className="text-muted-foreground">
-                      <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of
-                      community members also report this
-                    </span>
-                  </div>
-                );
-              })}
-              <Separator />
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {analysis.dominantSymptoms.map((s) => {
+                  const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
+                  if (!baseline) return null;
+                  return (
+                    <div key={s} className="flex items-center gap-4 rounded-lg border bg-accent/20 p-4">
+                      <span className="flex-1 text-sm font-medium">{labelFor(s)}</span>
+                      <PercentRing percent={baseline.percentOfCommunityReporting} />
+                    </div>
+                  );
+                })}
+              </div>
+              <Separator className="my-4" />
               <p className="text-xs text-muted-foreground">
                 On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
                 diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one

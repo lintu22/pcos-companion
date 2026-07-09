@@ -1,5 +1,5 @@
 // Mock evidence base. In production these would be pulled from a live literature
-// database (PubMed/Semantic Scholar) — for this demo they are curated, illustrative
+// database (PubMed/Semantic Scholar). For this demo they are curated, illustrative
 // entries loosely reflecting real PMOS (formerly known as PCOS) literature themes,
 // not verbatim quotes. Citation titles below are real, published paper titles and
 // are left as originally published (many predate the 2026 PMOS renaming), even
@@ -17,7 +17,7 @@ export type SymptomKey =
   | "fertility_concerns"
   | "pelvic_pain";
 
-// Editorial grade of how strong the evidence type is — OUR classification based on
+// Editorial grade of how strong the evidence type is: OUR classification based on
 // study design (guidelines/Cochrane/meta-analyses = strong; narrative reviews or
 // single studies = moderate; small/herbal/patient-info = limited). Not a grade the
 // papers assign themselves; used only to colour the UI badge and sort by evidence.
@@ -42,8 +42,8 @@ export const EVIDENCE_LABEL: Record<EvidenceLevel, string> = {
   low: "Very low evidence"
 };
 
-// Plain-language legend shown in the "How we grade evidence" info modal —
-// frames each level as a confidence level rather than research jargon.
+// Plain-language legend shown in the "How we grade evidence" info modal.
+// Frames each level as a confidence level rather than research jargon.
 export const EVIDENCE_INFO: Record<EvidenceLevel, { dot: string; title: string; description: string }> = {
   strong: {
     dot: "bg-emerald-500",
@@ -69,7 +69,7 @@ export const EVIDENCE_INFO: Record<EvidenceLevel, { dot: string; title: string; 
 
 export interface ResearchRecommendation {
   text: string; // an actionable suggestion, e.g. "Consider CBT..."
-  citations: string[]; // citation ids this suggestion is grounded in — never shown without these
+  citations: string[]; // citation ids this suggestion is grounded in, never shown without these
 }
 
 // Same shape as ResearchRecommendation, kept as a distinct type so the UI can
@@ -84,9 +84,9 @@ export interface SymptomInfo {
   key: SymptomKey;
   label: string;
   description: string;
-  citations: string[]; // citation ids — look up in CITATIONS (hand-curated) or ALL_CITATIONS (incl. ingested PDFs)
+  citations: string[]; // citation ids: look up in CITATIONS (hand-curated) or ALL_CITATIONS (incl. ingested PDFs)
   insights: string[]; // evidence-based statements, paired 1:1 with citations by index where possible
-  recommendations?: ResearchRecommendation[]; // what the research suggests actually helps (optional — not every symptom has a clear one)
+  recommendations?: ResearchRecommendation[]; // what the research suggests actually helps (optional, not every symptom has a clear one)
   supplements?: SupplementRecommendation[]; // dietary supplements with research evidence for this symptom (optional)
 }
 
@@ -201,7 +201,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     citations: ["teede2018", "legro2013"],
     insights: [
       "Irregular ovulation is one of the three core diagnostic criteria for PMOS under the Rotterdam consensus, alongside hyperandrogenism and polycystic ovarian morphology.",
-      "Cycle irregularity in PMOS is driven by disrupted LH pulsatility and anovulation, not just 'stress' — guidelines recommend it as a primary red flag to raise with a clinician.",
+      "Cycle irregularity in PMOS is driven by disrupted LH pulsatility and anovulation, not just 'stress'. Guidelines recommend it as a primary red flag to raise with a clinician.",
     ],
     recommendations: [
       {
@@ -240,7 +240,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Thinning at the crown or widening part line.",
     citations: ["escobarmorreale2018"],
     insights: [
-      "Androgenic alopecia (scalp thinning) shares the same hormonal driver as hirsutism and acne in PMOS — elevated free androgens acting on hair follicles.",
+      "Androgenic alopecia (scalp thinning) shares the same hormonal driver as hirsutism and acne in PMOS: elevated free androgens acting on hair follicles.",
     ],
   },
   {
@@ -250,7 +250,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     citations: ["lim2012", "stepto2013"],
     insights: [
       "A meta-analysis of over 30 studies found women with PMOS have significantly higher rates of overweight, obesity, and central (abdominal) adiposity than the general population.",
-      "Clamp studies show insulin resistance in PMOS is often intrinsic — present independent of body weight — which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
+      "Clamp studies show insulin resistance in PMOS is often intrinsic (present independent of body weight), which is why weight alone isn't a reliable marker and diet-only advice can be frustrating and incomplete.",
     ],
     recommendations: [
       {
@@ -274,12 +274,12 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Increased anxiety, low mood, or mood swings.",
     citations: ["cooney2017", "jiskoot2022"],
     insights: [
-      "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PMOS compared to controls — this is a recognised part of the condition, not 'just stress'.",
-      "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PMOS compared with usual care — a concrete, evidence-based option to raise with a clinician or therapist.",
+      "A meta-analysis found significantly elevated rates of moderate-to-severe depressive and anxiety symptoms in people with PMOS compared to controls. This is a recognised part of the condition, not 'just stress'.",
+      "A systematic review and meta-analysis of 8 studies found cognitive behavioural therapy (CBT) produced a large effect (Cohen's d = 1.02) in reducing depression scores in women with PMOS compared with usual care: a concrete, evidence-based option to raise with a clinician or therapist.",
     ],
     recommendations: [
       {
-        text: "Cognitive behavioural therapy (CBT) is a first-line, evidence-based option for depression in PMOS — a 2022 meta-analysis found a large effect size in favour of CBT compared with usual care.",
+        text: "Cognitive behavioural therapy (CBT) is a first-line, evidence-based option for depression in PMOS. A 2022 meta-analysis found a large effect size in favour of CBT compared with usual care.",
         citations: ["jiskoot2022"],
       },
     ],
@@ -290,7 +290,7 @@ export const SYMPTOMS: SymptomInfo[] = [
     description: "Intense cravings, energy crashes after meals, or shakiness between meals.",
     citations: ["stepto2013", "moran2013"],
     insights: [
-      "Insulin resistance — present in a majority of PMOS cases regardless of weight — can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
+      "Insulin resistance, present in a majority of PMOS cases regardless of weight, can drive blood-sugar swings that manifest as cravings and post-meal energy crashes.",
       "Cochrane review evidence shows structured lifestyle/dietary approaches (not necessarily weight loss) can meaningfully improve insulin sensitivity and related symptoms.",
     ],
     recommendations: [
@@ -316,13 +316,13 @@ export const SYMPTOMS: SymptomInfo[] = [
     ],
     recommendations: [
       {
-        text: "ESHRE guidelines recommend first-line ovulation induction treatment for anovulatory infertility in PMOS, which the large majority of patients respond well to — worth raising with a fertility specialist.",
+        text: "ESHRE guidelines recommend first-line ovulation induction treatment for anovulatory infertility in PMOS, which the large majority of patients respond well to. Worth raising with a fertility specialist.",
         citations: ["balen2016"],
       },
     ],
     supplements: [
       {
-        text: "Vitamin D supplementation has been associated in clinical studies with reduced FSH, LH, and androgen levels and fewer early miscarriages, and myo-inositol has been shown to help restore spontaneous ovulation — worth discussing with a fertility specialist before starting.",
+        text: "Vitamin D supplementation has been associated in clinical studies with reduced FSH, LH, and androgen levels and fewer early miscarriages, and myo-inositol has been shown to help restore spontaneous ovulation. Worth discussing with a fertility specialist before starting.",
         citations: ["han2024"],
       },
     ],

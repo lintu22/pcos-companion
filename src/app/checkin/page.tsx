@@ -45,7 +45,7 @@ export default function CheckInPage() {
         <CardHeader>
           <CardTitle>How has this week been?</CardTitle>
           <CardDescription>
-            Two quick questions — this helps us understand whether the insights are actually useful, and
+            Two quick questions: this helps us understand whether the insights are actually useful, and
             builds a timeline you can look back on.
           </CardDescription>
         </CardHeader>
@@ -106,7 +106,7 @@ export default function CheckInPage() {
       <div>
         <h2 className="mb-3 text-lg font-semibold">Your check-in history</h2>
         {history.length === 0 ? (
-          <p className="text-sm text-muted-foreground">No check-ins yet — your first one will show up here.</p>
+          <p className="text-sm text-muted-foreground">No check-ins yet. Your first one will show up here.</p>
         ) : (
           <div className="space-y-3">
             {history.map((entry, i) => (

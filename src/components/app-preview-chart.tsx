@@ -11,14 +11,14 @@ const RINGS = [1, 2, 3, 4, 5];
 const MAX_VALUE = 5;
 
 // Corner order matches the original mockup: A top-left, B top-right, C right,
-// D bottom-right, E bottom-left, F left — walked here by axis angle.
+// D bottom-right, E bottom-left, F left. Walked here by axis angle.
 const AXES = [
-  { label: "Mood", angle: 0 }, // C — right
-  { label: "Acne", angle: 60 }, // B — top-right
-  { label: "Fatigue", angle: 120 }, // A — top-left
-  { label: "Weight gain", angle: 180 }, // F — left
-  { label: ["Irregular", "period"], angle: 240 }, // E — bottom-left
-  { label: "Hair changes", angle: 300 }, // D — bottom-right
+  { label: "Mood", angle: 0 }, // C, right
+  { label: "Acne", angle: 60 }, // B, top-right
+  { label: "Fatigue", angle: 120 }, // A, top-left
+  { label: "Weight gain", angle: 180 }, // F, left
+  { label: ["Irregular", "period"], angle: 240 }, // E, bottom-left
+  { label: "Hair changes", angle: 300 }, // D, bottom-right
 ];
 
 // A few overlapping data rings echo the layered look of the original design.

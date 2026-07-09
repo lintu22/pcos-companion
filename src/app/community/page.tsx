@@ -17,7 +17,7 @@ export default function CommunityPage() {
         <h1 className="text-3xl font-bold tracking-tight">Community</h1>
         <p className="mt-1 text-muted-foreground">
           Real-world experiences from {COMMUNITY_STATS.totalUsers.toLocaleString()} members, shared
-          alongside — never in place of — the evidence.
+          alongside (never in place of) the evidence.
         </p>
       </div>
 
@@ -71,7 +71,7 @@ export default function CommunityPage() {
       </div>
 
       <p className="mt-8 text-center text-xs text-muted-foreground">
-        This is a mocked forum for demo purposes — posts are illustrative, not real user submissions.
+        This is a mocked forum for demo purposes: posts are illustrative, not real user submissions.
       </p>
     </div>
   );

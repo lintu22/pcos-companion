@@ -7,10 +7,14 @@ export const InsightSchema = z.object({
   symptom: z.string(),
   statement: z.string(),
   citationIds: z.array(z.string()),
+  // Personalized 1-2 sentence read on what `statement` means for THIS user,
+  // referencing their own answers (e.g. their severity rating), not a new
+  // research claim, just an interpretation of the statement/citations above.
+  meaning: z.string(),
 });
 
 // A recommendation must always be grounded in one of the two lists we hand the
-// model — never a bare suggestion. "research" ones carry citationIds (same
+// model, never a bare suggestion. "research" ones carry citationIds (same
 // rule as insights); "community" ones carry a communityRecommendationId that
 // must match a real entry, so the UI can show its real % and source posts.
 export const RecommendationSchema = z.object({
@@ -23,7 +27,7 @@ export const RecommendationSchema = z.object({
 
 // Supplements get their own schema/section (rather than being folded into
 // RecommendationSchema) so the UI can show them in a clearly separate area
-// with a safety disclaimer. Always research-grounded — citationIds must
+// with a safety disclaimer. Always research-grounded: citationIds must
 // resolve to a real citation, same hard rule as everything else.
 export const SupplementSchema = z.object({
   text: z.string(),
@@ -34,7 +38,7 @@ export const SupplementSchema = z.object({
 // One short synthesis per dominant symptom, shown when the user clicks that
 // symptom on the radar chart. Not independently grounded (it's a summary of
 // the insights/recommendations/supplements already produced for that
-// symptom) — the prompt instructs the model to introduce no new claims here.
+// symptom). The prompt instructs the model to introduce no new claims here.
 export const SymptomOverviewSchema = z.object({
   symptom: z.string(),
   overview: z.string(),
@@ -46,7 +50,7 @@ export const ProfileAnalysisSchema = z.object({
     .min(0)
     .max(97)
     .describe(
-      "Estimated likelihood the described symptom pattern is consistent with PMOS (formerly known as PCOS), as a screening signal only — never a diagnosis."
+      "Estimated likelihood the described symptom pattern is consistent with PMOS (formerly known as PCOS), as a screening signal only, never a diagnosis."
     ),
   confidenceNote: z
     .string()
@@ -70,7 +74,7 @@ export const ProfileAnalysisSchema = z.object({
   symptomOverviews: z
     .array(SymptomOverviewSchema)
     .describe(
-      "One entry per symptom key in dominantSymptoms: a 1-2 sentence synthesis based only on the insights/recommendations/supplements you already produced for that symptom in this same response — introduce no new claims or citations here."
+      "One entry per symptom key in dominantSymptoms: a 1-2 sentence synthesis based only on the insights/recommendations/supplements you already produced for that symptom in this same response. Introduce no new claims or citations here."
     ),
   summary: z.string().describe("A warm, empowering 2-3 sentence summary written directly to the user."),
 });
@@ -138,7 +142,18 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     const info = getSymptomInfo(symptomKey);
     const statement = info?.insights[0] ?? "This symptom is tracked in current PMOS literature.";
     const citationIds = info?.citations ?? [];
-    return { symptom: symptomKey, statement, citationIds };
+    const severity = derivedFrequencies[symptomKey];
+    const severityPhrase =
+      severity === undefined
+        ? ""
+        : severity >= 3
+          ? `At ${severity}/4, this is one of the more frequent symptoms in your answers.`
+          : severity === 2
+            ? `At ${severity}/4, this is a moderate part of your overall pattern.`
+            : `At ${severity}/4, this is a smaller part of your pattern right now.`;
+    const context = info?.description ? ` ${info.description}` : "";
+    const meaning = `${severityPhrase}${context}`.trim() || "This reflects the overall pattern in your answers.";
+    return { symptom: symptomKey, statement, citationIds, meaning };
   });
 
   const recommendations: ProfileAnalysis["recommendations"] = [];
@@ -185,7 +200,7 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
   return {
     likelihoodPercent,
     confidenceNote:
-      "This is a screening signal based on symptom patterns, not a diagnosis — please share this profile with a doctor for confirmation.",
+      "This is a screening signal based on symptom patterns, not a diagnosis. Please share this profile with a doctor for confirmation.",
     dominantSymptoms: dominant,
     insights,
     recommendations: recommendations.slice(0, 5),
@@ -193,6 +208,6 @@ export function computeFallbackAnalysis(answers: IntakeAnswers): ProfileAnalysis
     symptomOverviews,
     summary: dominantLabels
       ? `Your answers show a pattern most consistent with ${dominantLabels}. That combination shows up often in PMOS research, and there's solid evidence behind ways to understand and manage it.`
-      : "Your answers don't show a strong symptom pattern yet — that's genuinely useful information too. Keep checking in as things change.",
+      : "Your answers don't show a strong symptom pattern yet. That's genuinely useful information too. Keep checking in as things change.",
   };
 }

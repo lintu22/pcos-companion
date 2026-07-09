@@ -14,6 +14,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useStoredProfile } from "@/lib/storage";
 import {
   SYMPTOMS,
@@ -38,6 +39,7 @@ import {
   Pill,
   MessagesSquare,
   Info,
+  BookOpenCheck,
 } from "lucide-react";
 
 const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
@@ -49,6 +51,38 @@ const EVIDENCE_BADGE_CLASS: Record<EvidenceLevel, string> = {
 
 function labelFor(key: string) {
   return SYMPTOMS.find((s) => s.key === key)?.label ?? key;
+}
+
+function SectionHeading({
+  icon,
+  title,
+  description,
+  size = "default",
+  noBorder = false,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description?: string;
+  size?: "default" | "large";
+  noBorder?: boolean;
+}) {
+  return (
+    <div
+      className={`mb-3 mt-10 flex items-start gap-3 pb-3 first:mt-0 ${noBorder ? "" : "border-b"}`}
+    >
+      <span
+        className={`mt-0.5 flex shrink-0 items-center justify-center text-primary [&_svg]:h-full [&_svg]:w-full ${
+          size === "large" ? "h-10 w-10" : "h-5 w-5"
+        }`}
+      >
+        {icon}
+      </span>
+      <div>
+        <h2 className={`font-bold tracking-tight ${size === "large" ? "text-3xl" : "text-xl"}`}>{title}</h2>
+        {description && <p className="text-sm text-muted-foreground">{description}</p>}
+      </div>
+    </div>
+  );
 }
 
 function EvidenceInfoButton() {
@@ -69,7 +103,7 @@ function EvidenceInfoButton() {
         <DialogHeader>
           <DialogTitle>How we grade evidence</DialogTitle>
           <DialogDescription>
-            Each badge reflects our own read of the underlying study design — not a rating the
+            Each badge reflects our own read of the underlying study design, not a rating the
             researchers assigned themselves.
           </DialogDescription>
         </DialogHeader>
@@ -148,7 +182,14 @@ export default function ProfilePage() {
     : analysis.insights;
   const fallbackInsights =
     selectedSymptom && rawVisibleInsights.length === 0 && selectedInfo
-      ? [{ symptom: selectedSymptom, statement: selectedInfo.insights[0], citationIds: selectedInfo.citations }]
+      ? [
+          {
+            symptom: selectedSymptom,
+            statement: selectedInfo.insights[0],
+            citationIds: selectedInfo.citations,
+            meaning: "This is based on the pattern in your answers overall.",
+          },
+        ]
       : rawVisibleInsights;
   const visibleInsights =
     scienceSort === "evidence"
@@ -267,14 +308,23 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
 
+      <SectionHeading
+        icon={<BookOpenCheck />}
+        title="Backed by science"
+        description="Insights, suggestions, and supplements grounded in published research."
+        size="large"
+        noBorder
+      />
+
       {/* What science says */}
       <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>What science says</CardTitle>
+        <CardHeader className="border-b pb-6">
+          <CardTitle className="text-2xl font-bold">What science says</CardTitle>
           <CardDescription>
             Each statement links to a real study, graded by how strong the evidence type is.
           </CardDescription>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-medium text-muted-foreground">Filter by:</span>
             <SortTab active={scienceSort === "relevant"} onClick={() => setScienceSort("relevant")}>
               Most relevant to me
             </SortTab>
@@ -283,54 +333,68 @@ export default function ProfilePage() {
             </SortTab>
           </div>
         </CardHeader>
-        <CardContent className="space-y-5">
-          {visibleInsights.map((insight, i) => {
-            const level = bestEvidenceLevel(insight.citationIds);
-            const leadCitation = insight.citationIds.map((id) => ALL_CITATIONS[id]).find(Boolean);
-            return (
-              <div key={i}>
-                <div className="flex flex-wrap items-center gap-2">
-                  {level && (
-                    <span className="inline-flex items-center gap-1">
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
-                      >
-                        {EVIDENCE_LABEL[level]}
-                      </span>
-                      <EvidenceInfoButton />
-                    </span>
-                  )}
-                  <p className="text-sm font-medium">{labelFor(insight.symptom)}</p>
-                </div>
-                <p className="mt-1.5 text-sm text-muted-foreground">{insight.statement}</p>
-                {leadCitation?.summary && (
-                  <p className="mt-1.5 text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">What this means: </span>
-                    {leadCitation.summary}
-                  </p>
-                )}
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {insight.citationIds.map((id) => {
-                    const c = ALL_CITATIONS[id];
-                    if (!c) return null;
-                    return (
-                      <a
-                        key={id}
-                        href={c.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
-                        title={c.summary}
-                      >
-                        View study · {c.authorsYear} <ExternalLink className="h-3 w-3" />
-                      </a>
-                    );
-                  })}
-                </div>
-                {i < visibleInsights.length - 1 && <Separator className="mt-5" />}
-              </div>
-            );
-          })}
+        <CardContent>
+          <Accordion key={`${selectedSymptom ?? "all"}-${scienceSort}`} defaultValue={[0]}>
+            {visibleInsights.map((insight, i) => {
+              const level = bestEvidenceLevel(insight.citationIds);
+              return (
+                <AccordionItem key={i} value={i}>
+                  <div className="flex items-start justify-between gap-2">
+                    <AccordionTrigger className="flex-1 py-4">
+                      <div>
+                        <p className="text-base font-semibold">{labelFor(insight.symptom)}</p>
+                        {level && (
+                          <span
+                            className={`mt-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${EVIDENCE_BADGE_CLASS[level]}`}
+                          >
+                            {EVIDENCE_LABEL[level]}
+                          </span>
+                        )}
+                      </div>
+                    </AccordionTrigger>
+                    {level && (
+                      <div className="pt-4">
+                        <EvidenceInfoButton />
+                      </div>
+                    )}
+                  </div>
+                  <AccordionContent>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{insight.statement}</p>
+                    {insight.meaning && (
+                      <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3 text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">What this means for you: </span>
+                        {insight.meaning}
+                      </div>
+                    )}
+                    <div className="mt-4 flex flex-col gap-2">
+                      {insight.citationIds.map((id) => {
+                        const c = ALL_CITATIONS[id];
+                        if (!c) return null;
+                        return (
+                          <a
+                            key={id}
+                            href={c.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-start gap-2.5 rounded-lg border px-3.5 py-3 text-sm text-muted-foreground hover:border-primary hover:text-primary"
+                            title={c.summary}
+                          >
+                            <ExternalLink className="mt-0.5 h-4 w-4 shrink-0" />
+                            <span>
+                              <span className="block font-medium text-foreground">{c.title}</span>
+                              <span className="text-xs text-muted-foreground">
+                                {c.authorsYear} · {c.journal}
+                              </span>
+                            </span>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
           {visibleInsights.length === 0 && (
             <p className="text-sm text-muted-foreground">No specific research insight for this symptom yet.</p>
           )}
@@ -352,7 +416,7 @@ export default function ProfilePage() {
               <CardTitle className="flex items-center gap-2">
                 <Lightbulb className="h-5 w-5" /> What might help
               </CardTitle>
-              <CardDescription>Research-backed suggestions tied to your symptoms — never generic advice.</CardDescription>
+              <CardDescription>Research-backed suggestions tied to your symptoms, never generic advice.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {grounded.map(({ rec, citations }, i) => (
@@ -396,7 +460,7 @@ export default function ProfilePage() {
                 <Pill className="h-5 w-5" /> Supplements the research points to
               </CardTitle>
               <CardDescription>
-                Dietary supplements with research evidence for your symptoms — not a recommendation to start
+                Dietary supplements with research evidence for your symptoms, not a recommendation to start
                 taking anything without talking to a doctor or pharmacist first.
               </CardDescription>
             </CardHeader>
@@ -423,7 +487,7 @@ export default function ProfilePage() {
               ))}
               <Separator />
               <p className="text-xs text-muted-foreground">
-                Supplements can interact with medicines and aren&apos;t regulated the way medicines are — check with a
+                Supplements can interact with medicines and aren&apos;t regulated the way medicines are, so check with a
                 doctor or pharmacist before starting one, especially if you&apos;re pregnant, trying to conceive, or
                 on other medication.
               </p>
@@ -432,78 +496,90 @@ export default function ProfilePage() {
         );
       })()}
 
-      {/* What women with PMOS are trying (community) */}
-      {(() => {
-        const grounded = communityRecommendations
-          .map((rec) => {
-            const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
-            return community ? { rec, community } : null;
-          })
-          .filter((x): x is NonNullable<typeof x> => x !== null);
-        if (grounded.length === 0) return null;
-        return (
-          <Card className="mb-6">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] mb-6 w-screen bg-[#EDE4DB] py-8">
+        <div className="mx-auto max-w-3xl space-y-6 px-4">
+          <SectionHeading
+            icon={<Users />}
+            title="From the community"
+            description="What other members report trying and experiencing, shared anonymously, not medical advice."
+            size="large"
+            noBorder
+          />
+
+          {/* What women with PMOS are trying (community) */}
+          {(() => {
+            const grounded = communityRecommendations
+              .map((rec) => {
+                const community = COMMUNITY_RECOMMENDATIONS.find((c) => c.id === rec.communityRecommendationId);
+                return community ? { rec, community } : null;
+              })
+              .filter((x): x is NonNullable<typeof x> => x !== null);
+            if (grounded.length === 0) return null;
+            return (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                  </CardTitle>
+                  <CardDescription>
+                    Shared by other members: what they report trying, not medical advice.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {grounded.map(({ rec, community }, i) => (
+                      <div key={i} className="rounded-lg border bg-accent/30 p-4">
+                        <p className="text-sm">{rec.text}</p>
+                        <p className="mt-2 text-xs text-muted-foreground">
+                          Backed by{" "}
+                          <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of
+                          members who tried it
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <Button render={<Link href="/community" />} variant="outline" className="mt-4">
+                    Go to community <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })()}
+
+          {/* Community comparison */}
+          <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <MessagesSquare className="h-5 w-5" /> What women with PMOS are trying
+                <Users className="h-5 w-5" /> How you compare to the community
               </CardTitle>
               <CardDescription>
-                Shared by other members — what they report trying, not medical advice.
+                Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {grounded.map(({ rec, community }, i) => (
-                  <div key={i} className="rounded-lg border bg-accent/30 p-4">
-                    <p className="text-sm">{rec.text}</p>
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      Backed by{" "}
-                      <strong className="text-foreground">{community.percentReportingHelpful}%</strong> of members
-                      who tried it
-                    </p>
+            <CardContent className="space-y-3">
+              {visibleCommunitySymptoms.map((s) => {
+                const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
+                if (!baseline) return null;
+                return (
+                  <div key={s} className="flex items-center justify-between gap-4 text-sm">
+                    <span>{labelFor(s)}</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of
+                      community members also report this
+                    </span>
                   </div>
-                ))}
-              </div>
-              <Button render={<Link href="/community" />} variant="outline" className="mt-4">
-                Go to community <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+                );
+              })}
+              <Separator />
+              <p className="text-xs text-muted-foreground">
+                On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
+                diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one
+                supplement recommended online with no clinical backing before finding evidence-based info.
+              </p>
             </CardContent>
           </Card>
-        );
-      })()}
-
-      {/* Community comparison */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Users className="h-5 w-5" /> How you compare to the community
-          </CardTitle>
-          <CardDescription>
-            Based on {COMMUNITY_STATS.totalUsers.toLocaleString()} anonymised community profiles.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {visibleCommunitySymptoms.map((s) => {
-            const baseline = COMMUNITY_BASELINES.find((b) => b.symptom === s);
-            if (!baseline) return null;
-            return (
-              <div key={s} className="flex items-center justify-between gap-4 text-sm">
-                <span>{labelFor(s)}</span>
-                <span className="text-muted-foreground">
-                  <strong className="text-foreground">{baseline.percentOfCommunityReporting}%</strong> of community
-                  members also report this
-                </span>
-              </div>
-            );
-          })}
-          <Separator />
-          <p className="text-xs text-muted-foreground">
-            On average, community members waited {COMMUNITY_STATS.avgMonthsToDiagnosis} months for a formal
-            diagnosis, and {COMMUNITY_STATS.percentWhoTriedUnverifiedSupplements}% tried at least one
-            supplement recommended online with no clinical backing before finding evidence-based info.
-          </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       <div className="flex flex-wrap gap-3">
         <Button render={<Link href="/checkin" />}>Do a check-in</Button>
@@ -528,7 +604,7 @@ function SortTab({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+      className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
         active
           ? "bg-primary text-primary-foreground"
           : "border text-muted-foreground hover:border-primary hover:text-primary"

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Flower2 } from "lucide-react";
 
 const LINKS = [
   { href: "/intake", label: "Intake" },
@@ -16,9 +16,8 @@ export function Nav() {
   return (
     <header className="border-b bg-background/80 backdrop-blur sticky top-0 z-10">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-1.5 text-xl font-bold lowercase tracking-tight text-primary">
-          <Flower2 className="h-5 w-5" />
-          vera
+        <Link href="/" className="flex items-center">
+          <Image src="/vera_logo@2x.png" alt="Vera" width={81} height={49} className="h-16 w-auto" priority />
         </Link>
         <nav className="flex gap-1">
           {LINKS.map((link) => (

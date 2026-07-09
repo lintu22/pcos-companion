@@ -63,7 +63,7 @@ export function SymptomRadarChart({
   return (
     <svg
       viewBox={`0 0 ${SIZE} ${SIZE}`}
-      className="mx-auto w-full max-w-[320px]"
+      className="mx-auto w-full max-w-[416px]"
       role="img"
       aria-label="Symptom severity radar chart"
     >
@@ -75,7 +75,7 @@ export function SymptomRadarChart({
           <polygon
             key={ring}
             points={pts.map((p) => `${p.x},${p.y}`).join(" ")}
-            className="fill-none stroke-muted"
+            className="fill-none stroke-muted-foreground/40"
             strokeWidth={1}
           />
         );
@@ -92,7 +92,7 @@ export function SymptomRadarChart({
             y1={CENTER}
             x2={p.x}
             y2={p.y}
-            className={isSelected ? "stroke-primary" : "stroke-muted"}
+            className={isSelected ? "stroke-primary" : "stroke-muted-foreground/40"}
             strokeWidth={isSelected ? 2 : 1}
           />
         );

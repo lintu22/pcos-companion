@@ -8,9 +8,16 @@ import { COMMUNITY_RECOMMENDATIONS } from "@/lib/community-data";
 
 export const maxDuration = 60;
 
+// Haiku, not Sonnet: this call is structured extraction/personalization from a
+// fixed reference list (pick + reword), not open-ended reasoning, so the faster
+// tier is a better fit and cuts response time significantly.
 // Direct Anthropic key takes precedence (no Gateway account needed); otherwise use
 // the AI Gateway model string, which also works via Vercel's OIDC token when deployed.
-const model = process.env.ANTHROPIC_API_KEY ? anthropic("claude-sonnet-5") : "anthropic/claude-sonnet-5";
+// NOTE: the two paths use different model-id formats for Haiku (unlike Sonnet's
+// clean "claude-sonnet-5" alias, which happens to be identical on both) — verified
+// against /v1/models on each: direct Anthropic wants the dated slug, the Gateway
+// wants its own dotted alias.
+const model = process.env.ANTHROPIC_API_KEY ? anthropic("claude-haiku-4-5-20251001") : "anthropic/claude-haiku-4.5";
 // FORCE_FALLBACK=1 is a guaranteed kill switch, independent of any provider
 // env var (including Vercel's auto-injected OIDC token) — set it in Vercel
 // project settings to force every request onto the deterministic fallback
@@ -81,7 +88,8 @@ export async function POST(req: NextRequest) {
       // prepareCallSettings) — abortSignal is the only mechanism it actually
       // wires through to the underlying provider call, so that's what we use.
       maxRetries: 1,
-      abortSignal: AbortSignal.timeout(45_000),
+      maxOutputTokens: 2048,
+      abortSignal: AbortSignal.timeout(25_000),
       system:
         "You are a careful, evidence-based PMOS (polyendocrine metabolic ovarian syndrome, formerly known as PCOS, " +
         "renamed in 2026) symptom triage assistant. You never diagnose. " +

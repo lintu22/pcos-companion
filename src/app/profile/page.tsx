@@ -222,23 +222,23 @@ export default function ProfilePage() {
           <Separator className="my-5" />
 
           {selectedSymptom ? (
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wide text-primary">
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                 Your most prominent focus
               </p>
-              <p className="mt-1 text-lg font-semibold">{labelFor(selectedSymptom)}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{overviewText}</p>
+              <p className="mt-1.5 text-2xl font-bold">{labelFor(selectedSymptom)}</p>
+              <p className="mt-2 text-base text-muted-foreground">{overviewText}</p>
             </div>
           ) : (
-            <div>
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-lg font-semibold">Your chart overview</p>
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                <p className="text-2xl font-bold">Your chart overview</p>
+                <span className="inline-flex items-center rounded-full bg-primary px-3 py-1.5 text-sm font-semibold text-primary-foreground">
                   {analysis.likelihoodPercent}% screening signal
                 </span>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">{overviewText}</p>
-              <p className="mt-2 text-xs text-muted-foreground">{analysis.confidenceNote}</p>
+              <p className="mt-2 text-base text-muted-foreground">{overviewText}</p>
+              <p className="mt-3 text-xs text-muted-foreground">{analysis.confidenceNote}</p>
             </div>
           )}
         </CardContent>
